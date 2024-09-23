@@ -1,0 +1,159 @@
+
+#container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-wrapper {
+  position: relative;
+  max-width: 470px;
+  width: 100%;
+  border-radius: 12px;
+  padding: 20px 30px 120px;
+  background: var(--soft-charcoal); 
+  box-shadow: var(--card-shadow); 
+  overflow: hidden;
+}
+
+.form.login-form {
+  position: absolute;
+  left: 50%;
+  bottom: -86%;
+  transform: translateX(-50%);
+  width: calc(100% + 220px);
+  padding: 20px 140px;
+  border-radius: 50%;
+  height: 100%;
+  background: var(--bright-eggshell); 
+  transition: all 0.6s ease;
+}
+
+.form-wrapper.active .form.login-form {
+  bottom: -15%;
+  border-radius: 35%;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form header {
+  font-size: 30px;
+  text-align: center;
+  color: var(--bright-eggshell); 
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.form.login-form header {
+  color: var(--soft-charcoal); 
+  opacity: 0.6;
+}
+
+.form-wrapper.active .form.login-form header {
+  opacity: 1;
+}
+
+.form-wrapper.active .signup-form header {
+  opacity: 0.6;
+}
+
+.form-wrapper form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+form input {
+  height: 45px;
+  outline: none;
+  border: none;
+  padding: 0 15px;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--soft-charcoal); 
+  border-radius: 8px;
+  background: var(--bright-eggshell); 
+}
+
+.form.login-form input {
+  border: 1px solid var(--light-clay); 
+}
+
+.form.login-form input:focus {
+  box-shadow: 0 1px 0 var(--light-sage); 
+}
+
+form .signup-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.signup-checkbox input[type="checkbox"] {
+  height: 16px;
+  width: 16px;
+  accent-color: var(--bright-eggshell); 
+  cursor: pointer;
+}
+
+.signup-checkbox label {
+  cursor: pointer;
+  color: var(--soft-charcoal); 
+}
+
+form a {
+  color: var(--soft-charcoal); 
+  text-decoration: none;
+}
+
+form a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+/* Dark Mode Styles */
+.dark-mode #container {
+    background: var(--background-dark);
+  }
+  
+  .dark-mode .form-wrapper {
+    background: var(--header-dark);
+    box-shadow: var(--card-shadow-dark);
+  }
+  
+  .dark-mode .form.login-form {
+    background: var(--soft-charcoal);
+  }
+  
+  .dark-mode .form header {
+    color: var(--text-light);
+  }
+  
+  .dark-mode .form.login-form header {
+    color: var(--text-light);
+    opacity: 0.8;
+  }
+  
+  .dark-mode form input {
+    color: var(--text-light);
+    background: var(--soft-charcoal);
+  }
+  
+  .dark-mode .form.login-form input {
+    border: 1px solid var(--light-sage);
+  }
+  
+  .dark-mode .signup-checkbox label {
+    color: var(--text-light);
+  }
+  
+  .dark-mode form a {
+    color: var(--text-light);
+  }
+  
+  .dark-mode form a:hover {
+    text-decoration: underline;
+  }

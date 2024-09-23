@@ -1,0 +1,124 @@
+:root {
+  --warm-clay: #8b5e3c;
+  --golden-amber: #d89f42;
+  --eggshell-white: #f7f5eb;
+  --soft-charcoal: #504a40;
+  --sage-leaf-green: #96b46c;
+
+  --light-clay: #a9704c;
+  --light-amber: #f0b85e;
+  --light-sage: #b8cf8a;
+  --bright-eggshell: #fffdfc;
+  --light-charcoal: #6b645a;
+
+  --button-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  --card-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --input-focus-shadow: 0 0 5px rgba(150, 180, 108, 0.4);
+}
+
+/* Dark Mode Color Palette */
+.dark-mode {
+  --background-dark: #1c1c1c;
+  --text-light: #eaeaea;
+  --header-dark: #333333;
+  --golden-amber: #d89f42;
+  --button-hover-dark: #b58634;
+  --sage-dark: #60905d;
+  --sage-hover-dark: #4b7a48;
+  --button-shadow-dark: 0 2px 5px rgba(255, 255, 255, 0.1);
+  --card-shadow-dark: 0 4px 10px rgba(255, 255, 255, 0.05);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--eggshell-white);
+  margin: 0;
+  padding: 0;
+}
+
+.dark-mode {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+}
+
+
+
+
+/* Button Base Styles */
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Button Variants */
+.button-primary {
+  background-color: var(--golden-amber);
+  color: var(--eggshell-white);
+  box-shadow: var(--button-shadow);
+}
+
+.button-secondary {
+  background-color: var(--warm-clay);
+  color: var(--bright-eggshell);
+  box-shadow: var(--button-shadow);
+}
+
+.button-success {
+  background-color: var(--sage-leaf-green);
+  color: var(--bright-eggshell);
+  box-shadow: var(--button-shadow);
+}
+
+/* Hover and Focus Effects */
+.button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button-primary:hover {
+  background-color: var(--light-amber);
+}
+
+.button-secondary:hover {
+  background-color: var(--light-clay);
+}
+
+.button-success:hover {
+  background-color: var(--light-sage);
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: var(--input-focus-shadow);
+}
+
+/* Dark Mode Specific Styles */
+.dark-mode .button-primary {
+  background-color: var(--golden-amber);
+}
+
+.dark-mode .button-primary:hover {
+  background-color: var(--button-hover-dark);
+}
+
+.dark-mode .button-secondary {
+  background-color: var(--warm-clay);
+}
+
+.dark-mode .button-secondary:hover {
+  background-color: var(--light-clay);
+}
+
+.dark-mode .button-success {
+  background-color: var(--sage-dark);
+}
+
+.dark-mode .button-success:hover {
+  background-color: var(--sage-hover-dark);
+}

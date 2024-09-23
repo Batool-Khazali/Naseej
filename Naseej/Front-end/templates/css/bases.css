@@ -1,0 +1,33 @@
+
+
+
+:root {
+  --warm-clay: #8b5e3c;
+  --golden-amber: #d89f42;
+  --eggshell-white: #f7f5eb;
+  --soft-charcoal: #504a40;
+  --sage-leaf-green: #96b46c;
+
+  --light-clay: #a9704c;
+  --light-amber: #f0b85e;
+  --light-sage: #b8cf8a;
+  --bright-eggshell: #fffdfc;
+  --light-charcoal: #6b645a;
+
+  --button-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  --card-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --input-focus-shadow: 0 0 5px rgba(150, 180, 108, 0.4);
+}
+
+/* Dark Mode Color Palette */
+.dark-mode {
+  --background-dark: #1c1c1c;
+  --text-light: #eaeaea;
+  --header-dark: #333333;
+  --golden-amber: #d89f42;
+  --button-hover-dark: #b58634;
+  --sage-dark: #60905d;
+  --sage-hover-dark: #4b7a48;
+  --button-shadow-dark: 0 2px 5px rgba(255, 255, 255, 0.1);
+  --card-shadow-dark: 0 4px 10px rgba(255, 255, 255, 0.05);
+}
