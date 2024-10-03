@@ -36,6 +36,7 @@ async function Register() {
             });
 
         if (response.ok) {
+            event.preventDefault();
             document.getElementsByClassName("form-wrapper").item(0).classList.add("active");
         }
         else {
@@ -77,7 +78,7 @@ async function Login() {
 
         localStorage.setItem('jwtToken', result.token);
 
-        // localStorage.setItem('userId', result.id);
+        localStorage.setItem('userId', result.id);
 
         // if i arrived to login through a different page 
         //then redirect to said page after i'm logged in and remove it from local storage

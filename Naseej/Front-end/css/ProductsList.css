@@ -1,0 +1,168 @@
+@import url(bases.css);
+
+
+
+.ecommerce-page .card {
+    border: none;
+    box-shadow: var(--card-shadow);
+    margin: 0.5em 0;
+}
+.ecommerce-page .pro-img-box {
+    position: relative;
+}
+
+.ecommerce-page .card .pro-img-box .img-fluid {
+    height: 20em;
+}
+
+.ecommerce-page .card .card-body {
+    background-color: var(--section-bg-1);
+    border: none;
+    box-shadow: var(--card-shadow);
+}
+
+.ecommerce-page .card-header {
+    border-color: var(--border-color);
+    color: var(--text-color2);
+    font-size: 16px;
+    font-weight: 500;
+    background-color: var(--button-bg-color);
+}
+
+.ecommerce-page .prod-category li a {
+    border-bottom: 1px dashed #d9d9d9;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.ecommerce-page .prod-category li ul {
+    margin-left: 30px; /* Adjusted for RTL */
+}
+
+.ecommerce-page .prod-category li a:hover,
+.ecommerce-page .prod-category li a:focus,
+.ecommerce-page .prod-category li a.active {
+    color: var(--heading-color);
+}
+
+.ecommerce-page .product-list {
+margin-bottom: 1em;
+}
+
+.ecommerce-page .product-list img {
+    width: 100%;
+    border-radius: 4px 4px 0 0;
+}
+
+.ecommerce-page .add-to-cart,
+.ecommerce-page .view-details {
+    background: var(--section-bg-1);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: var(--text-color2);
+    text-align: center;
+    border: 3px solid #fff;
+    position: absolute;
+    bottom: -25px;
+}
+
+.ecommerce-page .add-to-cart {
+    right: 55%;
+}
+
+.ecommerce-page .view-details {
+    right: 30%;
+}
+
+.ecommerce-page .add-to-cart i,
+.ecommerce-page .view-details i {
+    font-size: 25px;
+    line-height: 42px;
+}
+
+.ecommerce-page .add-to-cart:hover,
+.ecommerce-page .view-details:hover {
+    background: var(--section-bg-1);
+    border-color: var(--section-bg-1);
+}
+
+.ecommerce-page .product-title {
+    color: var(--section-bg-1);
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.ecommerce-page .product-list .price {
+    color: var(--text-color2);
+    font-size: 15px;
+}
+
+
+/* Style the slider */
+
+#price-slider {
+    direction: ltr;
+    z-index: 0;
+}
+
+.ecommerce-page .slider-info {
+    text-align: right;
+}
+
+.ui-slider {
+    background-color: var(--section-bg-1);
+    border-radius: 10px;
+    height: 8px;
+}
+
+.ui-slider-handle {
+    background-color: var(--section-bg-1);
+    border: none;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+}
+
+.ui-slider-range {
+    background-color: var(--text-color2);
+}
+
+
+/* ///////////////////////////////////////// */
+
+.filter-form .color-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5em;
+}
+
+.filter-form input[type="checkbox"] {
+    margin-right: 0.5em;
+}
+
+.productsColor {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #000;
+}
+
+#ProColorList{
+    color: var(--text-color2);
+    
+}
+
+label {
+    color: var(--text-color2) !important;
+}
+
+
+
+
+
+
+
+

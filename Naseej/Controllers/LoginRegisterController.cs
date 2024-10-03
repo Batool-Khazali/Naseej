@@ -25,7 +25,7 @@ namespace Naseej.Controllers
         public IActionResult Register([FromForm] UsersRequestDTO model)
         {
 
-            var existingUser = _db.Users.FirstOrDefault(u => u.UserEmail == model.Email);
+            var existingUser = _db.Users.FirstOrDefault(u => u.Email == model.Email);
 
             if (existingUser != null)
                 return BadRequest("The user already exists.");
@@ -39,10 +39,24 @@ namespace Naseej.Controllers
                 Name = model.UserName,
                 PasswordHash = passwordHash,
                 PasswordSalt = passwordSalt,
-                UserEmail = model.Email,
+                Email = model.Email,
+                IsBusinessOwner = false,
             };
 
             _db.Users.Add(user);
+            _db.SaveChanges();
+
+
+            var check = _db.Carts.Where(a => a.UserId == user.Id).FirstOrDefault();
+
+            if (check != null) return BadRequest("user already has cart");
+
+            var newCart = new Cart
+            {
+                UserId = user.Id,
+            };
+
+            _db.Carts.Add(newCart);
             _db.SaveChanges();
 
             return Ok(user);
@@ -55,7 +69,7 @@ namespace Naseej.Controllers
         [HttpPost("login")]
         public IActionResult Login([FromForm] LoginRequestDTO model)
         {
-            var user = _db.Users.FirstOrDefault(x => x.UserEmail == model.Email);
+            var user = _db.Users.FirstOrDefault(x => x.Email == model.Email);
 
             var token = _tokenGenerator.GenerateToken(user.Name  );
 
@@ -69,7 +83,7 @@ namespace Naseej.Controllers
             }
             else
             {
-                return Ok(new { Token = token });
+                return Ok(new { Token = token , id = user.Id });
             }
         }
 

@@ -1,0 +1,117 @@
+@import url(bases.css);
+
+
+.container-fluid {
+    color: var(--text-color);
+}
+
+.proDetailImg
+{
+    height: 30em;   
+    overflow: hidden;
+}
+
+input.form-control.product-quantity.text-center
+{
+    border: 1px solid var(--border-color);
+    border-radius: 0 !important;
+}
+
+button.btn.quantity-sub.btn-minus
+{
+    background-color: var(--button-bg-color);
+    border-radius: 0 0.5em 0.5em 0;
+    border: 1px solid var(--border-color);
+    color: #FFFDED;
+}
+
+button.btn.quantity-add.btn-plus
+{
+    background-color: var(--button-bg-color);
+    border-radius:  0.5em 0 0 0.5em ;
+    border: 1px solid var(--border-color);
+    color: #FFFDED;
+}
+
+.quantity
+{
+    margin: 0 0.5em;
+}
+
+.productBuyBtn
+{
+    padding-left: 35px;
+    padding-right: 35px;
+    background-color: #763800;
+    border-color: #763800;
+    margin: 0.5em;
+    color: #FFFDED;
+}
+.productBuyBtn:hover
+{
+    background-color: #BBD26D;
+}
+
+.productSampleBtn
+{
+    padding-left: 35px;
+    padding-right: 35px;
+    background-color: #DDA15E;
+    border-color: #763800;
+    margin: 0.5em;
+    color: #FFFDED;
+}
+
+.productSampleBtn:hover
+{
+    background-color: #ecfdb4;
+}
+
+
+.proRevImg
+{
+    margin: 0.7em;
+}
+
+.ProDetailTab
+{
+    color: var(--text-color2);
+    opacity: 0.6;
+}
+
+a.nav-item.nav-link.ProDetailTab.active
+{
+    color: var(--text-color);
+    opacity: 1;
+    background-color: var(--section-bg-2);
+}
+
+.thumbnail-img {
+    cursor: pointer;
+    max-height: 80px;
+    object-fit: cover;
+}
+.carousel-item img {
+    max-height: 500px;
+    object-fit: contain;
+}
+
+.color-option {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+    border: 1px solid rgb(100, 100, 100);
+    transition: border 0.2s ease;
+}
+
+input[type="radio"]:checked + .color-option {
+    border: 2px solid #000;
+    box-shadow: 0 0 10px rgba(0, 0, 0);
+}
+
+.button-secondary {
+    background-color: var(--section-bg-1) !important;
+}

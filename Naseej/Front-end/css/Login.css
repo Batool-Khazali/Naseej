@@ -1,9 +1,16 @@
+@import url(bases.css);
+
+
+
+
 
 #container {
-  min-height: 100vh;
+
   display: flex;
   align-items: center;
   justify-content: center;
+  background: var(--section-bg-1);
+  padding: 100px;
 }
 
 .form-wrapper {
@@ -12,7 +19,7 @@
   width: 100%;
   border-radius: 12px;
   padding: 20px 30px 120px;
-  background: var(--soft-charcoal); 
+  background: var(--background-color); 
   box-shadow: var(--card-shadow); 
   overflow: hidden;
 }
@@ -26,12 +33,13 @@
   padding: 20px 140px;
   border-radius: 50%;
   height: 100%;
-  background: var(--bright-eggshell); 
+  background: var(--section-bg-2); 
   transition: all 0.6s ease;
+  border: 1px solid var(--border-color);
 }
 
 .form-wrapper.active .form.login-form {
-  bottom: -15%;
+  bottom: -12.5%;
   border-radius: 35%;
   box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
 }
@@ -39,13 +47,13 @@
 .form header {
   font-size: 30px;
   text-align: center;
-  color: var(--bright-eggshell); 
+  color: var(--text-color); 
   font-weight: 600;
   cursor: pointer;
 }
 
 .form.login-form header {
-  color: var(--soft-charcoal); 
+  color: var(--text-color); 
   opacity: 0.6;
 }
 
@@ -71,17 +79,17 @@ form input {
   padding: 0 15px;
   font-size: 16px;
   font-weight: 400;
-  color: var(--soft-charcoal); 
+  color: var(--text-color); 
   border-radius: 8px;
-  background: var(--bright-eggshell); 
+  background: var(--section-bg-1); 
 }
 
 .form.login-form input {
-  border: 1px solid var(--light-clay); 
+  border: 1px solid var(--text-color); 
 }
 
 .form.login-form input:focus {
-  box-shadow: 0 1px 0 var(--light-sage); 
+  box-shadow: 0 1px 0 var(--border-color); 
 }
 
 form .signup-checkbox {
@@ -93,17 +101,21 @@ form .signup-checkbox {
 .signup-checkbox input[type="checkbox"] {
   height: 16px;
   width: 16px;
-  accent-color: var(--bright-eggshell); 
+  accent-color: var(--section-bg-1); 
   cursor: pointer;
+}
+
+input::placeholder {
+  color: var(--text-color2);
 }
 
 .signup-checkbox label {
   cursor: pointer;
-  color: var(--soft-charcoal); 
+  color: var(--text-color); 
 }
 
 form a {
-  color: var(--soft-charcoal); 
+  color: var(--text-color); 
   text-decoration: none;
 }
 
@@ -114,46 +126,19 @@ form a:hover {
 
 
 
-/* Dark Mode Styles */
-.dark-mode #container {
-    background: var(--background-dark);
-  }
-  
-  .dark-mode .form-wrapper {
-    background: var(--header-dark);
-    box-shadow: var(--card-shadow-dark);
-  }
-  
-  .dark-mode .form.login-form {
-    background: var(--soft-charcoal);
-  }
-  
-  .dark-mode .form header {
-    color: var(--text-light);
-  }
-  
-  .dark-mode .form.login-form header {
-    color: var(--text-light);
-    opacity: 0.8;
-  }
-  
-  .dark-mode form input {
-    color: var(--text-light);
-    background: var(--soft-charcoal);
-  }
-  
-  .dark-mode .form.login-form input {
-    border: 1px solid var(--light-sage);
-  }
-  
-  .dark-mode .signup-checkbox label {
-    color: var(--text-light);
-  }
-  
-  .dark-mode form a {
-    color: var(--text-light);
-  }
-  
-  .dark-mode form a:hover {
-    text-decoration: underline;
-  }
+
+input.button-success {
+  background-color: var(--button-bg-color) !important;
+  border-color: transparent;
+  color: var(--text-color2);
+  border-radius: 25px;
+  padding: 10px 20px;
+  box-shadow: var(--button-shadow);
+  transition: background-color 0.3s, box-shadow 0.3s;
+  font-weight: 600;
+}
+
+input.button-success:hover {
+  background-color: var(--section-bg-2) !important;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
+}

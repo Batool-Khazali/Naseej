@@ -1,0 +1,70 @@
+
+
+.splide__pagination {
+  position: absolute;
+  bottom: -10px; /* Adjust this to move further below the slider */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.splide__pagination__page {
+  background-color: var(--background-color);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+  border: 1px solid  var(--text-color);
+}
+
+.splide__pagination__page.is-active {
+  background-color: var(--text-color); /* Active dot color */
+}
+
+/* Ensure the slider container is positioned relative */
+.splide {
+  position: relative; /* Make sure this is applied */
+}
+
+/* Ensure arrows are positioned absolutely */
+.splide__arrow {
+  position: absolute; /* This should allow movement of the arrows */
+  top: 50%; /* Center the arrows vertically */
+  transform: translateY(-50%); /* Adjust for vertical centering */
+  z-index: 10; /* Make sure arrows are on top */
+}
+
+/* Move the left arrow outside */
+.splide__arrow.splide__arrow--prev {
+  right: -40px !important; /* Adjust to move the left arrow outside */
+}
+
+/* Move the right arrow outside */
+.splide__arrow.splide__arrow--next {
+  left: -40px !important; /* Adjust to move the right arrow outside */
+}
+
+@media (max-width: 1200px) {
+  
+  .splide__arrow.splide__arrow--prev {
+    right: -20px !important; /* Adjust to move the left arrow outside */
+  }
+  
+  /* Move the right arrow outside */
+  .splide__arrow.splide__arrow--next {
+    left: -20px !important; /* Adjust to move the right arrow outside */
+  }
+  
+}
+
+@media (max-width: 1024px) {
+  
+  .splide__arrow.splide__arrow--prev {
+    right: 0px !important; /* Adjust to move the left arrow outside */
+  }
+  
+  /* Move the right arrow outside */
+  .splide__arrow.splide__arrow--next {
+    left: 0px !important; /* Adjust to move the right arrow outside */
+  }
+  
+}

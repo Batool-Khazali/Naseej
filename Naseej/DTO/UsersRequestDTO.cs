@@ -22,5 +22,8 @@ ErrorMessage = "Only alphabets, numbers, underscores, and spaces are allowed. St
         [Required(ErrorMessage = "please enter your email")]
         [EmailAddress(ErrorMessage = "please enter a valid email")]
         public string Email { get; set; }
+
+        public bool? IsBusinessOwner { get; set; }
+
     }
 }

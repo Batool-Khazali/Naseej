@@ -1,15 +1,64 @@
-:root {
-  --warm-clay: #8b5e3c;
-  --golden-amber: #d89f42;
-  --eggshell-white: #f7f5eb;
-  --soft-charcoal: #504a40;
-  --sage-leaf-green: #96b46c;
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
 
-  --light-clay: #a9704c;
-  --light-amber: #f0b85e;
-  --light-sage: #b8cf8a;
-  --bright-eggshell: #fffdfc;
-  --light-charcoal: #6b645a;
+* {
+  scroll-behavior: smooth;
+  font-family: 'Tajawal', sans-serif;
+
+}
+
+/* Light Theme Colors (Default) */
+
+:root {
+  --background-color: #FFFFF0; /* Soft Ivory */
+  --text-color: #8B5A2B; /* Saddle Brown */
+  --text-color2: #5c3818; /* Saddle Brown */
+  --text-color3: #FFFFFF; /* Saddle Brown */
+  --heading-color: #D2B48C; /* Tan */
+  --border-color: #E3C565; /* Medium Goldenrod */
+  --button-bg-color: #FFDAB9; /* Peach Puff */
+  --button-text-color: #8A4B30; /* Rust */
+  --link-color: #D7BDE2; /* Lilac */
+  --muted-color: #C2B280; /* Khaki */
+  
+  
+  --button-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  --card-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --input-focus-shadow: 0 0 5px rgba(150, 180, 108, 0.4);
+
+  /* New Section Background Colors */
+  --section-bg-1: #d6c4ac; /* Creamy Vanilla */
+  --section-bg-2: #FFFFFF; /* Pure White */
+  --section-bg-3: #F0F0F0; /* Light Gray */
+  --section-bg-4: #E0E0E0; /* Soft Silver */
+  --section-bg-5: #D9D9D9; /* Pale Gray */
+}
+
+/* Dark Theme Colors */
+.dark-mode {
+  --background-color: #2F2F2F; /* Dark Charcoal */
+  --text-color: #F5F5DC; /* Beige */
+  --text-color2: #be9974; /* Saddle Brown */
+  --text-color3: #be9974; /* Saddle Brown */
+  --heading-color: #D2B48C; /* Tan */
+  --border-color: #9C661F; /* Sienna */
+  --button-bg-color: #A0522D; /* Redwood */
+  --button-text-color: #FFFFF0; /* Soft Ivory */
+  --section-bg-1: #8B3E2F; /* Burnt Umber */
+  --muted-color: #B8860B; /* Dark Goldenrod */
+
+  /* New Section Background Colors for Dark Theme */
+  --section-bg-1: #4A403A; /* Deep Brown */
+  --section-bg-2: #2B2B2B; /* Very Dark Gray */
+  --section-bg-3: #383838; /* Charcoal Gray */
+  --section-bg-4: #4A4A4A; /* Smoky Gray */
+  --section-bg-5: #5A5A5A; /* Steel Gray */
+  
+  --button-shadow-dark: 0 2px 5px rgba(255, 255, 255, 0.1);
+  --card-shadow-dark: 0 4px 10px rgba(255, 255, 255, 0.05);
+}
+
+
+:root {
 
   --button-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
   --card-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -17,32 +66,31 @@
 }
 
 /* Dark Mode Color Palette */
-.dark-mode {
+/* .dark-mode {
   --background-dark: #1c1c1c;
   --text-light: #eaeaea;
   --header-dark: #333333;
-  --golden-amber: #d89f42;
+  --color3: #d89f42;
   --button-hover-dark: #b58634;
   --sage-dark: #60905d;
   --sage-hover-dark: #4b7a48;
   --button-shadow-dark: 0 2px 5px rgba(255, 255, 255, 0.1);
   --card-shadow-dark: 0 4px 10px rgba(255, 255, 255, 0.05);
-}
+} */
+
+
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  background-color: var(--eggshell-white);
+  background-color: var(--background-color);
   margin: 0;
   padding: 0;
 }
 
-.dark-mode {
-    background-color: var(--background-dark);
-    color: var(--text-light);
-}
+
 
 
 
@@ -59,20 +107,20 @@ body {
 
 /* Button Variants */
 .button-primary {
-  background-color: var(--golden-amber);
-  color: var(--eggshell-white);
+  background-color: var(--color3);
+  color: var(--background-color);
   box-shadow: var(--button-shadow);
 }
 
 .button-secondary {
-  background-color: var(--warm-clay);
-  color: var(--bright-eggshell);
+  background-color: var(--color4);
+  color: var(--color9);
   box-shadow: var(--button-shadow);
 }
 
 .button-success {
-  background-color: var(--sage-leaf-green);
-  color: var(--bright-eggshell);
+  background-color: var(--color5);
+  color: var(--color9);
   box-shadow: var(--button-shadow);
 }
 
@@ -82,15 +130,15 @@ body {
 }
 
 .button-primary:hover {
-  background-color: var(--light-amber);
+  background-color: var(--color7);
 }
 
 .button-secondary:hover {
-  background-color: var(--light-clay);
+  background-color: var(--color6);
 }
 
 .button-success:hover {
-  background-color: var(--light-sage);
+  background-color: var(--color8);
 }
 
 .button:focus {
@@ -100,7 +148,7 @@ body {
 
 /* Dark Mode Specific Styles */
 .dark-mode .button-primary {
-  background-color: var(--golden-amber);
+  background-color: var(--color3);
 }
 
 .dark-mode .button-primary:hover {
@@ -108,11 +156,11 @@ body {
 }
 
 .dark-mode .button-secondary {
-  background-color: var(--warm-clay);
+  background-color: var(--color4);
 }
 
 .dark-mode .button-secondary:hover {
-  background-color: var(--light-clay);
+  background-color: var(--color6);
 }
 
 .dark-mode .button-success {
@@ -121,4 +169,10 @@ body {
 
 .dark-mode .button-success:hover {
   background-color: var(--sage-hover-dark);
+}
+
+
+.text-muted {
+  color: var(--text-color2) !important;
+  opacity: 0.5 !important ;
 }

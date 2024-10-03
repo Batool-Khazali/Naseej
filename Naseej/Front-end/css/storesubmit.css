@@ -1,0 +1,16 @@
+
+@import url(bases.css);
+
+
+.userProfileContainer {
+  color: var(--text-color);
+}
+
+input , form-control , select , textarea  {
+  background-color: var(--section-bg-1) !important;
+  color: var(--text-color2) !important;
+}
+
+input::placeholder , form-control::placeholder , select::placeholder , textarea::placeholder {
+  color: var(--text-color) !important;
+}
