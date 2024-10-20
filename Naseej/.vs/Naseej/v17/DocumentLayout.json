@@ -1,0 +1,183 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Orange\\Desktop\\masterpiece\\F\u002BB\\Naseej\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3EB1CDE9-B41D-4CEC-ADCE-B5510ED3FEF9}|Naseej\\Naseej.csproj|c:\\users\\orange\\desktop\\masterpiece\\f\u002Bb\\naseej\\naseej\\controllers\\adminstorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EB1CDE9-B41D-4CEC-ADCE-B5510ED3FEF9}|Naseej\\Naseej.csproj|solutionrelative:naseej\\controllers\\adminstorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EB1CDE9-B41D-4CEC-ADCE-B5510ED3FEF9}|Naseej\\Naseej.csproj|c:\\users\\orange\\desktop\\masterpiece\\f\u002Bb\\naseej\\naseej\\dto\\adminstoresdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EB1CDE9-B41D-4CEC-ADCE-B5510ED3FEF9}|Naseej\\Naseej.csproj|solutionrelative:naseej\\dto\\adminstoresdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EB1CDE9-B41D-4CEC-ADCE-B5510ED3FEF9}|Naseej\\Naseej.csproj|c:\\users\\orange\\desktop\\masterpiece\\f\u002Bb\\naseej\\naseej\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EB1CDE9-B41D-4CEC-ADCE-B5510ED3FEF9}|Naseej\\Naseej.csproj|solutionrelative:naseej\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EB1CDE9-B41D-4CEC-ADCE-B5510ED3FEF9}|Naseej\\Naseej.csproj|c:\\users\\orange\\desktop\\masterpiece\\f\u002Bb\\naseej\\naseej\\controllers\\cartandordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EB1CDE9-B41D-4CEC-ADCE-B5510ED3FEF9}|Naseej\\Naseej.csproj|solutionrelative:naseej\\controllers\\cartandordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EB1CDE9-B41D-4CEC-ADCE-B5510ED3FEF9}|Naseej\\Naseej.csproj|c:\\users\\orange\\desktop\\masterpiece\\f\u002Bb\\naseej\\naseej\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EB1CDE9-B41D-4CEC-ADCE-B5510ED3FEF9}|Naseej\\Naseej.csproj|solutionrelative:naseej\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EB1CDE9-B41D-4CEC-ADCE-B5510ED3FEF9}|Naseej\\Naseej.csproj|c:\\users\\orange\\desktop\\masterpiece\\f\u002Bb\\naseej\\naseej\\controllers\\adminproductscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EB1CDE9-B41D-4CEC-ADCE-B5510ED3FEF9}|Naseej\\Naseej.csproj|solutionrelative:naseej\\controllers\\adminproductscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EB1CDE9-B41D-4CEC-ADCE-B5510ED3FEF9}|Naseej\\Naseej.csproj|c:\\users\\orange\\desktop\\masterpiece\\f\u002Bb\\naseej\\naseej\\dto\\admineditstoredto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EB1CDE9-B41D-4CEC-ADCE-B5510ED3FEF9}|Naseej\\Naseej.csproj|solutionrelative:naseej\\dto\\admineditstoredto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EB1CDE9-B41D-4CEC-ADCE-B5510ED3FEF9}|Naseej\\Naseej.csproj|c:\\users\\orange\\desktop\\masterpiece\\f\u002Bb\\naseej\\naseej\\controllers\\admincategoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EB1CDE9-B41D-4CEC-ADCE-B5510ED3FEF9}|Naseej\\Naseej.csproj|solutionrelative:naseej\\controllers\\admincategoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EB1CDE9-B41D-4CEC-ADCE-B5510ED3FEF9}|Naseej\\Naseej.csproj|c:\\users\\orange\\desktop\\masterpiece\\f\u002Bb\\naseej\\naseej\\controllers\\loginregistercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EB1CDE9-B41D-4CEC-ADCE-B5510ED3FEF9}|Naseej\\Naseej.csproj|solutionrelative:naseej\\controllers\\loginregistercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EB1CDE9-B41D-4CEC-ADCE-B5510ED3FEF9}|Naseej\\Naseej.csproj|c:\\users\\orange\\desktop\\masterpiece\\f\u002Bb\\naseej\\naseej\\controllers\\admincontactcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EB1CDE9-B41D-4CEC-ADCE-B5510ED3FEF9}|Naseej\\Naseej.csproj|solutionrelative:naseej\\controllers\\admincontactcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CartAndOrderController.cs",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\masterpiece\\F\u002BB\\Naseej\\Naseej\\Controllers\\CartAndOrderController.cs",
+              "RelativeDocumentMoniker": "Naseej\\Controllers\\CartAndOrderController.cs",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\masterpiece\\F\u002BB\\Naseej\\Naseej\\Controllers\\CartAndOrderController.cs",
+              "RelativeToolTip": "Naseej\\Controllers\\CartAndOrderController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T18:07:41.269Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AdminStoresDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\masterpiece\\F\u002BB\\Naseej\\Naseej\\DTO\\AdminStoresDTO.cs",
+              "RelativeDocumentMoniker": "Naseej\\DTO\\AdminStoresDTO.cs",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\masterpiece\\F\u002BB\\Naseej\\Naseej\\DTO\\AdminStoresDTO.cs",
+              "RelativeToolTip": "Naseej\\DTO\\AdminStoresDTO.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAD4vyMAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T01:35:39.873Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LoginRegisterController.cs",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\masterpiece\\F\u002BB\\Naseej\\Naseej\\Controllers\\LoginRegisterController.cs",
+              "RelativeDocumentMoniker": "Naseej\\Controllers\\LoginRegisterController.cs",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\masterpiece\\F\u002BB\\Naseej\\Naseej\\Controllers\\LoginRegisterController.cs",
+              "RelativeToolTip": "Naseej\\Controllers\\LoginRegisterController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADgAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T23:18:26.511Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProfileController.cs",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\masterpiece\\F\u002BB\\Naseej\\Naseej\\Controllers\\ProfileController.cs",
+              "RelativeDocumentMoniker": "Naseej\\Controllers\\ProfileController.cs",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\masterpiece\\F\u002BB\\Naseej\\Naseej\\Controllers\\ProfileController.cs",
+              "RelativeToolTip": "Naseej\\Controllers\\ProfileController.cs",
+              "ViewState": "AQIAAHMAAAAAAAAAAAA8wJAAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T22:48:27.566Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AdminEditStoreDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\masterpiece\\F\u002BB\\Naseej\\Naseej\\DTO\\AdminEditStoreDTO.cs",
+              "RelativeDocumentMoniker": "Naseej\\DTO\\AdminEditStoreDTO.cs",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\masterpiece\\F\u002BB\\Naseej\\Naseej\\DTO\\AdminEditStoreDTO.cs",
+              "RelativeToolTip": "Naseej\\DTO\\AdminEditStoreDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T03:25:24.033Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdminStoresController.cs",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\masterpiece\\F\u002BB\\Naseej\\Naseej\\Controllers\\AdminStoresController.cs",
+              "RelativeDocumentMoniker": "Naseej\\Controllers\\AdminStoresController.cs",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\masterpiece\\F\u002BB\\Naseej\\Naseej\\Controllers\\AdminStoresController.cs",
+              "RelativeToolTip": "Naseej\\Controllers\\AdminStoresController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T19:40:54.314Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CartItem.cs",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\masterpiece\\F\u002BB\\Naseej\\Naseej\\Models\\CartItem.cs",
+              "RelativeDocumentMoniker": "Naseej\\Models\\CartItem.cs",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\masterpiece\\F\u002BB\\Naseej\\Naseej\\Models\\CartItem.cs",
+              "RelativeToolTip": "Naseej\\Models\\CartItem.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T19:05:49.726Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AdminProductsController.cs",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\masterpiece\\F\u002BB\\Naseej\\Naseej\\Controllers\\AdminProductsController.cs",
+              "RelativeDocumentMoniker": "Naseej\\Controllers\\AdminProductsController.cs",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\masterpiece\\F\u002BB\\Naseej\\Naseej\\Controllers\\AdminProductsController.cs",
+              "RelativeToolTip": "Naseej\\Controllers\\AdminProductsController.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T19:40:53.392Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AdminContactController.cs",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\masterpiece\\F\u002BB\\Naseej\\Naseej\\Controllers\\AdminContactController.cs",
+              "RelativeDocumentMoniker": "Naseej\\Controllers\\AdminContactController.cs",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\masterpiece\\F\u002BB\\Naseej\\Naseej\\Controllers\\AdminContactController.cs",
+              "RelativeToolTip": "Naseej\\Controllers\\AdminContactController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T19:40:52.561Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AdminCategoriesController.cs",
+              "DocumentMoniker": "C:\\Users\\Orange\\Desktop\\masterpiece\\F\u002BB\\Naseej\\Naseej\\Controllers\\AdminCategoriesController.cs",
+              "RelativeDocumentMoniker": "Naseej\\Controllers\\AdminCategoriesController.cs",
+              "ToolTip": "C:\\Users\\Orange\\Desktop\\masterpiece\\F\u002BB\\Naseej\\Naseej\\Controllers\\AdminCategoriesController.cs",
+              "RelativeToolTip": "Naseej\\Controllers\\AdminCategoriesController.cs",
+              "ViewState": "AQIAADsAAAAAAAAAAAAkwFgAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T19:40:51.142Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

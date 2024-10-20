@@ -1,0 +1,416 @@
+@import url(bases.css);
+
+
+
+
+
+
+
+
+* {
+  scroll-behavior: smooth;
+}
+
+.header {
+  height: 100vh;
+}
+
+.header {
+  position: relative;
+  background-image: url(../images/header.jpg);
+}
+
+.header img {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* font-size: 48px;
+  color: var(--section-bg-1);
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  text-transform: uppercase; */
+}
+
+
+.navbar {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  background-color: var(--background-color);
+  box-shadow: 0 14px 14px -14px rgba(0, 0, 0, 0.75);
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.hidden {
+  display: none;
+}
+
+.display__logo {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.2;
+  color: inherit;
+}
+
+.display__logo img {
+  width: 8em;
+}
+
+.nav__items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav__link {
+  color: var(--card-shadow);
+  text-decoration: none;
+}
+
+.brand {
+  margin: 0;
+  font-size: 1.45em;
+}
+
+.brand a {
+  padding: 10px 15px;
+  text-align: center;
+  display: block;
+}
+
+.nav__items {
+  margin-top: 5px;
+}
+
+.brand .nav__link,
+.nav__items .nav__link {
+  padding: 10px 15px;
+  text-align: center;
+  display: block;
+}
+
+.nav__items .nav__link {
+  color: var(--text-color);
+  font-size: 0.99rem;
+}
+
+.nav__items .nav__link:hover {
+  color: var(--border-color);
+}
+
+/* Styles for larger screens */
+@media screen and (min-width: 600px) {
+  .navbar {
+    display: flex; /* Apply flexbox to align items horizontally */
+    justify-content: space-between; /* Space out brand and nav items */
+    align-items: center;
+    padding: 0.5em 2em; /* Adjust padding for larger screens */
+  }
+
+  .nav__items {
+    display: flex; /* Display nav items horizontally */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .nav__item {
+    display: inline-block;
+    margin-left: 20px; /* Add spacing between nav items */
+  }
+
+  .nav__link {
+    display: block;
+    padding: 10px 15px;
+    color: var(--text-color);
+    font-size: 1rem; /* Adjust font size for readability */
+    text-decoration: none;
+  }
+
+  .nav__link:hover {
+    color: var(--border-color); /* Color change on hover */
+  }
+
+  .nav__open {
+    display: none; /* Hide the burger menu icon on larger screens */
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0; /* Make the height 0 when the nav is hidden */
+    background-color: var(--background-color);
+    opacity: 0; /* Initially invisible */
+    overflow: hidden; /* Hide overflowing content */
+    transition: height 0.3s ease, opacity 0.3s ease; /* Animate height and opacity */
+    pointer-events: none; /* Disable interaction when nav is hidden */
+    z-index: 1;
+  }
+
+  .nav.nav--active {
+    height: 100vh; /* Expand the nav to cover the screen */
+    opacity: 1; /* Make it visible */
+    pointer-events: auto; /* Enable interaction when active */
+    z-index: 9999; /* Ensure it's on top */
+  }
+
+  .nav .nav__items {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    padding-inline-start: 0;
+  }
+
+  .nav .nav__items .nav__item {
+    display: block;
+    float: none;
+    width: 100%;
+    text-align: right;
+    margin-bottom: 10px;
+  }
+
+  .nav .nav__items .nav__item .nav__link {
+    padding: 10px 25px;
+    opacity: 0;
+    color: var(--card-shadow);
+    font-size: 24px;
+    font-weight: 600;
+    transform: translateY(-20px);
+    transition: all 0.2s ease;
+  }
+
+  .nav .nav__items .nav__item .nav__link:hover {
+    color: var(--border-color);
+  }
+
+  .nav__open {
+    position: absolute;
+    right: 10px;
+    top: 16px;
+    display: block;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    z-index: 10000;
+    border-radius: 50%;
+  }
+
+  .nav__open i {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: var(--border-color);
+    border-radius: 2px;
+    margin-left: 14px;
+  }
+
+  .nav__open i:nth-child(1) {
+    margin-top: 16px;
+  }
+
+  .nav__open i:nth-child(2) {
+    margin-top: 4px;
+    opacity: 1;
+  }
+
+  .nav__open i:nth-child(3) {
+    margin-top: 4px;
+  }
+
+  .dark-mode .nav {
+    background-color: var(
+      --header-dark
+    ); /* Adjust to the dark mode background color */
+  }
+
+  .dark-mode .nav__items .nav__item .nav__link {
+    color: var(--text-light); /* Change text color to light for dark mode */
+  }
+
+  .dark-mode .nav__open i {
+    background-color: var(
+      --heading-color
+    ); /* Change burger icon color for dark mode */
+  }
+
+  /* Ensure hover effects are also adjusted for dark mode */
+  .dark-mode .nav__items .nav__item .nav__link:hover {
+    color: var(--border-color); /* Adjust hover color for dark mode */
+  }
+}
+
+#nav:checked + .nav__open {
+  transform: rotate(45deg);
+}
+
+#nav:checked + .nav__open i {
+  background-color: var(--border-color);
+  transition: transform 0.2s ease;
+}
+
+#nav:checked + .nav__open i:nth-child(1) {
+  transform: translateY(6px) rotate(180deg);
+}
+
+#nav:checked + .nav__open i:nth-child(2) {
+  opacity: 0;
+}
+
+#nav:checked ~ .nav__item a {
+  display: block !important;
+}
+
+#nav:checked + .nav__open i:nth-child(3) {
+  transform: translateY(-6px) rotate(90deg);
+}
+
+#nav:checked ~ .nav {
+  z-index: 9990;
+  opacity: 1;
+}
+
+#nav:checked ~ .nav ul li a {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Dark Mode styles */
+
+.dark-mode .header {
+  background-image: url(../images/header.jpg);
+}
+
+.dark-mode .navbar {
+  background-color: var(--header-dark);
+}
+
+.dark-mode .nav__link {
+  color: var(--text-light);
+}
+
+.dark-mode .brand a,
+.dark-mode .nav__items .nav__link {
+  color: var(--heading-color);
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////////////// */
+
+/* dark mode toggle */
+/* From Uiverse.io by andrew-demchenk0 */
+.custom-switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 64px;
+  height: 34px;
+}
+
+.custom-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.custom-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #73c0fc;
+  transition: 0.4s;
+  border-radius: 30px;
+}
+
+.custom-slider:before {
+  position: absolute;
+  content: "";
+  height: 30px;
+  width: 30px;
+  border-radius: 20px;
+  left: 2px;
+  bottom: 2px;
+  z-index: 2;
+  background-color: #e8e8e8;
+  transition: 0.4s;
+}
+
+.custom-sun svg {
+  position: absolute;
+  top: 6px;
+  left: 36px;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+}
+
+.custom-moon svg {
+  fill: #73c0fc;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+}
+
+.custom-sun svg:hover {
+  animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.custom-moon svg:hover {
+  animation: tilt 5s linear infinite;
+}
+
+@keyframes tilt {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.custom-input:checked + .custom-slider {
+  background-color: #183153;
+}
+
+.custom-input:focus + .custom-slider {
+  box-shadow: 0 0 1px #183153;
+}
+
+.custom-input:checked + .custom-slider:before {
+  transform: translateX(30px);
+}

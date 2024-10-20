@@ -1,0 +1,95 @@
+@import url(bases.css);
+@import url(Profile.css);
+
+.form-group.row
+{
+    margin: 1em;
+}
+
+.userProfileSection {
+    background-color: var(--section-bg-1);
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    padding: 20px;
+}
+
+h4 {
+    font-size: 1.5rem;
+    color: var(--text-color2);
+    text-align: right;
+}
+
+.profileHR {
+    border: none;
+    height: 2px;
+    background-color: var(--button-bg-color);
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Label Styling */
+label {
+    color: var(--text-color2);
+    font-weight: 600;
+    text-align: right;
+    font-size: 1.1rem;
+}
+
+/* Input Fields */
+.userProfileInput {
+    background-color: var(--section-bg-2);
+    border: 2px solid var(--section-bg-1);
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1rem;
+    transition: box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.userProfileInput::placeholder {
+    color: var(--text-color2); /* Replace with your desired color */
+  }
+
+  
+.userProfileInput:focus {
+    border-color: var(--button-bg-color);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    box-shadow: var(--input-focus-shadow);
+    outline: none;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .userProfileSection {
+        padding: 15px;
+    }
+
+    h4 {
+        font-size: 1.3rem;
+    }
+
+    label {
+        font-size: 1rem;
+    }
+
+    .userProfileSaveEdit {
+        font-size: 1rem;
+        padding: 8px 20px;
+    }
+}
+
+@media (max-width :500px) {
+    .form-group {
+        flex-direction: column;
+        label {
+            width: 100%;
+        }
+    }
+}

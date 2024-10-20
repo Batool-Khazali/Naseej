@@ -1,0 +1,119 @@
+
+
+.header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../images/h1.webp);
+  position: relative;
+}
+
+
+/* .header img {
+  margin: 0;
+  width: 40%;
+  z-index: 2;
+} */
+
+.headerText {
+  color: ivory;
+  z-index: 2;
+  font-size: 40px;
+  text-align: center;
+  
+  text-shadow: 8px 8px 8px rgba(10, 9, 7, 0.9);
+  h1 {
+    font-size: 70px !important;
+    margin-bottom: 40px;
+    font-weight: bold;
+  }
+  p {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .mainBtn  {
+    background-color: var(--background-color) !important; 
+    color: var(--text-color) !important;
+    padding: 14px 20px ;
+    margin: 8px 0 ;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+    font-weight: bold;
+    border-radius: 4px;
+    font-size: 20px;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+    margin-top: 20px;
+  }
+}
+
+.blackBlur {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+@media (max-width: 1024px) {
+  .header  {
+    height: 700px;
+    .headerText {
+      font-size: 30px;
+      .mainBtn {
+        font-size: 15px;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .header  {
+    height: 500px;
+    flex-direction: column;
+    .headerText {
+      h1 {
+        font-size: 50px !important;
+        margin-bottom: 0px;
+      }
+      p {
+        padding: 40px 20px 0;
+        font-size: 20px;
+        text-align: center;
+      }
+      .mainBtn {
+        font-size: 15px;
+        width: 30%;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .header  {
+    height: 400px;
+    flex-direction: column;
+    .headerText {
+      h1 {
+        font-size: 35px !important;
+        margin-bottom: 0px;
+      }
+      p {
+        padding-top: 40px;
+        font-size: 15px;
+      }
+      .mainBtn {
+        font-size: 15px;
+        width: 40%;
+      }
+    }
+  }
+}

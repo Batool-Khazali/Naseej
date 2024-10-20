@@ -1,0 +1,19 @@
+footer.bg-body-tertiary{
+  background-color: var(--background-color) !important;
+  color: var(--text-color) !important;
+}
+ footer button {
+  background-color: var(--section-bg-1) !important;
+  color: var(--text-color) !important;
+ }
+ footer button:hover {
+  color: var(--text-color2) !important;
+ }
+ 
+footer i {
+  color: var(--text-color) !important;
+  
+}
+footer i:hover {
+  color: var(--text-color) !important;
+} 
