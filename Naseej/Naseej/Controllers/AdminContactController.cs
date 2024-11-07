@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Naseej.DTO;
 using Naseej.Models;
@@ -36,7 +37,9 @@ namespace Naseej.Controllers
         {
             if (messId <= 0) return BadRequest("invalid id");
 
-            var message = _db.Contacts.FirstOrDefault(a => a.Id == messId);
+            var message = _db.Contacts
+                .Include( x => x.AdminReplies )
+                .FirstOrDefault(a => a.Id == messId);
 
             if (message == null) return NotFound("no message was found");
 
@@ -47,12 +50,29 @@ namespace Naseej.Controllers
                 _db.SaveChanges();
             }
 
-            return Ok(messId);
+            var messageDto = new ContactDto
+            {
+                Id = message.Id,
+                SenderName = message.SenderName,
+                SenderEmail = message.SenderEmail,
+                Subject = message.Subject,
+                Message = message.Message,
+                Status = message.Status,
+                ar = message.AdminReplies.Select(reply => new AdminReplyDto
+                {
+                    Id = reply.Id,
+                    Subject = reply.Subject,
+                    Message = reply.Message,
+                    Status = reply.Status
+                }).FirstOrDefault()
+            };
+
+            return Ok(messageDto);
         }
 
 
         [HttpPost("reply/{messId}")]
-        public IActionResult reply(int messId, [FromForm] AdminReplyDTO r)
+        public async Task<IActionResult> reply(int messId, [FromForm] AdminReplyDTO r)
         {
             if (messId <= 0) return BadRequest("invalid id");
             if (r == null) return BadRequest("empty reply");
@@ -65,11 +85,28 @@ namespace Naseej.Controllers
                 ContactId = messId,
             };
 
+
             _db.AdminReplies.Add(reply);
-            _db.SaveChanges();
+
+            var message = _db.Contacts.FirstOrDefault(a => a.Id == messId);
+
+            message.Status = "replied";
+
+            _db.Contacts.Update(message);
+
+            await _db.SaveChangesAsync();
+
+            var emailService = new EmailServices(); 
+            await emailService.SendReplyEmailAsync(
+                senderEmail: "batoulkhazali96@gmail.com",  
+                toEmail: message.SenderEmail,      
+                subject: reply.Subject,
+                message: reply.Message
+            );
+
+
             return Ok();
         }
-
 
 
 

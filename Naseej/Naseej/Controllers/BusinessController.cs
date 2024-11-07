@@ -53,13 +53,13 @@ namespace Naseej.Controllers
             }
 
             //  permit upload
-            var DocFolder = Path.Combine(Directory.GetCurrentDirectory(), "documents");
-            if (!Directory.Exists(DocFolder))
+            var PermitsFolder = Path.Combine(Directory.GetCurrentDirectory(), "permits");
+            if (!Directory.Exists(PermitsFolder))
             {
-                Directory.CreateDirectory(DocFolder);
+                Directory.CreateDirectory(PermitsFolder);
             }
 
-            var DocFile = Path.Combine(DocFolder, b.StorePermit.FileName);
+            var DocFile = Path.Combine(PermitsFolder, b.StorePermit.FileName);
 
             using (var stream = new FileStream(DocFile, FileMode.Create))
             {

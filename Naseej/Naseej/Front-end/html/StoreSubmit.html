@@ -35,6 +35,8 @@
             <ul class="nav__items">
                 <li class="nav__item"><a href="../index.html#home" class="nav__link">الرئيسية</a></li>
                 <li class="nav__item"><a href="ProductsList.html" class="nav__link">المنتجات</a></li>
+                <li class="nav__item"><a href="about.html" class="nav__link">من نحن</a></li>
+                <li class="nav__item"><a href="ContactUs.html" class="nav__link">تواصل معنا</a></li>
                 <!-- <li class="nav__item"><a href="#" class="nav__link">الخياطون</a></li>
                 <li class="nav__item"><a href="#" class="nav__link">المشغولات اليدوية</a></li> -->
                 <li class="nav__item" id="IsLoggedIn" style="align-content: center;"></li>
@@ -43,10 +45,10 @@
                             style="color: #504a40;"></i></a>
                 </li>
                 <li class="nav__item" id="logout"><a href="#" class="nav__link">تسجيل خروج</a></li>
-
+    
                     
-
-
+    
+    
             </ul>
             <label class="switch">
                 <input type="checkbox" id="darkModeToggle">
@@ -83,7 +85,7 @@
             <h4>الرجاء تعبئة النموذج لتسجيل متجركم لدينا</h4>
             <h6>يجب تعبئة النموذج فقط من قبل صاحب المتجر المسجل في التصريح </h6>
             <br>
-            <h6>قد تستغرق العملية عدة أيام لتاكد من المعلومات. لذا نرجو منكم التحلي بالصبر.</h6>
+            <h6>قد تستغرق العملية عدة أيام للتاكد من المعلومات. نرجو منكم التحلي بالصبر.</h6>
         </div>
 
         <br>
@@ -123,7 +125,20 @@
                 </div>
                 <div class="col-md-6">
                     <label for="governate" class="form-label">المدينة</label>
-                    <input type="text" class="form-control" id="governate" name="governate">
+                    <select id="governate" name="governate"
+                    class="form-control" required>
+                    <option value="" selected disabled>اختر المدينة</option>
+
+                    <option class="l-m" value="قصبة المفرق">قصبة المفرق</option>
+                    <option class="l-m" value="الخالدية">الخالدية</option>
+                    <option class="l-m" value="رويشد">رويشد</option>
+                    <option class="l-m" value="ام جمال">ام جمال</option>
+
+                    <option class="l-i" value="قصبة اربد">قصبة اربد</option>
+                    <option class="l-i" value="الرمثا">الرمثا</option>
+                    <option class="l-i" value="الحصن">الحصن</option>
+                    <option class="l-i" value="ايدون">ايدون</option>
+                </select>
                 </div>
             </div>
 
@@ -138,8 +153,8 @@
                     <input type="file" class="form-control" name="logo" id="logo" accept="image/*">
                 </div>
                 <div class="col-md-6">
-                    <label for="storePermit" class="form-label">تصريح المتجر - على صيغة PDF</label>
-                    <input type="file" class="form-control" name="storePermit" id="storePermit" accept="application/pdf">
+                    <label for="storePermit" class="form-label">تصريح المتجر - على صيغة صورة</label>
+                    <input type="file" class="form-control" name="storePermit" id="storePermit" accept="image/*">
                 </div>
             </div>
 
@@ -150,8 +165,8 @@
                     <select class="form-control" id="bussinessType" name="businessType" onchange="fillSpecialitySelect()" >
                         <option value="" selected disabled>اختر نوع المتجر</option>
                         <option value="shop">بيع أقمشة و مستلزمات الخياطة</option>
-                        <option value="tailor">خياطة و تفصيل</option>
-                        <option value="craft">أعمال يدوية</option>
+                        <!-- <option value="tailor">خياطة و تفصيل</option>
+                        <option value="craft">أعمال يدوية</option> -->
                     </select>
                 </div>
                 <div class="col-md-6">
@@ -160,10 +175,10 @@
                         <option value="" selected disabled>اختر المجال</option>
                         <option value="fabric" id="1-1" style="display: none;">أقمشة</option>
                         <option value="supplies" id="1-2" style="display: none;">مستلزمات خياطة</option>
-                        <option value="women" id="2-1" style="display: none;">نسائي</option>
+                        <!-- <option value="women" id="2-1" style="display: none;">نسائي</option>
                         <option value="men" id="2-2" style="display: none;">رجالي</option>
                         <option value="beads" id="3-1" style="display: none;">خرز</option>
-                        <option value="crochet" id="3-2" style="display: none;">صنارة</option>
+                        <option value="crochet" id="3-2" style="display: none;">صنارة</option> -->
                     </select>
                 </div>
             </div>
@@ -174,7 +189,7 @@
             </div>
 
             <div class="text-center">
-                <button type="submit" class="btn button-primary" onclick="submitStoreForm()">بعث الطلب</button>
+                <button type="submit" class="btn button-primary" onclick="submitStoreForm()">إرسال الطلب</button>
             </div>
 
         </form>

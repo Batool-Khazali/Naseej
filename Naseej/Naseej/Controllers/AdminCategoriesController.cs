@@ -75,6 +75,9 @@ namespace Naseej.Controllers
         {
             if (c == null) return BadRequest("invalid form");
 
+            if (c.Image == null) return BadRequest("Image file is missing.");
+            
+
             var ImagesFolder = Path.Combine(Directory.GetCurrentDirectory(), "images");
             if (!Directory.Exists(ImagesFolder))
             {
@@ -95,10 +98,11 @@ namespace Naseej.Controllers
                 Care = c.Care,
                 Description = c.Description,
                 Image = c.Image.FileName,
+                SubCategory = c.SubCategory,
             };
 
             _db.Categories.Add(newCat);
-            _db.SaveChangesAsync();
+            _db.SaveChanges();
             return Ok();
         }
 
@@ -113,22 +117,28 @@ namespace Naseej.Controllers
 
             if (cat == null) return NotFound("no category was found");
 
-            var ImagesFolder = Path.Combine(Directory.GetCurrentDirectory(), "images");
-            if (!Directory.Exists(ImagesFolder))
+            if (Request.Form.Files.Count > 0 && c.Image != null && c.Image.Length > 0)
             {
-                Directory.CreateDirectory(ImagesFolder);
-            }
 
-            var imageFile = Path.Combine(ImagesFolder, c.Image.FileName);
+                var ImagesFolder = Path.Combine(Directory.GetCurrentDirectory(), "images");
+                if (!Directory.Exists(ImagesFolder))
+                {
+                    Directory.CreateDirectory(ImagesFolder);
+                }
 
-            using (var stream = new FileStream(imageFile, FileMode.Create))
-            {
-                await c.Image.CopyToAsync(stream);
+                var imageFile = Path.Combine(ImagesFolder, c.Image.FileName);
+
+                using (var stream = new FileStream(imageFile, FileMode.Create))
+                {
+                    await c.Image.CopyToAsync(stream);
+                }
+                cat.Image = c.Image.FileName ?? cat.Image;
+
             }
 
             cat.Name = c.Name ?? cat.Name;
             cat.SubCategory = c.SubCategory ?? cat.SubCategory;
-            cat.Image = c.Image.FileName ?? cat.Image;
+            cat.Image = cat.Image;
             cat.Usage = c.Usage ?? cat.Usage;
             cat.Care = c.Care ?? cat.Care;
             cat.Description = c.Description ?? cat.Description;
@@ -153,6 +163,28 @@ namespace Naseej.Controllers
 
             return NoContent();
         }
+
+
+        ///////////////////////////////// filters
+        ///
+        [HttpGet("searchByName/{text}")]
+        public IActionResult searchByName (string text)
+        {
+            if (string.IsNullOrEmpty(text)) return BadRequest("invalid search");
+
+            var result = _db.Categories
+                .Where(c => c.Name.Contains(text) || c.SubCategory.Contains(text))
+                .ToList();
+
+            if (result.IsNullOrEmpty()) return NotFound("no category that matches the search");
+
+            return Ok(result);
+        }
+
+
+
+
+
 
 
 

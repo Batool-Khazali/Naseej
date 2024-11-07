@@ -34,6 +34,8 @@
             <ul class="nav__items">
                 <li class="nav__item"><a href="../index.html#home" class="nav__link">الرئيسية</a></li>
                 <li class="nav__item"><a href="ProductsList.html" class="nav__link">المنتجات</a></li>
+                <li class="nav__item"><a href="about.html" class="nav__link">من نحن</a></li>
+                <li class="nav__item"><a href="ContactUs.html" class="nav__link">تواصل معنا</a></li>
                 <!-- <li class="nav__item"><a href="#" class="nav__link">الخياطون</a></li>
                 <li class="nav__item"><a href="#" class="nav__link">المشغولات اليدوية</a></li> -->
                 <li class="nav__item" id="IsLoggedIn" style="align-content: center;"></li>
@@ -42,10 +44,10 @@
                             style="color: #504a40;"></i></a>
                 </li>
                 <li class="nav__item" id="logout"><a href="#" class="nav__link">تسجيل خروج</a></li>
-
+    
                     
-
-
+    
+    
             </ul>
             <label class="switch">
                 <input type="checkbox" id="darkModeToggle">
@@ -159,28 +161,28 @@
                                         <label for="image" class="col-4 col-form-label">صورة المنتج 1</label>
                                         <div class="col-8">
                                             <input id="productImage" name="image"   placeholder="صورة المنتج 1"
-                                                class="form-control here userProfileInput" type="file">
+                                                class="form-control here userProfileInput" type="file" accept="image/*">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="image2" class="col-4 col-form-label">صورة المنتج 2</label>
                                         <div class="col-8">
                                             <input id="productImage2" name="image2"   placeholder="صورة المنتج 2"
-                                                class="form-control here userProfileInput" type="file">
+                                                class="form-control here userProfileInput" type="file" accept="image/*">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="image3" class="col-4 col-form-label">صورة المنتج 3</label>
                                         <div class="col-8">
                                             <input id="productImage3" name="image3"   placeholder="صورة المنتج 3"
-                                                class="form-control here userProfileInput" type="file">
+                                                class="form-control here userProfileInput" type="file" accept="image/*">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="image4" class="col-4 col-form-label">صورة المنتج 4</label>
                                         <div class="col-8">
                                             <input id="productImage4" name="image4"   placeholder="صورة المنتج 4"
-                                                class="form-control here userProfileInput" type="file">
+                                                class="form-control here userProfileInput" type="file" accept="image/*">
                                         </div>
                                     </div>
                                     <!-- <div class="form-group row">
@@ -202,7 +204,7 @@
                                         <div class="offset-4 col-8">
                                             <button name="submit" type="submit"
                                                 class="btn btn-primary userProfileSaveEdit"
-                                                onclick="editProduct()">تعديل</button>
+                                                onclick="editProduct(event)">تعديل</button>
                                         </div>
                                     </div>
                                 </form>

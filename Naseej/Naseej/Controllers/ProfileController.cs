@@ -30,6 +30,7 @@ namespace Naseej.Controllers
 
             var user = _db.Users
                 .Where(a => a.Id == UserId)
+                .Include(x => x.Businesses)
                 .Select(a => new ProfileDTO
                 {
                     Id = a.Id,
@@ -42,6 +43,9 @@ namespace Naseej.Controllers
                     IsBusinessOwner = a.IsBusinessOwner,
                     BirthDay = a.BirthDay,
                     Image = a.Image,
+                    // Select the first business if available, or return null
+                    BussinessId = a.Businesses.FirstOrDefault() != null ? a.Businesses.FirstOrDefault().Id : 0,
+                    BussinessName = a.Businesses.FirstOrDefault() != null ? a.Businesses.FirstOrDefault().Name : "N/A"
                 })
                 .FirstOrDefault();
 
@@ -62,27 +66,33 @@ namespace Naseej.Controllers
 
             if (user == null) return NotFound("no user found");
 
-            var ImagesFolder = Path.Combine(Directory.GetCurrentDirectory(), "images");
-            if (!Directory.Exists(ImagesFolder))
+            if (Request.Form.Files.Count > 0 && ui.Image != null && ui.Image.Length > 0)
             {
-                Directory.CreateDirectory(ImagesFolder);
+
+                var ImagesFolder = Path.Combine(Directory.GetCurrentDirectory(), "images");
+                if (!Directory.Exists(ImagesFolder))
+                {
+                    Directory.CreateDirectory(ImagesFolder);
+                }
+
+                var imageFile = Path.Combine(ImagesFolder, ui.Image.FileName);
+
+                using (var stream = new FileStream(imageFile, FileMode.Create))
+                {
+                    await ui.Image.CopyToAsync(stream);
+                }
+                user.Image = ui.Image.FileName ?? user.Image;
+                _db.Users.Update(user);
             }
 
-            var imageFile = Path.Combine(ImagesFolder, ui.Image.FileName);
-
-            using (var stream = new FileStream(imageFile, FileMode.Create))
-            {
-                await ui.Image.CopyToAsync(stream);
-            }
-
-            user.Name = ui.Name;
-            user.Phone = ui.Phone;
-            user.BirthDay = ui.BirthDay;
-            user.Image = ui.Image.FileName;
+            user.Name = ui.Name ?? user.Name;
+            user.Phone = ui.Phone ?? user.Phone;
+            user.BirthDay = ui.BirthDay ?? user.BirthDay;
+            user.Image = user.Image;
 
 
             _db.Users.Update(user);
-            _db.SaveChangesAsync();
+            _db.SaveChanges();
             return Ok();
         }
 
@@ -106,7 +116,7 @@ namespace Naseej.Controllers
             user.PasswordHash = passwordHash;
             user.PasswordSalt = passwordSalt;
 
-            _db.SaveChanges(); // Save changes synchronously
+            _db.SaveChanges();
 
             return Ok("Password reset successfully.");
         }

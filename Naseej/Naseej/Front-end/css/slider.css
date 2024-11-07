@@ -245,5 +245,9 @@ text-align: justify;
 
 
 
+.custom-carousel-item .mainBtn {
+  position: relative;
+  z-index: 10; /* Ensure the buttons are above the carousel controls */
+}
 
 

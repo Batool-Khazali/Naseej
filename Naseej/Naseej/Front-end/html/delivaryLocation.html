@@ -37,6 +37,8 @@
             <ul class="nav__items">
                 <li class="nav__item"><a href="../index.html#home" class="nav__link">الرئيسية</a></li>
                 <li class="nav__item"><a href="ProductsList.html" class="nav__link">المنتجات</a></li>
+                <li class="nav__item"><a href="about.html" class="nav__link">من نحن</a></li>
+                <li class="nav__item"><a href="ContactUs.html" class="nav__link">تواصل معنا</a></li>
                 <!-- <li class="nav__item"><a href="#" class="nav__link">الخياطون</a></li>
                 <li class="nav__item"><a href="#" class="nav__link">المشغولات اليدوية</a></li> -->
                 <li class="nav__item" id="IsLoggedIn" style="align-content: center;"></li>
@@ -45,6 +47,10 @@
                             style="color: #504a40;"></i></a>
                 </li>
                 <li class="nav__item" id="logout"><a href="#" class="nav__link">تسجيل خروج</a></li>
+    
+                    
+    
+    
             </ul>
        
             
@@ -116,7 +122,7 @@
                                 <form id="UserLocation">
 
                                     <div class="form-group row">
-                                        <label for="city" class="col-4 col-form-label">المحافظة</label>
+                                        <label for="userCity" class="col-4 col-form-label">المحافظة</label>
                                         <div class="col-8">
                                             <select id="userCity" name="city"
                                                 class="form-control here userProfileInput" required>
@@ -128,27 +134,14 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="governate" class="col-4 col-form-label">المدينة</label>
+                                        <label for="userGovernate" class="col-4 col-form-label">المدينة</label>
                                         <div class="col-8">
-                                            <select id="userGovernate" name="governate"
-                                                class="form-control here userProfileInput" required>
-                                                <option value="" selected disabled>اختر المدينة</option>
-
-                                                <option class="l-m" value="قصبة المفرق">قصبة المفرق</option>
-                                                <option class="l-m" value="الخالدية">الخالدية</option>
-                                                <option class="l-m" value="رويشد">رويشد</option>
-                                                <option class="l-m" value="ام جمال">ام جمال</option>
-
-                                                <option class="l-i" value="قصبة اربد">قصبة اربد</option>
-                                                <option class="l-i" value="الرمثا">الرمثا</option>
-                                                <option class="l-i" value="الحصن">الحصن</option>
-                                                <option class="l-i" value="ايدون">ايدون</option>
-                                            </select>
+                                            <input id="userGovernate" name="governate" type="text" class="form-control here userProfileInput" placeholder="المدينة"/>
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="address" class="col-4 col-form-label">الموقع التفصيلي</label>
+                                        <label for="userAddress" class="col-4 col-form-label">الموقع التفصيلي</label>
                                         <div class="col-8">
                                             <textarea required class="form-control here userProfileInput" rows="2" id="userAddress"
                                                 name="address" placeholder="الموقع التفصيلي"></textarea>

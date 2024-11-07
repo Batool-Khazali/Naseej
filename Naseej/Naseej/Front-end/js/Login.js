@@ -25,6 +25,9 @@ async function Register() {
     let confirmPassword = document.getElementById("ConfirmPWD").value;
     let password = document.getElementById("Password").value;
 
+    const emailErrorMessage = document.getElementById("email-error-message3");
+    emailErrorMessage.style.display = "none";
+
     if (confirmPassword === password) {
         const formdata = new FormData(form);
         formdata.append("UserName", userName)
@@ -36,15 +39,24 @@ async function Register() {
             });
 
         if (response.ok) {
-            event.preventDefault();
+            // event.preventDefault();
             document.getElementsByClassName("form-wrapper").item(0).classList.add("active");
         }
         else {
-            Swal.fire({
-                icon: "error",
-                title: "حاول مجدداً",
-                text: "تأكد من أن المعلومات المدخلة تطابق المطلوب",
-            });
+            debugger
+            const errorData = await response.text();
+            if (errorData === "The user already exists.") {
+                // Display email already used message
+                emailErrorMessage.style.display = "block";
+                emailErrorMessage.textContent = "هذا البريد الإلكتروني مسجل مسبقاً";
+            } else {
+                // Handle other errors
+                Swal.fire({
+                    icon: "error",
+                    title: "حاول مجدداً",
+                    text: errorData, // Display the error message returned from the API
+                });
+            }
         }
     }
     else {
@@ -64,7 +76,7 @@ async function Login() {
 
     const url = "https://localhost:7158/api/LoginRegister/login";
     let loginForm = document.getElementById("LogIn");
-    const formData = new FormData(LogIn);
+    const formData = new FormData(loginForm);
 
     let response = await fetch(url,
         {
@@ -89,33 +101,30 @@ async function Login() {
             }
         }
 
-
+        debugger
         // if i arrived to login through a different page 
         //then redirect to said page after i'm logged in and remove it from local storage
-        let previousPage = localStorage.getItem("previousPage");
-        if (previousPage) {
-            location.href = `${previousPage}.html`;
-            localStorage.removeItem("previousPage");
-        }
-        else {
-            location.href = "../index.html#home";
-        }
-
-        const userEmail = document.getElementById("LogInEmail").value;
-        if (userEmail == "admin@naseej.com")
-        {
+        if (result.isAdmin) {
             location.href = "../Admin/index.html";
+        } else {
+            // Redirect to the previous page if it exists, otherwise go to the main page
+            let previousPage = localStorage.getItem("previousPage");
+            if (previousPage) {
+                location.href = `${previousPage}.html`;
+                localStorage.removeItem("previousPage");
+            } else {
+                location.href = "../index.html";
+            }
         }
 
     }
-    else
-    {
+    else {
         Swal.fire({
             icon: "error",
             // title: "",
             text: "يبدو أن هنالك خطا في تسجيل الدخول. تأكد من المعلومات المدخلة و وجود حساب خاص بك؟",
             footer: '<a href="#">تواصل معنا في حال استمرار الخطأ</a>'
-          });
+        });
     }
 
 }
@@ -134,8 +143,8 @@ async function Login() {
 
 
 /// move cart items from local storage to database
-async function moveCartItems(){
-debugger
+async function moveCartItems() {
+    // debugger
     const userId = localStorage.getItem('userId');
     const url = `https://localhost:7158/api/CartAndOrder/moveLsToDb/${userId}`;
 
@@ -159,8 +168,7 @@ debugger
 
     console.log(respone)
 
-    if (respone.ok)
-    {
+    if (respone.ok) {
         for (let i = localStorage.length - 1; i >= 0; i--) {
             let key = localStorage.key(i);
             if (key.startsWith("item")) {
@@ -198,11 +206,11 @@ document.querySelectorAll('input[name="Password"]').forEach(function (passwordIn
         let PWDerrorMessage = passwordInput.parentElement.querySelector("#pwd-error-message");
 
         if (PWD === "") {
-            PWDerrorMessage.style.display = "none";  
-        } 
+            PWDerrorMessage.style.display = "none";
+        }
         else if (!PWDregex.test(PWD)) {
-            PWDerrorMessage.style.display = "block"; 
-        } 
+            PWDerrorMessage.style.display = "block";
+        }
         else {
             PWDerrorMessage.style.display = "none";
         }
@@ -214,15 +222,20 @@ document.querySelectorAll('input[type="email"]').forEach(function (emailInput) {
         let email = emailInput.value;
         let emailregex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         let EmailerrorMessage = emailInput.parentElement.querySelector("#email-error-message");
+        let EmailerrorMessage2 = emailInput.parentElement.querySelector("#email-error-message2");
 
         if (email === "") {
-            EmailerrorMessage.style.display = "none";  
-        } 
+            EmailerrorMessage.style.display = "none";
+        }
         else if (!emailregex.test(email)) {
-            EmailerrorMessage.style.display = "block"; 
-        } 
+            EmailerrorMessage.style.display = "block";
+        }
+        else if (email.endsWith("@naseej.com")) {
+            EmailerrorMessage2.style.display = "block";
+        }
         else {
             EmailerrorMessage.style.display = "none";
+            EmailerrorMessage2.style.display = "none";
         }
     });
 });

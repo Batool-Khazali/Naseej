@@ -47,8 +47,9 @@ async function orderTable()
                                         <th scope="row"><img src="../../images/${element.p.image}"
                                                 alt="product-img" title="product-img" class="avatar-lg rounded"></th>
                                         <td>
-                                            <h5 class="font-size-16 text-truncate"><a
-                                                    class="text-dark">${element.p.name}</a></h5>
+                                            <h5 class="font-size-16 text-truncate"><a class="text-dark">${element.p.name} - 
+                                                    <span style="background-color: ${element.color}; color: ${element.color}; display: inline-block; width: 1em; height: 1em; border-radius: 50%;"></span>
+                                                    </a></h5>
                                             <p class="text-muted mb-0 mt-1">${element.priceAtPurchase} دينار <span> * </span> ${element.quantity}</p>
                                         </td>
                                         <td>${total} دينار أردني</td>
@@ -112,10 +113,10 @@ async function checkout()
     let city = document.getElementById('user-city').value;
     // console.log(address, city, gov);
 
-    if(city == "0") {
+    if(city == "0" || gov == "" || address == "" || gov == null || address == null) {
         Swal.fire({
             icon: "error",
-            text: "الرجاء اختيار المحافظة",
+            text: "الرجاء تحديد الموقع",
         });
         return;
     };
@@ -157,6 +158,8 @@ async function checkout()
           `
                 }
             });
+
+            location.href = "OrderHistory.html"
         }
         else {
             Swal.fire({

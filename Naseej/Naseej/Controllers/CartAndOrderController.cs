@@ -362,6 +362,8 @@ namespace Naseej.Controllers
 
             var order = _db.Orders.Where(a => a.UserId == userId && a.Status == "pending").FirstOrDefault();
 
+            if (order == null) return NotFound("no order currently");
+
             var userOrderItems = _db.OrderItems
                 .Where(a => a.OrderId == order.Id)
                 .Select(a => new UserCheckoutItemsDTO
@@ -431,7 +433,24 @@ namespace Naseej.Controllers
         }
 
 
+        [HttpPut("changeOrderStatus/{orderId}")]
+        public IActionResult changeOrderStatus (int orderId, [FromBody] string status)
+        {
+            if (status.IsNullOrEmpty()) return BadRequest("invalid status");
+            if (orderId <= 0) return BadRequest("invalid id");
 
+
+            var order = _db.Orders.FirstOrDefault(a => a.Id == orderId);
+
+            if (order == null) return NotFound("no order was found");
+
+            order.Status = status;
+
+            _db.Orders.Update(order);
+            _db.SaveChanges();
+
+            return Ok();
+        }
 
 
 

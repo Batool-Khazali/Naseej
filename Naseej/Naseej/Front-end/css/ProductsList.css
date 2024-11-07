@@ -19,6 +19,7 @@
     background-color: var(--section-bg-1);
     border: none;
     box-shadow: var(--card-shadow);
+    padding: 2em 1em 1em;
 }
 
 .ecommerce-page .card-header {

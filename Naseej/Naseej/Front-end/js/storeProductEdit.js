@@ -76,8 +76,8 @@ async function getDetails(proId) {
     stock.value = ProData.stock;
 
     //////////////// sale
-    const sale = document.getElementById("productSale");
-    sale.value = ProData.salePercentage;
+    // const sale = document.getElementById("productSale");
+    // sale.value = ProData.salePercentage;
 }
 
 getDetails(ProId);
@@ -87,11 +87,11 @@ getDetails(ProId);
 /////////////////////////////////// edit product
 
 
-async function editProduct() {
-    // event.preventDefault();
+async function editProduct(event) {
+    event.preventDefault();
     debugger
 
-    const url =`https://localhost:7158/api/Store/editProdut/${userId}/${ProId}`
+    const url = `https://localhost:7158/api/Store/editProdut/${userId}/${ProId}`
 
     const form = document.getElementById('editStoreProduct');
     const formData = new FormData(form);

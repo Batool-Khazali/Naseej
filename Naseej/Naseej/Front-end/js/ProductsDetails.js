@@ -162,105 +162,124 @@ productDetailsFunction();
 
 //////////////////////////////////////////////// add to cartItems table
 
-async function addToCart()
-{
+async function addToCart() {
   debugger
   const quantity = document.getElementById("productQuantity") ? document.getElementById("productQuantity").value : 1;
 
   const colorOption = document.querySelector('input[name="color"]:checked');
+
+  if (!colorOption) {
+    const colorMessage = document.getElementById("colorErrorMessage");
+    colorMessage.innerHTML = "الرجاء اخيار اللون";
+    colorMessage.style.display = "inline";
+    colorMessage.style.color = "red";
+    return;
+  }
+
   let color = colorOption ? colorOption.value : null;
-  console.log(color);
+  // console.log(color);
 
   const token = localStorage.getItem("jwtToken");
 
   if (!token) {
 
-    const url = `https://localhost:7158/api/ProductsDetails/DetailByProId/${id}`
+    const url = `https://localhost:7158/api/ProductsDetails/DetailByProId/${ProId}`
     const response = await fetch(url);
     let proDetails = await response.json();
 
-    localStorage.setItem(`item${id}`, JSON.stringify({
-        productId: Number(id),
+    const existingProduct = localStorage.getItem(`item${ProId}`);
+
+    if (existingProduct) { 
+      let existingItem = JSON.parse(existingProduct);
+      existingItem.quantity += Number(quantity);
+      localStorage.setItem(`item${ProId}`, JSON.stringify(existingItem));
+    }
+    else {
+      localStorage.setItem(`item${ProId}`, JSON.stringify({
+        productId: Number(ProId),
         quantity: Number(quantity),
         color: color,
         price: proDetails.price,
         name: proDetails.name,
         image: proDetails.image
-    })
-    );
+      })
+      );
+    }
+
+
     // console.log(localStorage.getItem(`item${ProId}`));
 
     Swal.fire({
-        icon: "success",
-        title: "لقد تمت إضافة المنتج إلى العربة بنجاح",
-        showConfirmButton: false,
-        timer: 1000,
-        showClass: {
-            popup: `
+      icon: "success",
+      title: "لقد تمت إضافة المنتج إلى العربة بنجاح",
+      showConfirmButton: false,
+      timer: 1000,
+      showClass: {
+        popup: `
     animate__animated
     animate__fadeInUp
     animate__faster
   `
-        },
-        hideClass: {
-            popup: `
+      },
+      hideClass: {
+        popup: `
     animate__animated
     animate__fadeOutDown
     animate__faster
   `
-        }
+      }
     });
 
   }
   else {
 
-      const userId = localStorage.getItem('userId');
-      const url = `https://localhost:7158/api/CartAndOrder/addCartItems/${userId}`;
+    const userId = localStorage.getItem('userId');
+    const url = `https://localhost:7158/api/CartAndOrder/addCartItems/${userId}`;
 
-      const response = await fetch(url,
-          {
-              method: 'POST',
-              headers: {
-                  'Content-Type': 'application/json'
-              },
-              body: JSON.stringify({
-                  productId: Number(ProId),
-                  quantity: Number(quantity),
-                  color: color,
-              })
-          }
-      );
+    const response = await fetch(url,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          productId: Number(ProId),
+          quantity: Number(quantity),
+          color: color,
+        })
+      }
+    );
 
-      if (response.ok) {
-          Swal.fire({
-              icon: "success",
-              title: "لقد تمت إضافة المنتج إلى العربة بنجاح",
-              showConfirmButton: false,
-              timer: 1000,
-              showClass: {
-                  popup: `
+    if (response.ok) {
+      Swal.fire({
+        icon: "success",
+        title: "لقد تمت إضافة المنتج إلى العربة بنجاح",
+        showConfirmButton: false,
+        timer: 1000,
+        showClass: {
+          popup: `
           animate__animated
           animate__fadeInUp
           animate__faster
         `
-              },
-              hideClass: {
-                  popup: `
+        },
+        hideClass: {
+          popup: `
           animate__animated
           animate__fadeOutDown
           animate__faster
         `
-              }
-          });
-      }
-      else {
-          Swal.fire({
-              icon: "error",
-              // title: "",
-              text: "يبدو أن هنالك خطا ما",
-              footer: '<a href="ContactUs.html">تواصل معنا في حال استمرار الخطأ</a>'
-          });
-      }
+        }
+      });
+    }
+    else {
+      Swal.fire({
+        icon: "error",
+        // title: "",
+        text: "يبدو أن هنالك خطا ما",
+        footer: '<a href="ContactUs.html">تواصل معنا في حال استمرار الخطأ</a>'
+      });
+    }
 
 
   }
@@ -271,8 +290,7 @@ async function addToCart()
 
 /////////////////////////////////////// go to cart
 
-function goToCart()
-{
+function goToCart() {
   window.location.href = "Cart.html";
 }
 

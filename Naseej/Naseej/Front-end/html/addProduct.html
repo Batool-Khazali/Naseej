@@ -34,6 +34,8 @@
             <ul class="nav__items">
                 <li class="nav__item"><a href="../index.html#home" class="nav__link">الرئيسية</a></li>
                 <li class="nav__item"><a href="ProductsList.html" class="nav__link">المنتجات</a></li>
+                <li class="nav__item"><a href="about.html" class="nav__link">من نحن</a></li>
+                <li class="nav__item"><a href="ContactUs.html" class="nav__link">تواصل معنا</a></li>
                 <!-- <li class="nav__item"><a href="#" class="nav__link">الخياطون</a></li>
                 <li class="nav__item"><a href="#" class="nav__link">المشغولات اليدوية</a></li> -->
                 <li class="nav__item" id="IsLoggedIn" style="align-content: center;"></li>
@@ -42,10 +44,10 @@
                             style="color: #504a40;"></i></a>
                 </li>
                 <li class="nav__item" id="logout"><a href="#" class="nav__link">تسجيل خروج</a></li>
-
+    
                     
-
-
+    
+    
             </ul>
             <label class="switch">
                 <input type="checkbox" id="darkModeToggle">
@@ -127,7 +129,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="colors" class="col-4 col-form-label">الألوان</label>
+                                        <label for="colors" class="col-4 col-form-label" required>الألوان</label>
                                         <div class="col-8">
                                             <input type="checkbox" id="red" name="red" value="red" class="color-checkbox"> <label for="red">أحمر</label>
                                             <input type="checkbox" id="blue" name="blue" value="blue" class="color-checkbox"> <label for="blue">أزرق</label>
@@ -145,42 +147,42 @@
                                         <label for="price" class="col-4 col-form-label">السعر</label>
                                         <div class="col-8">
                                             <input id="productPrice" name="price" required placeholder="السعر"
-                                                class="form-control here userProfileInput" type="number" step="0.01">
+                                                class="form-control here userProfileInput" type="number" step="0.01" required>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="stock" class="col-4 col-form-label"> الكمية</label>
                                         <div class="col-8">
                                             <input id="productStock" name="stock" required placeholder=" الكمية"
-                                                class="form-control here userProfileInput" type="number">
+                                                class="form-control here userProfileInput" type="number" required>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="image" class="col-4 col-form-label">صورة المنتج 1</label>
                                         <div class="col-8">
                                             <input id="productImage" name="image" required placeholder="صورة المنتج 1"
-                                                class="form-control here userProfileInput" type="file">
+                                                class="form-control here userProfileInput" type="file" accept="image/*" required>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="image2" class="col-4 col-form-label">صورة المنتج 2</label>
                                         <div class="col-8">
                                             <input id="productImage2" name="image2" required placeholder="صورة المنتج 2"
-                                                class="form-control here userProfileInput" type="file">
+                                                class="form-control here userProfileInput" type="file" accept="image/*" required>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="image3" class="col-4 col-form-label">صورة المنتج 3</label>
                                         <div class="col-8">
                                             <input id="productImage3" name="image3" required placeholder="صورة المنتج 3"
-                                                class="form-control here userProfileInput" type="file">
+                                                class="form-control here userProfileInput" type="file" accept="image/*" required>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="image4" class="col-4 col-form-label">صورة المنتج 4</label>
                                         <div class="col-8">
                                             <input id="productImage4" name="image4" required placeholder="صورة المنتج 4"
-                                                class="form-control here userProfileInput" type="file">
+                                                class="form-control here userProfileInput" type="file" accept="image/*" required>
                                         </div>
                                     </div>
                                     <!-- <div class="form-group row">
@@ -194,7 +196,7 @@
                                         <label for="description" class="col-4 col-form-label">وصف المنتج</label>
                                         <div class="col-8">
                                              <textarea id="productDescription" required name="description" placeholder="وصف المنتج"
-                                                class="form-control here userProfileInput" rows="5"></textarea>
+                                                class="form-control here userProfileInput" rows="5" required></textarea>
                                         </div>
                                     </div>
 

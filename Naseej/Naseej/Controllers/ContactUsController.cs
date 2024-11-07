@@ -22,7 +22,7 @@ namespace Naseej.Controllers
 
 
         [HttpPost("sendContactmessage")]
-        public IActionResult sendContactmessage([FromForm] ContactsDTO c)
+        public async Task<IActionResult> sendContactmessage([FromForm] ContactsDTO c)
         {
             if (c.SenderEmail.IsNullOrEmpty()) return BadRequest("no email sent");
 
@@ -38,7 +38,11 @@ namespace Naseej.Controllers
             if (c == null) return BadRequest("no message recived");
 
             _db.Contacts.Add(newMessage);
-            _db.SaveChanges();
+            await _db.SaveChangesAsync();
+
+            var emailService = new EmailServices(); // Assuming EmailServices is available for use here
+            await emailService.SendContactEmailAsync(newMessage.SenderName, newMessage.SenderEmail, newMessage.Subject, newMessage.Message);
+
             return Ok(newMessage);
         }
 

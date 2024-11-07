@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Naseej;
 
 
@@ -92,9 +94,16 @@ builder.Services.AddAuthorization(options =>
 
 
 
+
+
+
+
 var app = builder.Build();
 
 
+
+
+app.UseStaticFiles(); // Enables serving static files
 
 
 if (app.Environment.IsDevelopment())
@@ -114,5 +123,6 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
 
 app.Run();

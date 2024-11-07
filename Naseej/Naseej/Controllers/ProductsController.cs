@@ -272,7 +272,18 @@ namespace Naseej.Controllers
         public IActionResult getLatestProduct ()
         {
             var products = _db.Products
+                .Include(p => p.Category)
                 .OrderByDescending(p => p.Id)
+                .Select( x => new LatestProductDTO
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    CategoryName = x.Category.Name,
+                    Price = x.Price,
+                    Image = x.Image,
+                    Description = x.Description,
+                    Stock = x.Stock,
+                })
                 .Take(8)
                 .ToList();
             if (products.IsNullOrEmpty()) return NotFound("no product was found");
@@ -286,6 +297,7 @@ namespace Naseej.Controllers
         {
             var mostSold = _db.OrderItems
                 .Include(oi => oi.Product) 
+                .ThenInclude(p => p.Category)
                 .GroupBy(oi => oi.ProductId) 
                 .Select(g => new
                 {
@@ -306,7 +318,9 @@ namespace Naseej.Controllers
                 mp.Product.Price,
                 mp.Product.Image,
                 mp.Product.Description,
-                mp.TotalQuantity
+                mp.Product.Stock,
+                mp.TotalQuantity,
+                CategoryName = mp.Product.Category?.Name ?? "No Category",
             });
 
             return Ok(result);

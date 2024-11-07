@@ -61,7 +61,7 @@ async function filterProducts(minPrice, maxPrice) {
                                 </a>
                             </div>
                             <div class="card-body text-center">
-                                <h4><a href="#" class="product-title">${element.name}</a></h4>
+                                <h4>${element.name}</h4>
                                 <p class="Desc">${element.description}</p>
                                 <p class="price">${element.price} دينار أردني</p>
                             </div>
@@ -131,7 +131,7 @@ async function fill() {
                                 </a>
                             </div>
                             <div class="card-body text-center">
-                                <h4><a href="#" class="product-title">${element.name}</a></h4>
+                                <h4>${element.name}</h4>
                                 <p class="Desc">${element.description}</p>
                                 <p class="price">${element.price} دينار أردني</p>
                             </div>
@@ -166,7 +166,7 @@ async function CatList(CatName, SubCatName) {
                                 </a>
                             </div>
                             <div class="card-body text-center">
-                                <h4><a href="#" class="product-title">${element.name}</a></h4>
+                                <h4>${element.name}</h4>
                                 <p class="Desc">${element.description}</p>
                                 <p class="price">${element.price} دينار أردني</p>
                             </div>
@@ -197,7 +197,7 @@ async function GenList(CatName) {
 
                             </div>
                             <div class="card-body text-center">
-                                <h4><a href="#" class="product-title">${element.name}</a></h4>
+                                <h4>${element.name}</h4>
                                 <p class="Desc">${element.description}</p>
                                 <p class="price">${element.price} دينار أردني</p>
                             </div>
@@ -253,7 +253,7 @@ async function colorFilter() {
 
                             </div>
                             <div class="card-body text-center">
-                                <h4><a href="#" class="product-title">${element.name}</a></h4>
+                                <h4>${element.name}</h4>
                                 <p class="Desc">${element.description}</p>
                                 <p class="price">${element.price} دينار أردني</p>
                             </div>
@@ -305,7 +305,7 @@ async function SearchName() {
                         </a>
                     </div>
                     <div class="card-body text-center">
-                        <h4><a href="#" class="product-title">${element.name}</a></h4>
+                        <h4>${element.name}</h4>
                         <p class="Desc">${element.description}</p>
                         <p class="price">${element.price} دينار أردني</p>
                     </div>

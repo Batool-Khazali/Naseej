@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 ///////////////// get data
 
-async function getStores(index) {
+async function getStores() {
+    // debugger
     const table = document.getElementById("StoreTable");
     table.innerHTML = "";
 
@@ -24,7 +25,7 @@ async function getStores(index) {
                                 <td>${tableIndex}</td>
                                 <td>
                                 <div class="avatar avatar-md">
-                                    <img src="../../images/${element.logo}" alt="..." class="avatar-img rounded-circle">
+                                    <img src="../../images/${element.logo}" alt="${element.name}'s logo" style="width:5em; height: 5em; object-fit: cover" class="avatar-img rounded-circle">
                                 </div>
                                 </td>
                                 <td>
@@ -51,7 +52,7 @@ async function getStores(index) {
                             </tr>
          `;
 
-        index++;
+         tableIndex++;
     });
 }
 
@@ -70,18 +71,21 @@ async function DeleteStore(id) {
         confirmButtonText: "Yes, delete it!"
     }).then((result) => {
         if (result.isConfirmed) {
+
+            debugger
             //////////// Delete
             async function Delete() {
                 const url = `https://localhost:7158/api/AdminStores/DeleteStore/${id}`
                 const response = await fetch(url, {
                     method: 'DELETE'
                 });
+                getStores();
             }
             Delete();
 
             Swal.fire({
                 title: "Deleted!",
-                text: "Your file has been deleted.",
+                text: "The store has been deleted.",
                 icon: "success"
             });
 
@@ -93,7 +97,8 @@ async function DeleteStore(id) {
 
 /////////////////////////// store id
 function storeID(id) {
-    localStorage.setItem("storeId", id);
+    debugger
+    localStorage.setItem("AdminStoreId", id);
 }
 
 
@@ -102,6 +107,11 @@ function storeID(id) {
 document.getElementById("inlineFormCustomSelectPref").addEventListener("change", async function () {
     debugger
     let status = this.value;
+
+    if (status == "all") {
+        getStores();
+        return;
+    }
 
     const url = `https://localhost:7158/api/AdminStores/getStoresByStatus/${status}`;
     const response = await fetch(url);
@@ -122,7 +132,7 @@ document.getElementById("inlineFormCustomSelectPref").addEventListener("change",
                                 <td>${tableIndex}</td>
                                 <td>
                                 <div class="avatar avatar-md">
-                                    <img src="../../images/${element.logo}" alt="..." class="avatar-img rounded-circle">
+                                    <img src="../../images/${element.logo}" alt="${element.name}'s logo"  style="width:5em; height: 5em; object-fit: cover" class="avatar-img rounded-circle">
                                 </div>
                                 </td>
                                 <td>

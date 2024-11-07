@@ -12,6 +12,8 @@
 
         public string? Logo { get; set; }
 
+        public string? StorePermit { get; set; }
+
         public string? BusinessType { get; set; }
 
         public string? Specialty { get; set; }

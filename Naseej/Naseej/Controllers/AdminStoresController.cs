@@ -57,17 +57,19 @@ namespace Naseej.Controllers
 
 
         [HttpGet("getStoresById/{storeId}")]
-        public IActionResult getStoresByStatus(int storeId)
+        public IActionResult getStoresById(int storeId)
         {
             if (storeId <= 0) return BadRequest("invalid id");
 
             var store = _db.Businesses
                             .Include(x => x.Owner)
+                            .Where(a => a.Id == storeId)
                             .Select(a => new AdminStoresDTO
                             {
-                                Id=a.Id,
+                                Id = a.Id,
                                 Name = a.Name,
                                 Logo = a.Logo,
+                                StorePermit = a.StorePermit,
                                 City = a.City,
                                 Governate = a.Governate,
                                 Adress = a.Adress,
@@ -131,7 +133,7 @@ namespace Naseej.Controllers
 
         [HttpPut("acceptStore/{storeId}")]
         public IActionResult acceptStore(int storeId, string status)
-        {
+         {
             if (storeId <= 0) return BadRequest("invalid id");
 
             if (status.IsNullOrEmpty()) return BadRequest("invalid status");
@@ -166,7 +168,7 @@ namespace Naseej.Controllers
 
 
         [HttpDelete("DeleteStore/{storeId}")]
-        public IActionResult refuseStore(int storeId)
+        public IActionResult deleteStore(int storeId)
         {
             if (storeId <= 0) return BadRequest("invalid id");
 
@@ -177,6 +179,14 @@ namespace Naseej.Controllers
             var ownerStatus = _db.Users.FirstOrDefault(a => a.Id == store.OwnerId);
 
             if (ownerStatus == null) return NotFound("the owner wasn't found");
+
+            var storeProducts = _db.Products.Where(a => a.BusinessId == storeId).ToList();
+
+            if(!storeProducts.IsNullOrEmpty())
+            {
+                _db.Products.RemoveRange(storeProducts);
+                _db.SaveChanges();
+            }
 
             _db.Businesses.Remove(store);
             _db.SaveChanges();
@@ -190,7 +200,7 @@ namespace Naseej.Controllers
 
 
         [HttpPut("editStoreInfo/{storeId}")]
-        public async Task<IActionResult> editStoreInfo(int storeId, [FromForm]AdminEditStoreDTO s)
+        public async Task<IActionResult> editStoreInfo(int storeId, [FromForm] AdminEditStoreDTO s)
         {
             if (storeId <= 0) return BadRequest("invalid id");
 
@@ -198,21 +208,28 @@ namespace Naseej.Controllers
 
             if (store == null) return NotFound("no store was found");
 
-            var ImagesFolder = Path.Combine(Directory.GetCurrentDirectory(), "images");
-            if (!Directory.Exists(ImagesFolder))
+            if (s.Logo != null && s.Logo.Length > 0)
             {
-                Directory.CreateDirectory(ImagesFolder);
-            }
+                var ImagesFolder = Path.Combine(Directory.GetCurrentDirectory(), "images");
+                if (!Directory.Exists(ImagesFolder))
+                {
+                    Directory.CreateDirectory(ImagesFolder);
+                }
 
-            var imageFile = Path.Combine(ImagesFolder, s.Logo.FileName);
+                var imageFile = Path.Combine(ImagesFolder, s.Logo.FileName);
 
-            using (var stream = new FileStream(imageFile, FileMode.Create))
-            {
-                await s.Logo.CopyToAsync(stream);
+                using (var stream = new FileStream(imageFile, FileMode.Create))
+                {
+                    await s.Logo.CopyToAsync(stream);
+                }
+
+                store.Logo = s.Logo.FileName ?? store.Logo;
+                _db.Businesses.Update(store);
+
             }
 
             store.Name = s.Name ?? store.Name;
-            store.Logo = s.Logo.FileName ?? store.Logo;
+            store.Logo = store.Logo;
             store.City = s.City ?? store.City;
             store.Governate = s.Governate ?? store.Governate;
             store.Adress = s.Adress ?? store.Adress;
@@ -229,9 +246,54 @@ namespace Naseej.Controllers
         }
 
 
+        [HttpGet("getStoresPermit/{storeId}")]
+        public IActionResult getStoresPermit(int storeId)
+        {
+            if (storeId <= 0) return BadRequest("invalid id");
+
+            var storePermit = _db.Businesses
+                            .Where(x => x.Id == storeId)
+                            .Select(a => new AdminStoresPermitDTO
+                            {
+                                StorePermit = a.StorePermit,
+                            })
+                            .FirstOrDefault();
+
+            if (storePermit == null) return NotFound("no store was found");
+
+            return Ok(storePermit);
+        }
 
 
+        [HttpGet("GetDocumentByStoreId/{storeId}")]
+        [EnableCors("AllowPdfAccess")]
+        public IActionResult GetDocumentByStoreId(int storeId)
+        {
+            // Retrieve the business record from the database
+            var business = _db.Businesses.FirstOrDefault(b => b.Id == storeId);
+            if (business == null || string.IsNullOrEmpty(business.StorePermit))
+            {
+                return NotFound("Document not found.");
+            }
 
+            // Locate the file in the documents folder
+            var DocFolder = Path.Combine(Directory.GetCurrentDirectory(), "documents");
+            var filePath = Path.Combine(DocFolder, business.StorePermit);
+
+            if (!System.IO.File.Exists(filePath))
+            {
+                return NotFound("File not found.");
+            }
+
+            var fileBytes = System.IO.File.ReadAllBytes(filePath);
+
+            // Add Content-Type and Content-Disposition headers to display PDF inline
+            Response.Headers.Add("Content-Type", "application/pdf");
+            Response.Headers.Add("Content-Disposition", $"inline; filename=\"{business.StorePermit}\"");
+
+            // Return the PDF file
+            return File(fileBytes, "application/pdf");
+        }
 
 
 

@@ -43,6 +43,49 @@ function fillSpecialitySelect() {
 
 
 
+/////////////////////////////////// city and governate dropdown
+document.getElementById("city").addEventListener("change", () =>
+    {
+        const city = document.getElementById("city");
+    
+        let Mgov = document.getElementsByClassName("l-m");
+        let Igov = document.getElementsByClassName("l-i");
+    
+        switch (city.value)
+        {
+            case "المفرق":
+                for (let i = 0; i < Mgov.length; i++) {
+                    Mgov[i].style.display = "block";
+                }
+                for (let i = 0; i < Mgov.length; i++) {
+                    Igov[i].style.display = "none";
+                }
+                break;
+    
+            case "اربد":
+                for (let i = 0; i < Mgov.length; i++) {
+                    Mgov[i].style.display = "none";
+                }
+                for (let i = 0; i < Igov.length; i++) {
+                    Igov[i].style.display = "block";
+                }
+                break;
+    
+            default:
+                for (let i = 0; i < Mgov.length; i++) {
+                    Mgov[i].style.display = "none";
+                }
+                for (let i = 0; i < Mgov.length; i++) {
+                    Mgov[i].style.display = "none";
+                }
+                break;
+        }
+    });
+    
+    
+
+
+
 ///////////////////// submit store
 async function submitStoreForm() {
     debugger
@@ -65,7 +108,6 @@ async function submitStoreForm() {
 
     if (!response.ok) {
         const errorMessage = await response.text();
-        console.log(result);
         console.log(`Error: ${errorMessage}`);
         throw new Error(`Error: ${errorMessage}`);
 
