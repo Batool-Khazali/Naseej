@@ -26,9 +26,11 @@ namespace Naseej.Controllers
         {
 
             var existingUser = _db.Users.FirstOrDefault(u => u.Email == model.Email);
-
             if (existingUser != null)
                 return BadRequest("The user already exists.");
+
+            if (model.Email.EndsWith("@naseej.com"))
+                return BadRequest("The email address cannot end with @naseej.com.");
 
             byte[] passwordHash, passwordSalt;
 
@@ -59,7 +61,7 @@ namespace Naseej.Controllers
             _db.Carts.Add(newCart);
             _db.SaveChanges();
 
-            return Ok(user);
+            return Ok();
 
 
 
@@ -71,20 +73,20 @@ namespace Naseej.Controllers
         {
             var user = _db.Users.FirstOrDefault(x => x.Email == model.Email);
 
-            var token = _tokenGenerator.GenerateToken(user.Name  );
+            bool isAdmin = user.Email.EndsWith("@naseej.com", StringComparison.OrdinalIgnoreCase);
+
+            var token = _tokenGenerator.GenerateToken(user.Email, isAdmin  );
 
             if (!PasswordHasher.VerifyPasswordHash(model.Password, user.PasswordHash, user.PasswordSalt))
             {
                 return Unauthorized("Invalid username or password.");
             }
-            else if (user == null)
-            {
-                return BadRequest("user doesn't exist. please sign up.");
-            }
-            else
-            {
-                return Ok(new { Token = token , id = user.Id });
-            }
+
+            if (user == null)  return BadRequest("user doesn't exist. please sign up.");
+            
+
+                return Ok(new { Token = token , id = user.Id , IsAdmin = isAdmin });
+            
         }
 
 

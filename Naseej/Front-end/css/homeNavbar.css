@@ -126,6 +126,7 @@
     margin: 20px 0;
   }
 
+
   /* Ensure nav__open stays visible in mobile mode */
   .nav__open {
     display: block;

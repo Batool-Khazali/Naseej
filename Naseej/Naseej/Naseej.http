@@ -1,6 +1,0 @@
-@Naseej_HostAddress = http://localhost:5277
-
-GET {{Naseej_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

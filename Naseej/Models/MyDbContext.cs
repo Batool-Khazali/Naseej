@@ -15,6 +15,8 @@ public partial class MyDbContext : DbContext
     {
     }
 
+    public virtual DbSet<AdminReply> AdminReplies { get; set; }
+
     public virtual DbSet<Business> Businesses { get; set; }
 
     public virtual DbSet<Cart> Carts { get; set; }
@@ -24,6 +26,8 @@ public partial class MyDbContext : DbContext
     public virtual DbSet<Category> Categories { get; set; }
 
     public virtual DbSet<Comment> Comments { get; set; }
+
+    public virtual DbSet<Contact> Contacts { get; set; }
 
     public virtual DbSet<Kit> Kits { get; set; }
 
@@ -47,6 +51,22 @@ public partial class MyDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<AdminReply>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__AdminRep__3214EC271D952E0D");
+
+            entity.ToTable("AdminReply");
+
+            entity.Property(e => e.Id).HasColumnName("ID");
+            entity.Property(e => e.Message).HasColumnType("ntext");
+            entity.Property(e => e.Status).HasColumnName("status");
+
+            entity.HasOne(d => d.Contact).WithMany(p => p.AdminReplies)
+                .HasForeignKey(d => d.ContactId)
+                .OnDelete(DeleteBehavior.Cascade)
+                .HasConstraintName("FK__AdminRepl__Conta__3E1D39E1");
+        });
+
         modelBuilder.Entity<Business>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Business__3214EC27965049C9");
@@ -134,6 +154,15 @@ public partial class MyDbContext : DbContext
                 .HasForeignKey(d => d.UserId)
                 .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("FK__Comments__UserID__7A672E12");
+        });
+
+        modelBuilder.Entity<Contact>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Contacts__3214EC27C5EB1B1E");
+
+            entity.Property(e => e.Id).HasColumnName("ID");
+            entity.Property(e => e.Message).HasColumnType("ntext");
+            entity.Property(e => e.Status).HasColumnName("status");
         });
 
         modelBuilder.Entity<Kit>(entity =>

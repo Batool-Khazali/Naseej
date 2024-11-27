@@ -1,269 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar-en" dir="rtl">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-
-    <link rel="stylesheet" href="../css/navbar.css">
-    <link rel="stylesheet" href="../css/Login.css">
-
-    <title>الدخول</title>
-</head>
-
-<body id="TheBody">
-
-    <!-- navbar -->
-    <nav class="sticky navbar">
-        <div class="brand  display__logo">
-            <a href="../index.html#home" class="nav__link"> <img src="../images/long Logo.png" alt=""></a>
-        </div>
-
-        <input type="checkbox" id="nav" class="hidden" />
-        <label for="nav" class="nav__open"><i></i><i></i><i></i></label>
-        <div class="nav">
-            <ul class="nav__items">
-                <li class="nav__item"><a href="../index.html#home" class="nav__link">الرئيسية</a></li>
-                <li class="nav__item"><a href="ProductsList.html" class="nav__link">المنتجات</a></li>
-                <li class="nav__item"><a href="about.html" class="nav__link">من نحن</a></li>
-                <li class="nav__item"><a href="ContactUs.html" class="nav__link">تواصل معنا</a></li>
-                <!-- <li class="nav__item"><a href="#" class="nav__link">الخياطون</a></li>
-                <li class="nav__item"><a href="#" class="nav__link">المشغولات اليدوية</a></li> -->
-                <li class="nav__item" id="IsLoggedIn" style="align-content: center;"></li>
-                <li class="nav__item" style="align-content: center;">
-                    <a href="Cart.html" class="nav__link"><i class="fa-solid fa-cart-shopping"
-                            style="color: #504a40;"></i></a>
-                </li>
-                <li class="nav__item" id="logout"><a href="#" class="nav__link">تسجيل خروج</a></li>
-
-
-
-
-            </ul>
-            <label class="switch">
-                <input type="checkbox" id="darkModeToggle">
-                <span class="slider">
-                    <span class="icon sun">☀️</span>
-                    <span class="icon moon">🌙</span>
-                </span>
-            </label>
-        </div>
-    </nav>
-    <!-- end of navbar -->
-
-
-    <!-- content -->
-    <div id="container">
-
-        <section class="form-wrapper">
-            <div class="form signup-form">
-                <header>إنشاء حساب</header>
-                <form id="SignUp">
-                    <input type="text" id="SU-FName" placeholder="الاسم" required />
-                    <input type="text" id="SU-LName" placeholder="اسم العائلة" required />
-
-                    <input type="email" id="SU-email" name="Email" placeholder="البريد الالكتروني" required />
-                    <div id="email-error-message" style="color: var(--light-amber); display: none;">إدخال بريد الكتروني
-                        صحيح</div>
-                    <div id="email-error-message2" style="color: var(--light-amber); display: none;">لا يمكن استخدام هذا
-                        البريد الاكتروني
-                    </div>
-                    <div id="email-error-message3" style="color: var(--light-amber); display: none;">البريد الإلكتروني
-                        مسجل مسبقاً</div>
-
-                    <input type="password" id="Password" name="Password" placeholder="كلمة السر" required />
-                    <div id="pwd-error-message" style="color: var(--light-amber); display: none;">كلمة السر يجب أن تحتوي
-                        على 8 إلى 50 حرفاً، ويتكون من حروف كبيرة وصغيرة، رقمين، وحرف خاص.</div>
-
-                    <input type="password" id="ConfirmPWD" placeholder="تأكيد كلمة السر" required />
-                    <div id="Cpwd-error-message" style="color: var(--light-amber); display: none;">كلمة السر لا تتطابق
-                    </div>
-                    <!-- <div class="signup-checkbox">
-                    <input type="checkbox" id="signupCheckbox" />
-                    <label for="signupCheckbox">I accept all terms & conditions</label>
-                </div> -->
-                    <input type="submit" onclick="Register()" value="إنشاء حساب" class="button-success" />
-                </form>
-            </div>
-
-            <div class="form login-form">
-                <header>تسجيل دخول</header>
-                <form id="LogIn">
-                    <input type="text" id="LogInEmail" name="Email" placeholder="البريد الالكتروني" required />
-                    <div id="email-error-message" style="color: var(--light-amber); display: none;">إدخال بريد الكتروني
-                        صحيح</div>
-
-                    <input type="password" name="Password" placeholder="كلمة السر" required />
-                    <div id="pwd-error-message" style="color: var(--light-amber); display: none;">كلمة السر يجب أن تحتوي
-                        على 8 إلى 50 حرفاً، ويتكون من حروف كبيرة وصغيرة، رقمين، وحرف خاص.</div>
-
-                    <!-- <a href="#">هل نسيت كلمة السر؟</a> -->
-                    <input type="submit" onclick="Login()" value="تسجيل دخول" class="button-success" />
-                </form>
-            </div>
-        </section>
-    </div>
-    <!-- end of content -->
-
-    <!-- Footer -->
-    <footer class="bg-body-tertiary text-center">
-        <!-- Grid container -->
-        <div class="container p-4">
-            <!-- Section: Social media -->
-            <!-- <section class="mb-4">
-    
-                    <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
-        
-                    <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
-        
-                    <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
-        
-                    <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
-        
-                    <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
-        
-                    <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
-                </section> -->
-            <!-- Section: Social media -->
-
-            <!-- Section: Form -->
-            <!-- <section class="">
-                    <form action="">
-    
-                        <div class="row d-flex justify-content-center">
-    
-                            <div class="col-auto">
-                                <p class="pt-2">
-                                    <strong>اشترك في نشرتنا الإخبارية</strong>
-                                </p>
-                            </div>
-        
-    
-                            <div class="col-md-5 col-12">
-    
-                                <div data-mdb-input-init class="form-outline mb-4">
-                                    <input type="email" id="form5Example24" placeholder="عنوان البريد الإلكتروني" class="form-control" />
-                                </div>
-                            </div>
-        
-    
-                            <div class="col-auto">
-                                <button data-mdb-ripple-init type="submit" class="btn btn-outline mb-4">
-                                    اشتراك
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </section> -->
-            <!-- Section: Form -->
-
-            <!-- Section: Text -->
-            <section class="mb-4">
-                <!-- <p>
-                        لوريم إيبسوم هو ببساطة نص شكلي يستخدم في صناعة الطباعة والتنضيد. لوريم إيبسوم هو النص
-                        الوهمي القياسي في هذه الصناعة منذ القرن الخامس عشر الميلادي.
-                    </p> -->
-            </section>
-            <!-- Section: Text -->
-
-            <!-- Section: Links -->
-            <section class="">
-                <!--Grid row-->
-                <div class="row">
-                    <!--Grid column-->
-                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4">
-
-                        </h6>
-                        <p>
-                            <a href="../index.html" class="text-reset">الرئيسية</a>
-                        </p>
-                        <p>
-                            <a href="ProductsList.html" class="text-reset">المنتجات</a>
-                        </p>
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4">
-
-                        </h6>
-                        <p>
-                            <a href="Profile.html" class="text-reset">الصفحة الشخصية</a>
-                        </p>
-                        <p>
-                            <a href="Store.html" class="text-reset">المتجر</a>
-                        </p>
-                    </div>
-
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <!-- <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4" >
-                            <h6 class="text-uppercase fw-bold mb-4">
-                                
-                            </h6>
-                            <p>
-                                <a href="ContactUs.html" class="text-reset">تواصل معنا</a>
-                            </p>
-                            <p>
-                                <a href="about.html" class="text-reset">من نحن</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">الطلبات</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">المساعدة</a>
-                            </p>
-                        </div>                     -->
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <!-- Grid column -->
-                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4"><a href="ContactUs.html">تواصل معنا</a></h6>
-                        <p><i class="fas fa-home ms-3"></i>الاردن - اربد</p>
-                        <p>
-                            <i class="fas fa-envelope ms-3"></i>
-                            info@example.com
-                        </p>
-                        <p><i class="fas fa-phone ms-3"></i> + 0789456123</p>
-                    </div>
-
-                    <!--Grid column-->
-                </div>
-                <!--Grid row-->
-            </section>
-            <!-- Section: Links -->
-        </div>
-        <!-- Grid container -->
-
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-            © 2024 حقوق الطبع والنشر:
-            <!-- <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Naseej.com</a> -->
-        </div>
-    </footer>
-
-    <!-- Footer -->
-
-    <!-- scripts -->
-    <script src="../js/navbar.js"></script>
-    <script src="../js/script.js"></script>
-    <script src="../js/Login.js"></script>
-
-</body>
-
-</html>

@@ -21,5 +21,10 @@
         public string? Governate { get; set; }
 
         public bool? IsBusinessOwner { get; set; }
+
+        public long BussinessId { get; set; }
+
+        public string BussinessName { get; set; } = null!;
+
     }
 }

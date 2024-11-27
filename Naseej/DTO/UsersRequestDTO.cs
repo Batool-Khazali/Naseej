@@ -6,8 +6,9 @@ namespace Naseej.DTO
     {
         [Required(ErrorMessage = "please enter your user name")]
         [StringLength(50, MinimumLength = 6, ErrorMessage = "user name should be between 6 and 50 ")]
-        [RegularExpression(@"^([A-Za-z][A-Za-z0-9_\s]*)$",
-ErrorMessage = "Only alphabets, numbers, underscores, and spaces are allowed. Start with a letter.")]
+        [RegularExpression(@"^([A-Za-z\u0600-\u06FF][A-Za-z0-9_\s\u0600-\u06FF]*)$",
+ErrorMessage = "Only alphabets (English or Arabic), numbers, underscores, and spaces are allowed. Start with a letter.")]
+
         public string UserName { get; set; }
 
 

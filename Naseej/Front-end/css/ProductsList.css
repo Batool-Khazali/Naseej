@@ -19,6 +19,8 @@
     background-color: var(--section-bg-1);
     border: none;
     box-shadow: var(--card-shadow);
+    padding: 2em 1em 1em;
+    color: var(--text-color2);
 }
 
 .ecommerce-page .card-header {
@@ -73,7 +75,8 @@ margin-bottom: 1em;
 }
 
 .ecommerce-page .view-details {
-    right: 30%;
+    /* right: 30%; */
+    right: 43%;
 }
 
 .ecommerce-page .add-to-cart i,
@@ -89,7 +92,7 @@ margin-bottom: 1em;
 }
 
 .ecommerce-page .product-title {
-    color: var(--section-bg-1);
+    color: var(--text-color2);
     margin-top: 20px;
     font-size: 16px;
 }
@@ -107,12 +110,14 @@ margin-bottom: 1em;
     z-index: 0;
 }
 
+
+
 .ecommerce-page .slider-info {
     text-align: right;
 }
 
 .ui-slider {
-    background-color: var(--section-bg-1);
+    background-color: var(--button-bg-color);
     border-radius: 10px;
     height: 8px;
 }
@@ -159,9 +164,19 @@ label {
     color: var(--text-color2) !important;
 }
 
+/* /////////////////////////////////////////////// */
 
+.page-link {
+    background-color: var(--button-bg-color);
+    border-color: var(--section-bg-1);
+    color: var(--text-color);
+}
 
+.page-item.active  .page-link {
+    background-color: var(--text-color2);
+    border-color: var(--section-bg-1);
 
+}
 
 
 

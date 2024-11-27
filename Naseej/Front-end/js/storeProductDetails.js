@@ -1,10 +1,41 @@
 
 
+const userId = localStorage.getItem('userId');
+
+document.addEventListener('DOMContentLoaded', function()
+{
+
+    if (!userId){
+        Swal.fire({
+            title: "الرجاء تسجيل الدخول ",
+            icon: "error",
+            showClass: {
+              popup: `
+                animate__animated
+                animate__fadeInUp
+                animate__faster
+              `
+            },
+            hideClass: {
+              popup: `
+                animate__animated
+                animate__fadeOutDown
+                animate__faster
+              `
+            }
+          });
+    
+          setTimeout(function() {
+            location.href = "Login.html"; 
+          }, 3000);
+    }
+
+});
 
 
 
 
-// JavaScript function to switch images in the gallery
+// images gallery
 function showImage(index) {
     const images = document.querySelectorAll('.image-gallery img');
     images.forEach((img, idx) => {

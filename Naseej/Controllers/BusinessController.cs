@@ -36,34 +36,46 @@ namespace Naseej.Controllers
         [HttpPost("BusinessRequest/{userId}")]
         public async Task<IActionResult> BusinessRequest(int userId, [FromForm] AddBusinessDTO b)
         {
-            if (userId <= 0) return BadRequest("invalid user id");
+            if (userId <= 0) return BadRequest("Invalid user ID");
 
-            //logo upload
-            var ImagesFolder = Path.Combine(Directory.GetCurrentDirectory(), "images");
+            var ImagesFolder = Path.Combine(Directory.GetCurrentDirectory(), "logo");
+            var PermitsFolder = Path.Combine(Directory.GetCurrentDirectory(), "permits");
+
             if (!Directory.Exists(ImagesFolder))
-            {
                 Directory.CreateDirectory(ImagesFolder);
+
+            if (!Directory.Exists(PermitsFolder))
+                Directory.CreateDirectory(PermitsFolder);
+
+            string uniqueLogoFileName = null;
+            string uniquePermitFileName = null;
+
+            // Logo upload
+            if (b.Logo != null && b.Logo.Length > 0)
+            {
+                var logoFileName = Path.GetFileName(b.Logo.FileName);
+                uniqueLogoFileName = $"{Guid.NewGuid()}_{logoFileName}";
+                var logoFilePath = Path.Combine(ImagesFolder, uniqueLogoFileName);
+
+                await using (var stream = new FileStream(logoFilePath, FileMode.Create))
+                {
+                    await b.Logo.CopyToAsync(stream);
+                }
+                Console.WriteLine($"Logo uploaded successfully: {uniqueLogoFileName}");
             }
 
-            var imageFile = Path.Combine(ImagesFolder, b.Logo.FileName);
-
-            using (var stream = new FileStream(imageFile, FileMode.Create))
+            // Permit upload
+            if (b.StorePermit != null && b.StorePermit.Length > 0)
             {
-                b.Logo.CopyToAsync(stream);
-            }
+                var permitFileName = Path.GetFileName(b.StorePermit.FileName);
+                uniquePermitFileName = $"{Guid.NewGuid()}_{permitFileName}";
+                var permitFilePath = Path.Combine(PermitsFolder, uniquePermitFileName);
 
-            //  permit upload
-            var DocFolder = Path.Combine(Directory.GetCurrentDirectory(), "documents");
-            if (!Directory.Exists(DocFolder))
-            {
-                Directory.CreateDirectory(DocFolder);
-            }
-
-            var DocFile = Path.Combine(DocFolder, b.StorePermit.FileName);
-
-            using (var stream = new FileStream(DocFile, FileMode.Create))
-            {
-                b.StorePermit.CopyToAsync(stream);
+                await using (var stream = new FileStream(permitFilePath, FileMode.Create))
+                {
+                    await b.StorePermit.CopyToAsync(stream);
+                }
+                Console.WriteLine($"Permit uploaded successfully: {uniquePermitFileName}");
             }
 
             var newBusiness = new Business()
@@ -79,16 +91,17 @@ namespace Naseej.Controllers
                 Phone = b.Phone,
                 OpenHour = b.OpenHour,
                 CloseHour = b.CloseHour,
-                Status = "Pending",
-                Logo = b.Logo.FileName,
-                StorePermit = b.StorePermit.FileName,
+                Status = "pending",
+                Logo = uniqueLogoFileName, // Save the unique file name
+                StorePermit = uniquePermitFileName // Save the unique file name
             };
 
             _db.Businesses.Add(newBusiness);
             _db.SaveChanges();
             return Ok();
         }
-   
+
+
 
 
 

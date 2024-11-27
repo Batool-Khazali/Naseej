@@ -73,6 +73,7 @@ namespace Naseej.Controllers
                     Name = a.Name,
                     City = a.City,
                     Governate = a.Governate,
+                    Address = a.Adress,
                 }).FirstOrDefault();
 
             return Ok(Storeinfo);

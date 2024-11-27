@@ -2,15 +2,72 @@
 const userId = localStorage.getItem('userId');
 // console.log(userId);
 
+
 //////////////////////// fill category options
 
 document.addEventListener('DOMContentLoaded', function () {
+
+    if (!userId){
+        Swal.fire({
+            title: "الرجاء تسجيل الدخول ",
+            icon: "error",
+            showClass: {
+              popup: `
+                animate__animated
+                animate__fadeInUp
+                animate__faster
+              `
+            },
+            hideClass: {
+              popup: `
+                animate__animated
+                animate__fadeOutDown
+                animate__faster
+              `
+            }
+          });
+    
+          setTimeout(function() {
+            location.href = "Login.html"; 
+          }, 3000);
+    }
+
+
     fillCategory();
+
+    ////////////////////////// display images
+    // Map input IDs to their corresponding preview image IDs
+    const imagePreviewMap = {
+        productImage: 'image1Preview',
+        productImage2: 'image2Preview',
+        productImage3: 'image3Preview',
+        productImage4: 'image4Preview',
+    };
+
+    // Add change event to file inputs
+    Object.keys(imagePreviewMap).forEach(inputId => {
+        const fileInput = document.getElementById(inputId);
+        const previewImage = document.getElementById(imagePreviewMap[inputId]);
+
+        fileInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    previewImage.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    });
 });
+
+//////////////////////////////////////////////////
 
 async function fillCategory() {
     const url = `https://localhost:7158/api/Categories/getCatAnSubCatByStore/${userId}`;
     const response = await fetch(url);
+
     let data = await response.json();
 
     const category = document.getElementById("productCategory");
@@ -27,7 +84,7 @@ async function fillCategory() {
 
 async function addProduct(event) {
     event.preventDefault();
-    // debugger
+    debugger
     const url = `https://localhost:7158/api/Store/addProduct/${userId}`;
 
     const form = document.getElementById("addStoreProduct");
@@ -50,14 +107,47 @@ async function addProduct(event) {
     );
 
     if (response.ok) {
-        // alert("Product added successfully!");
-        window.location.href = "store.html";
+        Swal.fire({
+            title: "تم إضافة المنتج بنجاح",
+            icon: "success",
+            showClass: {
+                popup: `
+                animate__animated
+                animate__fadeInUp
+                animate__faster
+              `
+            },
+            hideClass: {
+                popup: `
+                animate__animated
+                animate__fadeOutDown
+                animate__faster
+              `
+            }
+        });
+
+        setTimeout(function() {
+            location.href = "storeProducts.html";
+          }, 3000);
     } else {
-        // alert("Failed to add product. Please try again.");
         Swal.fire({
             icon: "error",
             title: "يبدو أن هنالك خطأ ما",
-            text: "تأكد من أن المعلومات المدخلة تطابق المطلوب",
+            footer: '<a href="ContactUs.html">تواصل معنا في حال استمرار الخطأ</a>',
+            showClass: {
+                popup: `
+                animate__animated
+                animate__fadeInUp
+                animate__faster
+              `
+            },
+            hideClass: {
+                popup: `
+                animate__animated
+                animate__fadeOutDown
+                animate__faster
+              `
+            }
         });
     }
 }

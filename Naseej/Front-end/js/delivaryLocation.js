@@ -1,53 +1,60 @@
 
+const userId = localStorage.getItem('userId');
 
+document.addEventListener('DOMContentLoaded', () => {
 
-
-/////////////////////////////////// city and governate dropdown
-document.getElementById("userCity").addEventListener("change", () =>
-{
-    const city = document.getElementById("userCity");
-
-    let Mgov = document.getElementsByClassName("l-m");
-    let Igov = document.getElementsByClassName("l-i");
-
-    switch (city.value)
-    {
-        case "المفرق":
-            for (let i = 0; i < Mgov.length; i++) {
-                Mgov[i].style.display = "block";
+    if (!userId){
+        Swal.fire({
+            title: "الرجاء تسجيل الدخول ",
+            icon: "error",
+            showClass: {
+              popup: `
+                animate__animated
+                animate__fadeInUp
+                animate__faster
+              `
+            },
+            hideClass: {
+              popup: `
+                animate__animated
+                animate__fadeOutDown
+                animate__faster
+              `
             }
-            for (let i = 0; i < Mgov.length; i++) {
-                Igov[i].style.display = "none";
-            }
-            break;
-
-        case "اربد":
-            for (let i = 0; i < Mgov.length; i++) {
-                Mgov[i].style.display = "none";
-            }
-            for (let i = 0; i < Igov.length; i++) {
-                Igov[i].style.display = "block";
-            }
-            break;
-
-        default:
-            for (let i = 0; i < Mgov.length; i++) {
-                Mgov[i].style.display = "none";
-            }
-            for (let i = 0; i < Mgov.length; i++) {
-                Mgov[i].style.display = "none";
-            }
-            break;
+          });
+    
+          setTimeout(function() {
+            location.href = "Login.html"; 
+          }, 3000);
     }
+
+    getUserInfo();
+
 });
+
+
+///////////////////////// get location
+
+async function getUserInfo() {
+
+    const url = `https://localhost:7158/api/CartAndOrder/getUserInfo/${userId}`;
+
+    const response = await fetch(url);
+    const data = await response.json();
+
+    document.getElementById("userCity").value = data.city;
+    document.getElementById("userGovernate").value = data.governate;
+    document.getElementById("userAddress").value = data.address;
+}
+
 
 
 ///////////////////////////////// update locatiom
 
-async function updateLocation()
+async function updateLocation(event)
 {
+    event.preventDefault();
     // debugger
-    const userId = localStorage.getItem('userId');
     const url = `https://localhost:7158/api/Profile/userLocation/${userId}`;
 
     const form = document.getElementById('UserLocation');
@@ -59,11 +66,49 @@ async function updateLocation()
     });
     
     if (response.ok) {
-        location.href = "Profile.html";
+
+        Swal.fire({
+            title: "تم تعديل الموقع بنجاح",
+            icon: "success",
+            showClass: {
+              popup: `
+                animate__animated
+                animate__fadeInUp
+                animate__faster
+              `
+            },
+            hideClass: {
+              popup: `
+                animate__animated
+                animate__fadeOutDown
+                animate__faster
+              `
+            }
+          });
+
+          setTimeout(function() {
+            location.href = "Profile.html";
+          }, 3000);
+
     } else {
         Swal.fire({
             icon: "error",
             title: "يبدو أن هنالك خطأ ما",
+            footer: '<a href="ContactUs.html">تواصل معنا في حال استمرار الخطأ</a>',
+            showClass: {
+                popup: `
+                animate__animated
+                animate__fadeInUp
+                animate__faster
+              `
+            },
+            hideClass: {
+                popup: `
+                animate__animated
+                animate__fadeOutDown
+                animate__faster
+              `
+            }
         });
     }
 }

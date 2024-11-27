@@ -136,3 +136,9 @@ C:\Users\Orange\Desktop\masterpiece\F+B\Naseej\Naseej\obj\Debug\net8.0\refint\Na
 C:\Users\Orange\Desktop\masterpiece\F+B\Naseej\Naseej\obj\Debug\net8.0\Naseej.pdb
 C:\Users\Orange\Desktop\masterpiece\F+B\Naseej\Naseej\obj\Debug\net8.0\Naseej.genruntimeconfig.cache
 C:\Users\Orange\Desktop\masterpiece\F+B\Naseej\Naseej\obj\Debug\net8.0\ref\Naseej.dll
+C:\Users\Orange\Desktop\masterpiece\F+B\Naseej\Naseej\bin\Debug\net8.0\Front-end\Admin\data\contacts.json
+C:\Users\Orange\Desktop\masterpiece\F+B\Naseej\Naseej\bin\Debug\net8.0\Front-end\Admin\data\eu.topo.json
+C:\Users\Orange\Desktop\masterpiece\F+B\Naseej\Naseej\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+C:\Users\Orange\Desktop\masterpiece\F+B\Naseej\Naseej\bin\Debug\net8.0\MailKit.dll
+C:\Users\Orange\Desktop\masterpiece\F+B\Naseej\Naseej\bin\Debug\net8.0\MimeKit.dll
+C:\Users\Orange\Desktop\masterpiece\F+B\Naseej\Naseej\bin\Debug\net8.0\System.Formats.Asn1.dll

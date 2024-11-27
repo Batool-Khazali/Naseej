@@ -17,7 +17,9 @@
     <link rel="stylesheet" href="../css/breadcrump.css">
     <link rel="stylesheet" href="../css/ProfileEdit.css">
 
-    <title>تعديل معلومات المستخدم</title>
+    <link rel="icon" href="../Images/naseej.png" type="image/x-icon" />
+
+    <title>نسيج | تعديل معلومات المستخدم</title>
 </head>
 
 <body id="TheBody">
@@ -34,24 +36,25 @@
             <ul class="nav__items">
                 <li class="nav__item"><a href="../index.html#home" class="nav__link">الرئيسية</a></li>
                 <li class="nav__item"><a href="ProductsList.html" class="nav__link">المنتجات</a></li>
-                <!-- <li class="nav__item"><a href="#" class="nav__link">الخياطون</a></li>
-                <li class="nav__item"><a href="#" class="nav__link">المشغولات اليدوية</a></li> -->
+                <li class="nav__item"><a href="about.html" class="nav__link">من نحن</a></li>
+                <li class="nav__item"><a href="ContactUs.html" class="nav__link">تواصل معنا</a></li>
                 <li class="nav__item" id="IsLoggedIn" style="align-content: center;"></li>
-                <li class="nav__item"><a href="Cart.html" class="nav__link"><i class="fa-solid fa-cart-shopping"
-                            style="color: #504a40;"></i></a></li>
+                <li class="nav__item" style="align-content: center;">
+                    <a href="Cart.html" class="nav__link"><i class="fa-solid fa-cart-shopping"
+                            style="color: #504a40;"></i></a>
+                </li>
                 <li class="nav__item" id="logout"><a href="#" class="nav__link">تسجيل خروج</a></li>
 
-                    
+                <label class="switch nav__item">
+                    <input type="checkbox" id="darkModeToggle">
+                    <span class="slider">
+                        <span class="icon sun">☀️</span>
+                        <span class="icon moon">🌙</span>
+                    </span>
+                </label>
 
 
             </ul>
-            <label class="switch">
-                <input type="checkbox" id="darkModeToggle">
-                <span class="slider">
-                <span class="icon sun">☀️</span>
-                <span class="icon moon">🌙</span>
-                </span>
-            </label>
         </div>
     </nav>
     <!-- end of navbar -->
@@ -73,7 +76,7 @@
 
     <!-- content -->
 
-    <div class="userProfileContainer container-fluid">
+    <div class="container-fluid userProfileContainer">
         <div class="row">
             <div class="col-md-3">
                 <div class="list-group userSideDashList" id="UserProfileSideBar">
@@ -82,17 +85,11 @@
                     </a>
                     <a href="profile.html" class="list-group-item list-group-item-action sideDashItem active"
                         style="z-index: 0;">الملف الشخصي</a>
-                    <!-- <a href="../html/coming soon.html" class="list-group-item list-group-item-action sideDashItem">التوصيل و الدفع</a> -->
                     <a href="delivaryLocation.html" class="list-group-item list-group-item-action sideDashItem">موقع
                         الايصال</a>
-                    <!-- <a href="../html/coming soon.html" class="list-group-item list-group-item-action sideDashItem">المفضلة</a> -->
-                    <a href="#" class="list-group-item list-group-item-action sideDashItem">مشترياتي</a>
+                    <a href="OrderHistory.html" class="list-group-item list-group-item-action sideDashItem">مشترياتي</a>
                     <a href="Store.html" class="list-group-item list-group-item-action sideDashItem">متجري</a>
-                    <!-- <a href="#" class="list-group-item list-group-item-action sideDashItem">العروض</a> -->
-                    <!-- <a href="#" class="list-group-item list-group-item-action sideDashItem">سياسة الخصوصية</a> -->
-                    <a href="#" class="list-group-item list-group-item-action sideDashItem">الاسفسارات</a>
-                    <!-- <a href="../html/coming soon.html" class="list-group-item list-group-item-action sideDashItem">خدمة المستخدم</a> -->
-                    <!-- <a href="#" class="list-group-item list-group-item-action sideDashItem">الاعدادات</a> -->
+                    <a href="faq.html" class="list-group-item list-group-item-action sideDashItem">الاسفسارات</a>
                 </div>
             </div>
 
@@ -116,27 +113,11 @@
                                                 class="form-control here userProfileInput" type="text">
                                         </div>
                                     </div>
-                                    <!-- <div class="form-group row">
-                                        <label for="userFirstName" class="col-4 col-form-label">الاسم الأول*</label>
-                                        <div class="col-8">
-                                            <input id="userFirstName" name="userFirstName" placeholder="الاسم الأول"
-                                                class="form-control here userProfileInput"
-                                                type="text">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="userLastName" class="col-4 col-form-label">اسم العائلة*</label>
-                                        <div class="col-8">
-                                            <input id="userLastName" name="userLastName" placeholder="اسم العائلة"
-                                                class="form-control here userProfileInput"
-                                                type="text">
-                                        </div>
-                                    </div> -->
                                     <div class="form-group row">
                                         <label for="userEmail" class="col-4 col-form-label">البريد الالكتروني(لا يمكن
                                             تعديل هذه الخانة)</label>
                                         <div class="col-8">
-                                            <input id="userEmail" name="userEmail" placeholder="البريدالالكتروني"
+                                            <input id="userEmail" placeholder="البريدالالكتروني"
                                                 class="form-control here userProfileInput" type="email" readonly
                                                 disabled>
                                         </div>
@@ -144,7 +125,7 @@
                                     <div class="form-group row">
                                         <label for="age" class="col-4 col-form-label"> تاريخ الميلاد</label>
                                         <div class="col-8">
-                                            <input id="userAge" name="age" placeholder=" تاريخ الميلاد"
+                                            <input id="userAge" placeholder=" تاريخ الميلاد"
                                                 class="form-control here userProfileInput" type="date">
                                         </div>
                                     </div>
@@ -153,6 +134,8 @@
                                         <div class="col-8">
                                             <input id="userPhone" name="phone" placeholder="الهاتف الشخصي"
                                                 class="form-control here userProfileInput" type="tel">
+                                            <p id="phoneErrorMessage" style="color: red; display: none;">
+                                            </p>
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -163,10 +146,17 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
+                                        <label for="image" class="col-4 col-form-label">عرض الصورة الشخصية</label>
+                                        <div class="col-8">
+                                            <img id="imagePreview" src="../../images/" alt="Image preview"
+                                                style="max-width: 100%; height: auto;" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
                                         <div class="offset-4 col-8">
                                             <button name="submit" type="submit"
                                                 class="btn btn-primary userProfileSaveEdit"
-                                                onclick="updateProfile()">حفظ التعديلات</button>
+                                                onclick="updateProfile(event)">حفظ التعديلات</button>
                                         </div>
                                     </div>
                                 </form>
@@ -181,151 +171,118 @@
 
     <!-- end of content -->
 
-        <!-- Footer -->
-        <footer class="bg-body-tertiary text-center">
-            <!-- Grid container -->
-            <div class="container p-4">
-                <!-- Section: Social media -->
-                <!-- <section class="mb-4">
-    
-                    <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
-        
-                    <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
-        
-                    <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
-        
-                    <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
-        
-                    <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
-        
-                    <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
-                </section> -->
-                <!-- Section: Social media -->
-        
-                <!-- Section: Form -->
-                <!-- <section class="">
-                    <form action="">
-    
-                        <div class="row d-flex justify-content-center">
-    
-                            <div class="col-auto">
-                                <p class="pt-2">
-                                    <strong>اشترك في نشرتنا الإخبارية</strong>
-                                </p>
-                            </div>
-        
-    
-                            <div class="col-md-5 col-12">
-    
-                                <div data-mdb-input-init class="form-outline mb-4">
-                                    <input type="email" id="form5Example24" placeholder="عنوان البريد الإلكتروني" class="form-control" />
-                                </div>
-                            </div>
-        
-    
-                            <div class="col-auto">
-                                <button data-mdb-ripple-init type="submit" class="btn btn-outline mb-4">
-                                    اشتراك
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </section> -->
-                <!-- Section: Form -->
-        
-                <!-- Section: Text -->
-                <section class="mb-4">
-                    <!-- <p>
-                        لوريم إيبسوم هو ببساطة نص شكلي يستخدم في صناعة الطباعة والتنضيد. لوريم إيبسوم هو النص
-                        الوهمي القياسي في هذه الصناعة منذ القرن الخامس عشر الميلادي.
-                    </p> -->
-                </section>
-                <!-- Section: Text -->
-        
-                <!-- Section: Links -->
-                <section class="">
-                    <!--Grid row-->
-                    <div class="row">
-                        <!--Grid column-->
-                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                            <!-- Links -->
-                            <h6 class="text-uppercase fw-bold mb-4">
-                                
-                            </h6>
-                            <p>
-                                <a href="../index.html" class="text-reset">الرئيسية</a>
-                            </p>
-                            <p>
-                                <a href="ProductsList.html" class="text-reset">المنتجات</a>
-                            </p>
-                        </div>
-                        <!--Grid column-->
-        
-                        <!--Grid column-->
-                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                            <!-- Links -->
-                            <h6 class="text-uppercase fw-bold mb-4">
-                                
-                            </h6>
-                            <p>
-                                <a href="Profile.html" class="text-reset">الصفحة الشخصية</a>
-                            </p>
-                            <p>
-                                <a href="Store.html" class="text-reset">المتجر</a>
-                            </p>
-                        </div>
-                        
-                        <!--Grid column-->
-        
-                        <!--Grid column-->
-                        <!-- <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4" >
-                            <h6 class="text-uppercase fw-bold mb-4">
-                                
-                            </h6>
-                            <p>
-                                <a href="ContactUs.html" class="text-reset">تواصل معنا</a>
-                            </p>
-                            <p>
-                                <a href="about.html" class="text-reset">من نحن</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">الطلبات</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">المساعدة</a>
-                            </p>
-                        </div>                     -->
-                        <!--Grid column-->
-        
-                        <!--Grid column-->
-                        <!-- Grid column -->
-                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                            <!-- Links -->
-                            <h6 class="text-uppercase fw-bold mb-4"><a href="ContactUs.html">تواصل معنا</a></h6>
-                            <p><i class="fas fa-home ms-3"></i>الاردن - اربد</p>
-                            <p>
-                                <i class="fas fa-envelope ms-3"></i>
-                                info@example.com
-                            </p>
-                            <p><i class="fas fa-phone ms-3"></i> + 0789456123</p>
-                        </div>
-                        
-                        <!--Grid column-->
+    <!-- Footer -->
+    <footer class="bg-body-tertiary text-center">
+        <!-- Grid container -->
+        <div class="container p-4">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+
+                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1"
+                    href="mailto:batoul.a.khazali@gmail.com" role="button"><i class="fab fa-google"></i></a>
+
+                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1"
+                    href="www.linkedin.com/in/batool-khazali-436583308" role="button"><i
+                        class="fab fa-linkedin-in"></i></a>
+
+                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1"
+                    href="https://github.com/Batool-Khazali" role="button"><i class="fab fa-github"></i></a>
+            </section>
+            <!-- Section: Social media -->
+
+            <!-- Section: Links -->
+            <section class="">
+                <!--Grid row-->
+                <div class="row">
+                    <!--Grid column-->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+
+                        </h6>
+                        <p>
+                            <a href="../index.html" class="text-reset">الرئيسية</a>
+                        </p>
+                        <p>
+                            <a href="ProductsList.html" class="text-reset">المنتجات</a>
+                        </p>
                     </div>
-                    <!--Grid row-->
-                </section>
-                <!-- Section: Links -->
-            </div>
-            <!-- Grid container -->
-        
-            <!-- Copyright -->
-            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-                © 2024 حقوق الطبع والنشر:
-                <!-- <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Naseej.com</a> -->
-            </div>
-        </footer>
-        
-      <!-- Footer -->
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+
+                        </h6>
+                        <p>
+                            <a href="Profile.html" class="text-reset">الصفحة الشخصية</a>
+                        </p>
+                        <p>
+                            <a href="Store.html" class="text-reset">المتجر</a>
+                        </p>
+                    </div>
+
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">
+
+                        </h6>
+                        <p>
+                            <a href="about.html" class="text-reset">من نحن</a>
+                        </p>
+                        <p>
+                            <a href="faq.html" class="text-reset">الأسئلة الشائعة</a>
+                        </p>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4" style="color: var(--link-color);">
+                            <a href="ContactUs.html" style="color: var(--link-color);">تواصل معنا</a>
+                        </h6>
+                        <p>
+                            <a href="https://maps.app.goo.gl/LY33BnEuKvHeJ4ga6" target="_blank"
+                                style="color: var(--text-color);">
+                                <i class="fas fa-home ms-3"></i> 
+                                HR3X+2VM, Al-Sheikh Khalil St.,
+                                Irbid
+                            </a>
+                        </p>
+                        <p>
+                            <a href="mailto:batoul.a.khazali@gmail.com" style="color: var(--text-color);">
+                                <i class="fas fa-envelope"></i> 
+                                batoul.a.khazali@gmail.com
+                            </a>
+                        </p>
+                        <p>
+                            <a href="tel://1234567920" target="_blank" style="color: var(--text-color);">
+                                <i class="fas fa-phone ms-3"></i> 
+                                + (962) 789024480</a>
+                        </p>
+                    </div>
+
+                    <!--Grid column-->
+                </div>
+                <!--Grid row-->
+            </section>
+            <!-- Section: Links -->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2024 حقوق الطبع والنشر:
+            <p class="text-reset fw-bold" >Batool Khazali</p>
+        </div>
+    </footer>
+
+    <!-- Footer -->
 
 
     <!-- scripts -->

@@ -140,8 +140,8 @@ td {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    background-color: #3b76e1;
-    color: #fff;
+    background-color: var(--text-color);
+    color: var(--text-color3);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

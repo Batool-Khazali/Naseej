@@ -1,4 +1,4 @@
-async function updatePWD() {
+async function updatePWD(event) {
 
     debugger
     event.preventDefault();
@@ -11,8 +11,22 @@ async function updatePWD() {
     if (newPassword !== confirmNewPassword) {
         Swal.fire({
             icon: "error",
-            title: "حاول مجدداً",
+            title: "يبدو أن هنالك خطأ ما",
             text: "كلمة السر المدخلة غير متطابقة",
+            showClass: {
+                popup: `
+                animate__animated
+                animate__fadeInUp
+                animate__faster
+              `
+            },
+            hideClass: {
+                popup: `
+                animate__animated
+                animate__fadeOutDown
+                animate__faster
+              `
+            }
         });
         return;
     }
@@ -26,23 +40,55 @@ async function updatePWD() {
     };
 
 
-        const response = await fetch('https://localhost:7158/api/Profile/resetPassword', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
+    const response = await fetch('https://localhost:7158/api/Profile/resetPassword', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    });
+
+    if (response.ok) {
+        Swal.fire({
+            title: "تم تعديل كلمة السر بنجاح",
+            icon: "success",
+            showClass: {
+              popup: `
+                animate__animated
+                animate__fadeInUp
+                animate__faster
+              `
             },
-            body: JSON.stringify(data),
+            hideClass: {
+              popup: `
+                animate__animated
+                animate__fadeOutDown
+                animate__faster
+              `
+            }
+          });
+        location.href = "Profile.html";
+    } else {
+        Swal.fire({
+            icon: "error",
+            title: "يبدو أن هنالك خطأ ما",
+            text: "تأكد من أن المعلومات المدخلة تطابق المطلوب",
+            showClass: {
+                popup: `
+                animate__animated
+                animate__fadeInUp
+                animate__faster
+              `
+            },
+            hideClass: {
+                popup: `
+                animate__animated
+                animate__fadeOutDown
+                animate__faster
+              `
+            }
         });
-        
-        if (response.ok) {
-            location.href = "Profile.html";
-        } else {
-            Swal.fire({
-                icon: "error",
-                title: "حاول مجدداً",
-                text: "تأكد من أن المعلومات المدخلة تطابق المطلوب",
-            });
-        }
+    }
 
 }
 
@@ -63,20 +109,18 @@ document.getElementById("ConfirmNew").addEventListener("input", function () {
 });
 
 document.getElementById("NewPassword").addEventListener("input", function () {
-    let PWD = this.value; 
+    let PWD = this.value;
     let PWDregex = /^(?=.*[0-9]{2})(?=.*[A-Z])(?=.*[a-z])(?=.*[^0-9A-Za-z]).{8,50}$/;
     let PWDerrorMessage = document.getElementById("pwdError");
 
     if (PWD === "") {
         PWDerrorMessage.style.display = "none";
     } else if (!PWDregex.test(PWD)) {
-        PWDerrorMessage.style.display = "block"; 
+        PWDerrorMessage.style.display = "block";
     } else {
-        PWDerrorMessage.style.display = "none"; 
+        PWDerrorMessage.style.display = "none";
     }
 });
-
-
 
 
 

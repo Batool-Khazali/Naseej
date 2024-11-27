@@ -3,6 +3,36 @@
 
 const UserId = localStorage.getItem('userId');
 
+document.addEventListener('DOMContentLoaded',() => {
+    if (!UserId){
+        Swal.fire({
+            title: "الرجاء تسجيل الدخول ",
+            icon: "error",
+            showClass: {
+              popup: `
+                animate__animated
+                animate__fadeInUp
+                animate__faster
+              `
+            },
+            hideClass: {
+              popup: `
+                animate__animated
+                animate__fadeOutDown
+                animate__faster
+              `
+            }
+          });
+    
+          setTimeout(function() {
+            location.href = "Login.html"; 
+          }, 3000);
+    }
+})
+
+
+
+/////////////////
 async function FillUserInfo(UserId) {
     debugger
     const url = `https://localhost:7158/api/Profile/getUserInfo/${UserId}`;
@@ -13,6 +43,10 @@ async function FillUserInfo(UserId) {
 
     ////////// user image
     let ImgSrc = document.getElementById("UserImage");
+
+    console.log(`${Data.image}`)
+    console.log(`${Data.name}`)
+
     if (Data.image) {
         ImgSrc.src = "";
         ImgSrc.src = `../../images/${Data.image}`;
@@ -83,26 +117,14 @@ async function FillUserInfo(UserId) {
     const address = document.getElementById("TabUserAddress");
     if (Data.address)
     {
-        address.innerHTML = `${Data.address}`;
+        address.innerHTML = `${Data.city} - ${Data.governate} - ${Data.address}`;
     }
     else
     {
         address.innerHTML = "لم يتم ادخال العنوان بعد";
     }
 
-
-
-
-
-
-
-
-
-
-
-
 }
 FillUserInfo(UserId);
 
-//////////////////////// profile edit
 

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Naseej.DTO;
 using Naseej.Models;
 
@@ -29,6 +30,7 @@ namespace Naseej.Controllers
 
             var user = _db.Users
                 .Where(a => a.Id == UserId)
+                .Include(x => x.Businesses)
                 .Select(a => new ProfileDTO
                 {
                     Id = a.Id,
@@ -40,6 +42,10 @@ namespace Naseej.Controllers
                     Governate = a.Governate,
                     IsBusinessOwner = a.IsBusinessOwner,
                     BirthDay = a.BirthDay,
+                    Image = a.Image,
+                    // Select the first business if available, or return null
+                    BussinessId = a.Businesses.FirstOrDefault() != null ? a.Businesses.FirstOrDefault().Id : 0,
+                    BussinessName = a.Businesses.FirstOrDefault() != null ? a.Businesses.FirstOrDefault().Name : "N/A"
                 })
                 .FirstOrDefault();
 
@@ -60,27 +66,33 @@ namespace Naseej.Controllers
 
             if (user == null) return NotFound("no user found");
 
-            var ImagesFolder = Path.Combine(Directory.GetCurrentDirectory(), "images");
-            if (!Directory.Exists(ImagesFolder))
+            if (Request.Form.Files.Count > 0 && ui.Image != null && ui.Image.Length > 0)
             {
-                Directory.CreateDirectory(ImagesFolder);
+
+                var ImagesFolder = Path.Combine(Directory.GetCurrentDirectory(), "images");
+                if (!Directory.Exists(ImagesFolder))
+                {
+                    Directory.CreateDirectory(ImagesFolder);
+                }
+
+                var imageFile = Path.Combine(ImagesFolder, ui.Image.FileName);
+
+                using (var stream = new FileStream(imageFile, FileMode.Create))
+                {
+                    await ui.Image.CopyToAsync(stream);
+                }
+                user.Image = ui.Image.FileName ?? user.Image;
+                _db.Users.Update(user);
             }
 
-            var imageFile = Path.Combine(ImagesFolder, ui.Image.FileName);
-
-            using (var stream = new FileStream(imageFile, FileMode.Create))
-            {
-                await ui.Image.CopyToAsync(stream);
-            }
-
-            user.Name = ui.Name;
-            user.Phone = ui.Phone;
-            user.BirthDay = ui.BirthDay;
-            user.Image = ui.Image.FileName;
+            user.Name = ui.Name ?? user.Name;
+            user.Phone = ui.Phone ?? user.Phone;
+            user.BirthDay = ui.BirthDay ?? user.BirthDay;
+            user.Image = user.Image;
 
 
             _db.Users.Update(user);
-            _db.SaveChangesAsync();
+            _db.SaveChanges();
             return Ok();
         }
 
@@ -104,7 +116,7 @@ namespace Naseej.Controllers
             user.PasswordHash = passwordHash;
             user.PasswordSalt = passwordSalt;
 
-            _db.SaveChanges(); // Save changes synchronously
+            _db.SaveChanges();
 
             return Ok("Password reset successfully.");
         }
@@ -130,7 +142,91 @@ namespace Naseej.Controllers
 
 
 
+        [HttpGet("orderHistory/{userId}")]
+        public IActionResult orderHistory(int userId)
+        {
+            if (userId <= 0) return BadRequest("invalid id");
 
+            var order = _db.Orders
+                .Include(a => a.Payments)
+                .Include(a => a.OrderItems)
+                    .ThenInclude(item => item.Product)
+                .Where(a => a.UserId == userId)
+                .Select(a => new OrderHistoryDTO
+                {
+                    OrderDate = a.OrderDate,
+                    Id = a.Id,
+                    Status = a.Status,
+                    FinalTotal = a.FinalTotal,
+                    op = new orderPayment
+                    {
+                        Date = a.Payments.Date,
+                        Status = a.Payments.Status,
+                        PaymentMethod = a.Payments.PaymentMethod,
+                    },
+                    oi = a.OrderItems.Select(item => new orderHistoryItems
+                    {
+                        Quantity = item.Quantity,
+                        PriceAtPurchase = item.PriceAtPurchase,
+                        Color = item.Color,
+                        IsSample = item.IsSample,
+                        ip = new itemProduct
+                        {
+                            Name = item.Product.Name,
+                            Image = item.Product.Image
+                        }
+                    }).ToList(),
+                })
+                .ToList();
+
+            if (order.IsNullOrEmpty()) return NotFound("No order was found");
+
+            return Ok(order);
+        }
+
+        
+        [HttpGet("filterUserOrderStatus/{userId}/{status}")]
+        public IActionResult filterUserOrderStatus(int userId, string status)
+        {
+            if (userId <= 0) return BadRequest("invalid id");
+            if (string.IsNullOrEmpty(status)) return BadRequest("invalid search");
+
+            var order = _db.Orders
+                .Where(a => a.UserId == userId && a.Status == status)
+                .Include(a => a.Payments)
+                .Include(a => a.OrderItems)
+                    .ThenInclude(item => item.Product)
+                .Select(a => new OrderHistoryDTO
+                {
+                    OrderDate = a.OrderDate,
+                    Id = a.Id,
+                    Status = a.Status,
+                    FinalTotal = a.FinalTotal,
+                    op = new orderPayment
+                    {
+                        Date = a.Payments.Date,
+                        Status = a.Payments.Status,
+                        PaymentMethod = a.Payments.PaymentMethod,
+                    },
+                    oi = a.OrderItems.Select(item => new orderHistoryItems
+                    {
+                        Quantity = item.Quantity,
+                        PriceAtPurchase = item.PriceAtPurchase,
+                        Color = item.Color,
+                        IsSample = item.IsSample,
+                        ip = new itemProduct
+                        {
+                            Name = item.Product.Name,
+                            Image = item.Product.Image
+                        }
+                    }).ToList(),
+                })
+                .ToList();
+
+            if (order.IsNullOrEmpty()) return NotFound("No order was found");
+
+            return Ok(order);
+        }
 
 
 

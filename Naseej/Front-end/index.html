@@ -5,23 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link href="https://cdn.jsdelivr.net/gh/yesiamrocks/cssanimation.io@1.0.3/cssanimation.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-        integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide.min.css">
-        <link rel="stylesheet" href="css/bases.css">
-        <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide.min.css">
+    <link rel="stylesheet" href="css/bases.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <link rel="icon" href="../Images/naseej.png" type="image/x-icon"/>
 
     <title>نسيج</title>
 </head>
 
 <body id="TheBody">
 
-    
+
     <!-- navbar -->
     <nav class="sticky navbar">
         <div class="brand  display__logo">
@@ -34,567 +32,224 @@
             <ul class="nav__items">
                 <li class="nav__item"><a href="index.html" class="nav__link">الرئيسية</a></li>
                 <li class="nav__item"><a href="html/ProductsList.html" class="nav__link">المنتجات</a></li>
-                <!-- <li class="nav__item"><a href="#" class="nav__link">الخياطون</a></li>
-                <li class="nav__item"><a href="#" class="nav__link">المشغولات اليدوية</a></li> -->
+                <li class="nav__item"><a href="html/about.html" class="nav__link">من نحن</a></li>
+                <li class="nav__item"><a href="html/ContactUs.html" class="nav__link">تواصل معنا</a></li>
                 <li class="nav__item" id="IsLoggedIn" style="align-content: center;"></li>
-                <li class="nav__item"><a href="html/Cart.html" class="nav__link"><i class="fa-solid fa-cart-shopping"
-                            style="color: #504a40;"></i></a></li>
+                <li class="nav__item" style="align-content: center;">
+                    <a href="html/Cart.html" class="nav__link"><i class="fa-solid fa-cart-shopping"
+                            style="color: #504a40;"></i></a>
+                </li>
                 <li class="nav__item" id="logout"><a href="#" class="nav__link">تسجيل خروج</a></li>
+                <label class="switch nav__item">
+                    <input type="checkbox" id="darkModeToggle">
+                    <span class="slider">
+                        <span class="icon sun">☀️</span>
+                        <span class="icon moon">🌙</span>
+                    </span>
+                </label>
 
-                    
 
 
             </ul>
-            <label class="switch">
-                <input type="checkbox" id="darkModeToggle">
-                <span class="slider">
-                <span class="icon sun">☀️</span>
-                <span class="icon moon">🌙</span>
-                </span>
-            </label>
+
         </div>
     </nav>
 
 
-    
-    
+
+
     <!-- header for HP only -->
     <header class="header">
-    <div class="blackBlur"></div>
+        <div class="blackBlur"></div>
         <div class="headerText">
             <h1>أهلا بك في نسيج</h1>
             <!-- <p>الموقع الوحيد الذي يجمع بين القماش والمصممين والمشغولات اليدوية.</p> -->
-            <a href="html/ContactUs.html" class="mainBtn">تواصل معنا</a>
+            <p>الطريقة الأسهل للحصول على مستلزمات مشروعك القادم.</p>
+            <p>ابدأ رحتلك الآن</p>
+            <a href="html/ProductsList.html" class="mainBtn">تصفح المعروضات</a>
         </div>
     </header>
 
-
-        <div class="custom-carousel">
-            <div class="custom-carousel-inner">
-                <input class="custom-carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
-                <div class="custom-carousel-item">
-                    <div class="custom-carousel-container">
-                        <div >
-                            <h1> 1</h1>
-                            <h3>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق. 
-                            إذا كنت تحتاج إلى عدد أكبر من الفقرات يتيح لك مولد النص العربى زيادة عدد الفقرات كما تريد، النص لن يبدو مقسما ولا يحوي أخطاء لغوية، مولد النص العربى مفيد لمصممي المواقع على وجه الخصوص كما يمكن استخدامه لتصاميم الجرافيكس.</h3>
-                        </div>
-                        <div class="carouselImg">
-                            <img alt="bg" src="https://www.pixelstalk.net/wp-content/uploads/2016/10/Cloth-Wallpapers-HD.jpg">
-                        </div>
+    <!-- Slider -->
+    <div class="custom-carousel">
+        <div class="custom-carousel-inner">
+            <input class="custom-carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true"
+                hidden="" checked="checked">
+            <div class="custom-carousel-item">
+                <div class="custom-carousel-container">
+                    <div>
+                        <h1> اكتشفوا مجموعتنا الفاخرة</h1>
+                        <h3>نقدم لكم أرقى الأقمشة المصنوعة بحرفية عالية لتلبية جميع احتياجاتكم .</h3>
+                        <a href="html/ProductsList.html" class="mainBtn button-primary">تسوق الآن</a>
+                    </div>
+                    <div class="carouselImg">
+                        <img alt="bg"
+                            src="https://www.pixelstalk.net/wp-content/uploads/2016/10/Cloth-Wallpapers-HD.jpg">
                     </div>
                 </div>
-                <input class="custom-carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
-                <div class="custom-carousel-item">
-                    <div class="custom-carousel-container"">
-                        <div >
-                            <h1> 2</h1>
-                            <h3>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق. 
-                            إذا كنت تحتاج إلى عدد أكبر من الفقرات يتيح لك مولد النص العربى زيادة عدد الفقرات كما تريد، النص لن يبدو مقسما ولا يحوي أخطاء لغوية، مولد النص العربى مفيد لمصممي المواقع على وجه الخصوص كما يمكن استخدامه لتصاميم الجرافيكس.</h3>
-                        </div>
-                        <div class="carouselImg">
-                            <img alt="bg" src="https://wallpaperaccess.com/full/1899609.jpg">
-                        </div>
-                    </div>
-                </div>
-                <input class="custom-carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
-                <div class="custom-carousel-item">
-                    <div class="custom-carousel-container">
-                        <div >
-                            <h1> 3</h1>
-                            <h3>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق. 
-                            إذا كنت تحتاج إلى عدد أكبر من الفقرات يتيح لك مولد النص العربى زيادة عدد الفقرات كما تريد، النص لن يبدو مقسما ولا يحوي أخطاء لغوية، مولد النص العربى مفيد لمصممي المواقع على وجه الخصوص كما يمكن استخدامه لتصاميم الجرافيكس.</h3>
-                        </div>
-                        <div class="carouselImg">
-                            <img alt="bg" src="https://vistapointe.net/images/fabric-8.jpg">
-                        </div>
-                    </div>
-                </div>
-                <label for="carousel-3" class="custom-carousel-control custom-prev custom-control-1">‹</label>
-                <label for="carousel-2" class="custom-carousel-control custom-next custom-control-1">›</label>
-                <label for="carousel-1" class="custom-carousel-control custom-prev custom-control-2">‹</label>
-                <label for="carousel-3" class="custom-carousel-control custom-next custom-control-2">›</label>
-                <label for="carousel-2" class="custom-carousel-control custom-prev custom-control-3">‹</label>
-                <label for="carousel-1" class="custom-carousel-control custom-next custom-control-3">›</label>
-                <ol class="custom-carousel-indicators">
-                    <li>
-                        <label for="carousel-1" class="custom-carousel-bullet">•</label>
-                    </li>
-                    <li>
-                        <label for="carousel-2" class="custom-carousel-bullet">•</label>
-                    </li>
-                    <li>
-                        <label for="carousel-3" class="custom-carousel-bullet">•</label>
-                    </li>
-                </ol>
             </div>
+            <input class="custom-carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true"
+                hidden="">
+            <div class="custom-carousel-item">
+                <div class="custom-carousel-container">
+                    <div>
+                        <h1> جودة تستحق الثقة</h1>
+                        <h3>جميع منتجاتنا مصنوعة من أفضل الخامات لضمان الراحة والمتانة .</h3>
+                        <a href="html/ContactUs.html" class="mainBtn button-primary">تواصل معنا لمعرفة المزيد</a>
+                    </div>
+                    <div class=" carouselImg">
+                        <img alt="bg" src="https://wallpaperaccess.com/full/1899609.jpg">
+                    </div>
+                </div>
+            </div>
+            <input class="custom-carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true"
+                hidden="">
+            <div class="custom-carousel-item">
+                <div class="custom-carousel-container">
+                    <div>
+                        <h1> انضم إلينا وزد من مبيعاتك</h1>
+                        <h3>هل ترغب في توسيع نطاق عملك؟ قم بعرض منتجاتك على منصتنا واستفد من جمهورنا الواسع ودعمنا</h3>
+                        <a href="html/StoreSubmit.html" class="mainBtn button-primary">ابدأ الآن</a>
+                    </div>
+                    <div class="carouselImg">
+                        <img alt="bg" src="https://vistapointe.net/images/fabric-8.jpg">
+                    </div>
+                </div>
+            </div>
+            <label for="carousel-3" class="custom-carousel-control custom-prev custom-control-1">‹</label>
+            <label for="carousel-2" class="custom-carousel-control custom-next custom-control-1">›</label>
+            <label for="carousel-1" class="custom-carousel-control custom-prev custom-control-2">‹</label>
+            <label for="carousel-3" class="custom-carousel-control custom-next custom-control-2">›</label>
+            <label for="carousel-2" class="custom-carousel-control custom-prev custom-control-3">‹</label>
+            <label for="carousel-1" class="custom-carousel-control custom-next custom-control-3">›</label>
+            <ol class="custom-carousel-indicators">
+                <li>
+                    <label for="carousel-1" class="custom-carousel-bullet">•</label>
+                </li>
+                <li>
+                    <label for="carousel-2" class="custom-carousel-bullet">•</label>
+                </li>
+                <li>
+                    <label for="carousel-3" class="custom-carousel-bullet">•</label>
+                </li>
+            </ol>
         </div>
-        
-        <div class="types">
-            <div class="homeTitle">أصناف</div>
-            
-            <div class="typesGrid">
+    </div>
+    <!-- end slider -->
+
+
+    <!-- categories -->
+    <div class="types">
+        <div class="homeTitle">بعض أصنافنا</div>
+
+        <div class="typesGrid">
             <div class="card first">
-            <div class="card__img">  
-                <img src="https://sewguide.com/wp-content/uploads/2019/02/wool-fabric-1.jpg" alt="Big Ben">
-                <div class="card__overlay">
-                <h2>صوف</h2>
-                <p>Big Ben</p>
-                </div>
-                </div>
-            </div>
-                <div class="card second">
-            <div class="card__img">  
-                <img src="https://s3.eu-1.blufs.ir/aradbranding-en-wp-content/uploads/2022/08/materiali-vestiti-outpump9.jpg" alt="Eiffel Tower">
-                    
-                <div class="card__overlay">
-                <h2>كتان</h2>
-                <p>Eiffel Tower</p>
-                </div>
+                <div class="card__img">
+                    <img src="../images/wool-fabric-1.jpg">
+                    <div class="card__overlay">
+                        <h2>صوف</h2>
+                    </div>
                 </div>
             </div>
-                <div class="card third">
-            <div class="card__img">  
-                <img src="https://i.etsystatic.com/26699908/r/il/574706/2957872064/il_fullxfull.2957872064_fv74.jpg" alt="Colosseum">
-                    
-                <div class="card__overlay">
-                <h2>قطن</h2>
-                <p>Colosseum</p>
-                </div>
-                </div>
-            </div>
-                <div class="card fourth">
-            <div class="card__img">  
-                <img src="https://ae01.alicdn.com/kf/HTB1th9ducuYBuNkSmRyq6AA3pXaY/Xintianji-High-denim-fabric-quality-thin-cotton-denim-fabric-for-jeans-dress-and-denim-cap-45.jpg" alt="Pisa Tower">
-                    
-                <div class="card__overlay">
-                <h2>جينز</h2>
-                <p>Pisa Tower</p>
-                </div>
+            <div class="card second">
+                <div class="card__img">
+                    <img src="../images/materiali-vestiti-outpump9.jpg">
+
+                    <div class="card__overlay">
+                        <h2>كتان</h2>
+                    </div>
                 </div>
             </div>
-                <div class="card fifth">
-            <div class="card__img">  
-                <img src="https://i.etsystatic.com/26815392/r/il/b8d9ff/2995058492/il_1140xN.2995058492_r6ia.jpg" alt="">
-                    
-                <div class="card__overlay">
-                <h2>شيفون</h2>
-                <p>Statue of Liberty</p>
-                </div>
-                </div>
-            </div>
-                <div class="card sixth">
-            <div class="card__img">  
-                <img src="https://ae01.alicdn.com/kf/HTB14aizngvD8KJjy0Flq6ygBFXaY/40cm-160cm-Solid-Shaggy-Faux-Fur-Fabric-long-Pile-Fur-Costumes-Crafts-DIY-Imitation-mink-Fur.jpg" alt="Sydney Opera House">
-                    
-                <div class="card__overlay">
-                <h2>فرو</h2>
-                <p>Sydney Opera House</p>
-                </div>
+            <div class="card third">
+                <div class="card__img">
+                    <img src="../images/il_fullxfull.2957872064_fv74.jpg">
+
+                    <div class="card__overlay">
+                        <h2>قطن</h2>
+                    </div>
                 </div>
             </div>
-            
+            <div class="card fourth">
+                <div class="card__img">
+                    <img src="../images/types-of-buttons.webp">
+
+                    <div class="card__overlay">
+                        <h2>أزرار</h2>
+                    </div>
+                </div>
             </div>
+            <div class="card fifth">
+                <div class="card__img">
+                    <img src="../images/moon_sewing_threads_1000_yard_spool_2048x.jpg">
+
+                    <div class="card__overlay">
+                        <h2>خيوط</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="card sixth">
+                <div class="card__img">
+                    <img
+                        src="../images/embroidery-threads-karly-santiago-unsplash_60a3174f-9675-40ba-8a48-4a8935b4a091.webp">
+
+                    <div class="card__overlay">
+                        <h2>تطريز</h2>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 
+
+    <!-- latest -->
     <div class="latest">
         <div class="homeTitle">آخر ما وصلنا</div>
         <div class="container-lg">
-                <div class="splide" id="product-slider-1">
-                    <div class="splide__track">
-                        <ul class="splide__list">
-                            <!-- Slide 1 -->
-                            <li class="splide__slide">
-                                <div class="product-card">
-                                    <div class="badge">Hot</div>
-                                    <div class="product-tumb">
-                                        <img src="https://www.onlinefabricstore.com/ofssilo/wp-content/uploads/2019/07/broadcloth-feature750.jpg" alt="">
-                                    </div>
-                                    <div class="product-details">
-                                        <span class="product-catagory">Women, bag</span>
-                                        <h4><a href="#">حقيبه جلد نسائية</a></h4>
-                                        <p>هذا النص هو مثال لنص يمكن استبداله في نفس المساحة.</p>
-                                        <div class="product-bottom-details">
-                                            <div class="product-links">
-                                                <a href="#"><i class="fa fa-heart"></i></a>
-                                                <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                                            </div>
-                                            <div class="product-price"><small>96.00JOD</small>230.99JOD</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- Slide 2 -->
-                            <li class="splide__slide">
-                                <div class="product-card">
-                                    <div class="badge">Hot</div>
-                                    <div class="product-tumb">
-                                        <img src="https://www.onlinefabricstore.com/ofssilo/wp-content/uploads/2019/07/broadcloth-feature750.jpg" alt="">
-                                    </div>
-                                    <div class="product-details">
-                                        <span class="product-catagory">Women, bag</span>
-                                        <h4><a href="#">حقيبه جلد نسائية</a></h4>
-                                        <p>هذا النص هو مثال لنص يمكن استبداله في نفس المساحة.</p>
-                                        <div class="product-bottom-details">
-                                            <div class="product-links">
-                                                <a href="#"><i class="fa fa-heart"></i></a>
-                                                <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                                            </div>
-                                            <div class="product-price"><small>96.00JOD</small>230.99JOD</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- Slide 3 -->
-                            <li class="splide__slide">
-                                <div class="product-card">
-                                    <div class="badge">Hot</div>
-                                    <div class="product-tumb">
-                                        <img src="https://www.onlinefabricstore.com/ofssilo/wp-content/uploads/2019/07/broadcloth-feature750.jpg" alt="">
-                                    </div>
-                                    <div class="product-details">
-                                        <span class="product-catagory">Women, bag</span>
-                                        <h4><a href="#">حقيبه جلد نسائية</a></h4>
-                                        <p>هذا النص هو مثال لنص يمكن استبداله في نفس المساحة.</p>
-                                        <div class="product-bottom-details">
-                                            <div class="product-links">
-                                                <a href="#"><i class="fa fa-heart"></i></a>
-                                                <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                                            </div>
-                                            <div class="product-price"><small>96.00JOD</small>230.99JOD</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="splide__slide">
-                                <div class="product-card">
-                                    <div class="badge">Hot</div>
-                                    <div class="product-tumb">
-                                        <img src="https://www.onlinefabricstore.com/ofssilo/wp-content/uploads/2019/07/broadcloth-feature750.jpg" alt="">
-                                    </div>
-                                    <div class="product-details">
-                                        <span class="product-catagory">Women, bag</span>
-                                        <h4><a href="#">حقيبه جلد نسائية</a></h4>
-                                        <p>هذا النص هو مثال لنص يمكن استبداله في نفس المساحة.</p>
-                                        <div class="product-bottom-details">
-                                            <div class="product-links">
-                                                <a href="#"><i class="fa fa-heart"></i></a>
-                                                <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                                            </div>
-                                            <div class="product-price"><small>96.00JOD</small>230.99JOD</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="splide__slide">
-                                <div class="product-card">
-                                    <div class="badge">Hot</div>
-                                    <div class="product-tumb">
-                                        <img src="https://www.onlinefabricstore.com/ofssilo/wp-content/uploads/2019/07/broadcloth-feature750.jpg" alt="">
-                                    </div>
-                                    <div class="product-details">
-                                        <span class="product-catagory">Women, bag</span>
-                                        <h4><a href="#">حقيبه جلد نسائية</a></h4>
-                                        <p>هذا النص هو مثال لنص يمكن استبداله في نفس المساحة.</p>
-                                        <div class="product-bottom-details">
-                                            <div class="product-links">
-                                                <a href="#"><i class="fa fa-heart"></i></a>
-                                                <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                                            </div>
-                                            <div class="product-price"><small>96.00JOD</small>230.99JOD</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="splide__slide">
-                                <div class="product-card">
-                                    <div class="badge">Hot</div>
-                                    <div class="product-tumb">
-                                        <img src="https://www.onlinefabricstore.com/ofssilo/wp-content/uploads/2019/07/broadcloth-feature750.jpg" alt="">
-                                    </div>
-                                    <div class="product-details">
-                                        <span class="product-catagory">Women, bag</span>
-                                        <h4><a href="#">حقيبه جلد نسائية</a></h4>
-                                        <p>هذا النص هو مثال لنص يمكن استبداله في نفس المساحة.</p>
-                                        <div class="product-bottom-details">
-                                            <div class="product-links">
-                                                <a href="#"><i class="fa fa-heart"></i></a>
-                                                <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                                            </div>
-                                            <div class="product-price"><small>96.00JOD</small>230.99JOD</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="splide__slide">
-                                <div class="product-card">
-                                    <div class="badge">Hot</div>
-                                    <div class="product-tumb">
-                                        <img src="https://www.onlinefabricstore.com/ofssilo/wp-content/uploads/2019/07/broadcloth-feature750.jpg" alt="">
-                                    </div>
-                                    <div class="product-details">
-                                        <span class="product-catagory">Women, bag</span>
-                                        <h4><a href="#">حقيبه جلد نسائية</a></h4>
-                                        <p>هذا النص هو مثال لنص يمكن استبداله في نفس المساحة.</p>
-                                        <div class="product-bottom-details">
-                                            <div class="product-links">
-                                                <a href="#"><i class="fa fa-heart"></i></a>
-                                                <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                                            </div>
-                                            <div class="product-price"><small>96.00JOD</small>230.99JOD</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="splide__slide">
-                                <div class="product-card">
-                                    <!-- <div class="badge">Hot</div> -->
-                                    <div class="product-tumb">
-                                        <img src="https://www.onlinefabricstore.com/ofssilo/wp-content/uploads/2019/07/broadcloth-feature750.jpg" alt="">
-                                    </div>
-                                    <div class="product-details">
-                                        <span class="product-catagory">Women, bag</span>
-                                        <h4><a href="#">حقيبه جلد نسائية</a></h4>
-                                        <p>هذا النص هو مثال لنص يمكن استبداله في نفس المساحة.</p>
-                                        <div class="product-bottom-details">
-                                            <div class="product-links">
-                                                <a href="#"><i class="fa fa-heart"></i></a>
-                                                <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                                            </div>
-                                            <div class="product-price"><small>96.00JOD</small>230.99JOD</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+            <div class="splide" id="product-slider-1">
+                <div class="splide__track">
+                    <ul class="splide__list" id="latestSliderCardCon">
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
-    
-    
-    
-    
-    
+
+
+
+    <!-- most sold -->
     <div class="mostSells">
         <div class="homeTitle">الأكثر مبيعا</div>
         <div class="container-lg">
-                <div class="splide" id="product-slider-2">
-                    <div class="splide__track">
-                        <ul class="splide__list">
-                            <!-- Slide 1 -->
-                            <li class="splide__slide">
-                                <div class="product-card">
-                                    <div class="badge">Hot</div>
-                                    <div class="product-tumb">
-                                        <img src="https://www.onlinefabricstore.com/ofssilo/wp-content/uploads/2019/07/broadcloth-feature750.jpg" alt="">
-                                    </div>
-                                    <div class="product-details">
-                                        <span class="product-catagory">Women, bag</span>
-                                        <h4><a href="#">حقيبه جلد نسائية</a></h4>
-                                        <p>هذا النص هو مثال لنص يمكن استبداله في نفس المساحة.</p>
-                                        <div class="product-bottom-details">
-                                            <div class="product-links">
-                                                <a href="#"><i class="fa fa-heart"></i></a>
-                                                <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                                            </div>
-                                            <div class="product-price"><small>96.00JOD</small>230.99JOD</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- Slide 2 -->
-                            <li class="splide__slide">
-                                <div class="product-card">
-                                    <div class="badge">Hot</div>
-                                    <div class="product-tumb">
-                                        <img src="https://www.onlinefabricstore.com/ofssilo/wp-content/uploads/2019/07/broadcloth-feature750.jpg" alt="">
-                                    </div>
-                                    <div class="product-details">
-                                        <span class="product-catagory">Women, bag</span>
-                                        <h4><a href="#">حقيبه جلد نسائية</a></h4>
-                                        <p>هذا النص هو مثال لنص يمكن استبداله في نفس المساحة.</p>
-                                        <div class="product-bottom-details">
-                                            <div class="product-links">
-                                                <a href="#"><i class="fa fa-heart"></i></a>
-                                                <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                                            </div>
-                                            <div class="product-price"><small>96.00JOD</small>230.99JOD</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- Slide 3 -->
-                            <li class="splide__slide">
-                                <div class="product-card">
-                                    <div class="badge">Hot</div>
-                                    <div class="product-tumb">
-                                        <img src="https://www.onlinefabricstore.com/ofssilo/wp-content/uploads/2019/07/broadcloth-feature750.jpg" alt="">
-                                    </div>
-                                    <div class="product-details">
-                                        <span class="product-catagory">Women, bag</span>
-                                        <h4><a href="#">حقيبه جلد نسائية</a></h4>
-                                        <p>هذا النص هو مثال لنص يمكن استبداله في نفس المساحة.</p>
-                                        <div class="product-bottom-details">
-                                            <div class="product-links">
-                                                <a href="#"><i class="fa fa-heart"></i></a>
-                                                <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                                            </div>
-                                            <div class="product-price"><small>96.00JOD</small>230.99JOD</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="splide__slide">
-                                <div class="product-card">
-                                    <div class="badge">Hot</div>
-                                    <div class="product-tumb">
-                                        <img src="https://www.onlinefabricstore.com/ofssilo/wp-content/uploads/2019/07/broadcloth-feature750.jpg" alt="">
-                                    </div>
-                                    <div class="product-details">
-                                        <span class="product-catagory">Women, bag</span>
-                                        <h4><a href="#">حقيبه جلد نسائية</a></h4>
-                                        <p>هذا النص هو مثال لنص يمكن استبداله في نفس المساحة.</p>
-                                        <div class="product-bottom-details">
-                                            <div class="product-links">
-                                                <a href="#"><i class="fa fa-heart"></i></a>
-                                                <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                                            </div>
-                                            <div class="product-price"><small>96.00JOD</small>230.99JOD</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="splide__slide">
-                                <div class="product-card">
-                                    <div class="badge">Hot</div>
-                                    <div class="product-tumb">
-                                        <img src="https://www.onlinefabricstore.com/ofssilo/wp-content/uploads/2019/07/broadcloth-feature750.jpg" alt="">
-                                    </div>
-                                    <div class="product-details">
-                                        <span class="product-catagory">Women, bag</span>
-                                        <h4><a href="#">حقيبه جلد نسائية</a></h4>
-                                        <p>هذا النص هو مثال لنص يمكن استبداله في نفس المساحة.</p>
-                                        <div class="product-bottom-details">
-                                            <div class="product-links">
-                                                <a href="#"><i class="fa fa-heart"></i></a>
-                                                <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                                            </div>
-                                            <div class="product-price"><small>96.00JOD</small>230.99JOD</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="splide__slide">
-                                <div class="product-card">
-                                    <div class="badge">Hot</div>
-                                    <div class="product-tumb">
-                                        <img src="https://www.onlinefabricstore.com/ofssilo/wp-content/uploads/2019/07/broadcloth-feature750.jpg" alt="">
-                                    </div>
-                                    <div class="product-details">
-                                        <span class="product-catagory">Women, bag</span>
-                                        <h4><a href="#">حقيبه جلد نسائية</a></h4>
-                                        <p>هذا النص هو مثال لنص يمكن استبداله في نفس المساحة.</p>
-                                        <div class="product-bottom-details">
-                                            <div class="product-links">
-                                                <a href="#"><i class="fa fa-heart"></i></a>
-                                                <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                                            </div>
-                                            <div class="product-price"><small>96.00JOD</small>230.99JOD</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="splide__slide">
-                                <div class="product-card">
-                                    <div class="badge">Hot</div>
-                                    <div class="product-tumb">
-                                        <img src="https://www.onlinefabricstore.com/ofssilo/wp-content/uploads/2019/07/broadcloth-feature750.jpg" alt="">
-                                    </div>
-                                    <div class="product-details">
-                                        <span class="product-catagory">Women, bag</span>
-                                        <h4><a href="#">حقيبه جلد نسائية</a></h4>
-                                        <p>هذا النص هو مثال لنص يمكن استبداله في نفس المساحة.</p>
-                                        <div class="product-bottom-details">
-                                            <div class="product-links">
-                                                <a href="#"><i class="fa fa-heart"></i></a>
-                                                <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                                            </div>
-                                            <div class="product-price"><small>96.00JOD</small>230.99JOD</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+            <div class="splide" id="product-slider-2">
+                <div class="splide__track">
+                    <ul class="splide__list" id="mostSoldSliderCardCon">
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
-    
+
 
     <!-- Footer -->
     <footer class="bg-body-tertiary text-center">
         <!-- Grid container -->
         <div class="container p-4">
             <!-- Section: Social media -->
-            <!-- <section class="mb-4">
-
-                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
-    
-                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
-    
-                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
-    
-                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
-    
-                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
-    
-                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
-            </section> -->
-            <!-- Section: Social media -->
-    
-            <!-- Section: Form -->
-            <!-- <section class="">
-                <form action="">
-
-                    <div class="row d-flex justify-content-center">
-
-                        <div class="col-auto">
-                            <p class="pt-2">
-                                <strong>اشترك في نشرتنا الإخبارية</strong>
-                            </p>
-                        </div>
-    
-
-                        <div class="col-md-5 col-12">
-
-                            <div data-mdb-input-init class="form-outline mb-4">
-                                <input type="email" id="form5Example24" placeholder="عنوان البريد الإلكتروني" class="form-control" />
-                            </div>
-                        </div>
-    
-
-                        <div class="col-auto">
-                            <button data-mdb-ripple-init type="submit" class="btn btn-outline mb-4">
-                                اشتراك
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </section> -->
-            <!-- Section: Form -->
-    
-            <!-- Section: Text -->
             <section class="mb-4">
-                <!-- <p>
-                    لوريم إيبسوم هو ببساطة نص شكلي يستخدم في صناعة الطباعة والتنضيد. لوريم إيبسوم هو النص
-                    الوهمي القياسي في هذه الصناعة منذ القرن الخامس عشر الميلادي.
-                </p> -->
+
+                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1"
+                    href="mailto:batoul.a.khazali@gmail.com" role="button"><i class="fab fa-google"></i></a>
+
+                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1"
+                    href="www.linkedin.com/in/batool-khazali-436583308" role="button"><i
+                        class="fab fa-linkedin-in"></i></a>
+
+                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1"
+                    href="https://github.com/Batool-Khazali" role="button"><i class="fab fa-github"></i></a>
             </section>
-            <!-- Section: Text -->
-    
+            <!-- Section: Social media -->
+
             <!-- Section: Links -->
             <section class="">
                 <!--Grid row-->
@@ -603,22 +258,22 @@
                     <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                         <!-- Links -->
                         <h6 class="text-uppercase fw-bold mb-4">
-                            
+
                         </h6>
                         <p>
-                            <a href="../index.html" class="text-reset">الرئيسية</a>
+                            <a href="index.html" class="text-reset">الرئيسية</a>
                         </p>
                         <p>
-                            <a href="ProductsList.html" class="text-reset">المنتجات</a>
+                            <a href="html/ProductsList.html" class="text-reset">المنتجات</a>
                         </p>
                     </div>
                     <!--Grid column-->
-    
+
                     <!--Grid column-->
                     <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                         <!-- Links -->
                         <h6 class="text-uppercase fw-bold mb-4">
-                            
+
                         </h6>
                         <p>
                             <a href="html/Profile.html" class="text-reset">الصفحة الشخصية</a>
@@ -627,42 +282,51 @@
                             <a href="html/Store.html" class="text-reset">المتجر</a>
                         </p>
                     </div>
-                    
+
                     <!--Grid column-->
-    
+
                     <!--Grid column-->
-                    <!-- <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4" >
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                         <h6 class="text-uppercase fw-bold mb-4">
-                            
+
                         </h6>
                         <p>
-                            <a href="ContactUs.html" class="text-reset">تواصل معنا</a>
+                            <a href="html/about.html" class="text-reset">من نحن</a>
                         </p>
                         <p>
-                            <a href="about.html" class="text-reset">من نحن</a>
+                            <a href="html/faq.html" class="text-reset">الأسئلة الشائعة</a>
                         </p>
-                        <p>
-                            <a href="#!" class="text-reset">الطلبات</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-reset">المساعدة</a>
-                        </p>
-                    </div>                     -->
+                    </div>
                     <!--Grid column-->
-    
+
                     <!--Grid column-->
                     <!-- Grid column -->
                     <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                         <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4"><a href="ContactUs.html">تواصل معنا</a></h6>
-                        <p><i class="fas fa-home ms-3"></i>الاردن - اربد</p>
+                        <h6 class="text-uppercase fw-bold mb-4" style="color: var(--link-color);">
+                            <a href="html/ContactUs.html" style="color: var(--link-color);">تواصل معنا</a>
+                        </h6>
                         <p>
-                            <i class="fas fa-envelope ms-3"></i>
-                            info@example.com
+                            <a href="https://maps.app.goo.gl/LY33BnEuKvHeJ4ga6" target="_blank"
+                                style="color: var(--text-color);">
+                                <i class="fas fa-home ms-3"></i> 
+                                HR3X+2VM, Al-Sheikh Khalil St.,
+                                Irbid
+                            </a>
                         </p>
-                        <p><i class="fas fa-phone ms-3"></i> + 0789456123</p>
+                        <p>
+                            <a href="mailto:batoul.a.khazali@gmail.com" style="color: var(--text-color);">
+                                <i class="fas fa-envelope"></i> 
+                                batoul.a.khazali@gmail.com
+                            </a>
+                        </p>
+                        <p>
+                            <a href="tel://1234567920" target="_blank" style="color: var(--text-color);">
+                                <i class="fas fa-phone ms-3"></i> 
+                                + (962) 789024480</a>
+                        </p>
                     </div>
-                    
+
                     <!--Grid column-->
                 </div>
                 <!--Grid row-->
@@ -670,73 +334,67 @@
             <!-- Section: Links -->
         </div>
         <!-- Grid container -->
-    
+
         <!-- Copyright -->
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
             © 2024 حقوق الطبع والنشر:
-            <!-- <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Naseej.com</a> -->
+            <p class="text-reset fw-bold" >Batool Khazali</p>
         </div>
     </footer>
-    
-  <!-- Footer -->
 
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"
-        integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"
-        integrity="sha512-Rd5Gf5A6chsunOJte+gKWyECMqkG8MgBYD1u80LOOJBfl6ka9CtatRrD4P0P5Q5V/z/ecvOCSYC8tLoWNrCpPg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-        new WOW({ animateClass: 'animate__animated' }).init();
-    </script> -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Footer -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             new Splide('#product-slider-1', {
-                type    : 'loop',
-                perPage : 5, 
-                gap     : '10px', 
+                type: 'loop',
+                perPage: 5,
+                gap: '10px',
                 direction: 'rtl',
                 breakpoints: {
                     1400: {
-                        perPage: 4, 
+                        perPage: 4,
                     },
                     1200: {
-                        perPage: 3, 
+                        perPage: 3,
                     },
                     1024: {
-                        perPage: 2, 
+                        perPage: 2,
                     },
                     600: {
-                        perPage: 2, 
+                        perPage: 2,
                     },
                 },
             }).mount();
             new Splide('#product-slider-2', {
-                type    : 'loop',
-                perPage : 5, 
-                gap     : '10px', 
+                type: 'loop',
+                perPage: 5,
+                gap: '10px',
                 direction: 'rtl',
                 breakpoints: {
                     1400: {
-                        perPage: 4, 
+                        perPage: 4,
                     },
                     1200: {
-                        perPage: 3, 
+                        perPage: 3,
                     },
                     1024: {
-                        perPage: 2, 
+                        perPage: 2,
                     },
                     600: {
-                        perPage: 2, 
+                        perPage: 2,
                     },
                 },
             }).mount();
         });
     </script>
-        <script src="../js/navbar.js"></script>
-        <script src="../js/script.js"></script>
+    <script src="js/HPnavbar.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>

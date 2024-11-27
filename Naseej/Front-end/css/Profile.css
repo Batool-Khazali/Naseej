@@ -14,6 +14,11 @@
   color: var(--text-color);
   overflow: hidden;
   text-align: right;
+  z-index: 0;
+}
+
+.sideDashItem:hover {
+  color: var(--text-color2);
 }
 
 .userSideDashList {

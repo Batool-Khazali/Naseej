@@ -1,7 +1,34 @@
 
+const userId = localStorage.getItem('userId');
 
 document.addEventListener('DOMContentLoaded', function()
 {
+
+    if (!userId){
+        Swal.fire({
+            title: "الرجاء تسجيل الدخول ",
+            icon: "error",
+            showClass: {
+              popup: `
+                animate__animated
+                animate__fadeInUp
+                animate__faster
+              `
+            },
+            hideClass: {
+              popup: `
+                animate__animated
+                animate__fadeOutDown
+                animate__faster
+              `
+            }
+          });
+    
+          setTimeout(function() {
+            location.href = "Login.html"; 
+          }, 3000);
+    }
+
     checkBusinessOwner();
 });
 
@@ -9,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function()
 
 async function checkBusinessOwner()
 {
-    const userId = localStorage.getItem('userId');
     const url = `https://localhost:7158/api/Business/IsBusinessOwner/${userId}`
     const response = await fetch(url);
     let data = await response.json();

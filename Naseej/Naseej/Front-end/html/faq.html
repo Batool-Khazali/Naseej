@@ -1,453 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar-en" dir="rtl">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide.min.css">
-    <link rel="stylesheet" href="../css/bases.css">
-    <link rel="stylesheet" href="../css/faq.css">
-
-    <title>نسيج | الأسئلة الشائعة</title>
-</head>
-
-<body id="TheBody">
-
-
-    <!-- navbar -->
-
-    <nav class="sticky navbar">
-        <div class="brand  display__logo">
-            <a href="../index.html#home" class="nav__link"> <img src="../images/long Logo.png" alt=""></a>
-        </div>
-
-        <input type="checkbox" id="nav" class="hidden" />
-        <label for="nav" class="nav__open"><i></i><i></i><i></i></label>
-        <div class="nav">
-            <ul class="nav__items">
-                <li class="nav__item"><a href="../index.html#home" class="nav__link">الرئيسية</a></li>
-                <li class="nav__item"><a href="ProductsList.html" class="nav__link">المنتجات</a></li>
-                <li class="nav__item"><a href="about.html" class="nav__link">من نحن</a></li>
-                <li class="nav__item"><a href="ContactUs.html" class="nav__link">تواصل معنا</a></li>
-                <!-- <li class="nav__item"><a href="#" class="nav__link">الخياطون</a></li>
-                <li class="nav__item"><a href="#" class="nav__link">المشغولات اليدوية</a></li> -->
-                <li class="nav__item" id="IsLoggedIn" style="align-content: center;"></li>
-                <li class="nav__item" style="align-content: center;">
-                    <a href="Cart.html" class="nav__link"><i class="fa-solid fa-cart-shopping"
-                            style="color: #504a40;"></i></a>
-                </li>
-                <li class="nav__item" id="logout"><a href="#" class="nav__link">تسجيل خروج</a></li>
-    
-                    
-    
-    
-            </ul>
-            <label class="switch">
-                <input type="checkbox" id="darkModeToggle">
-                <span class="slider">
-                <span class="icon sun">☀️</span>
-                <span class="icon moon">🌙</span>
-                </span>
-            </label>
-        </div>
-    </nav>
-
-
-
-
-
-
-    <section class="faq py-5">
-        <div class="container-lg">
-            <div class="row justify-content-center text-center mb-3">
-                <div class="col-lg-8 col-xl-7">
-                    <span class="text-muted">F.A.Q</span>
-                    <h2 class="display-5 fw-bold">الأسئلة الشائعة</h2>
-                    <p class="lead">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد
-                        النص العربى.</p>
-                </div>
-            </div>
-            <div class="row justify-content-around">
-                <div class="faqContact col-md-4">
-                    <span class="text-muted">هذا النص هو مثال لنص يمكن استبداله</span>
-                    <h2 class="pb-4 fw-bold">هل لديك أي أسئلة؟</h2>
-                    <p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى.
-                    </p>
-                    <a class="faqBtn btn btn-primary btn-lg mt-3" href="#">تواصل معنا</a>
-                </div>
-
-                <div class="faqs col-md-8">
-                    <div class=" row justify-content-center mb-4">
-                        <div class="faqCat col-lg-8">
-                            <h6 class="mb-3 mt-3 mt-md-0">تقني</h6>
-                            <div class="accordion" id="Tech-accordion">
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="Tech-headingOne"><button
-                                            aria-controls="Tech-collapseOne" aria-expanded="false"
-                                            class="accordion-button collapsed" data-bs-target="#Tech-collapseOne"
-                                            data-bs-toggle="collapse" type="button">
-                                            <div class="text-muted me-3">
-                                                <svg class="bi bi-question-circle-fill" fill="currentColor" height="24"
-                                                    viewbox="0 0 16 16" width="24" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z">
-                                                    </path>
-                                                </svg>
-                                            </div>هذا النص هو مثال لنص يمكن استبداله في نفس المساحة؟
-                                        </button></h2>
-                                    <div aria-labelledby="Tech-headingOne" class="accordion-collapse collapse"
-                                        data-bs-parent="#Tech-accordion" id="Tech-collapseOne">
-                                        <div class="accordion-body">
-                                            هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من
-                                            مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى
-                                            إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="Tech-headingTwo"><button
-                                            aria-controls="Tech-collapseTwo" aria-expanded="true"
-                                            class="accordion-button" data-bs-target="#Tech-collapseTwo"
-                                            data-bs-toggle="collapse" type="button">
-                                            <div class="text-muted me-3">
-                                                <svg class="bi bi-question-circle-fill" fill="currentColor" height="24"
-                                                    viewbox="0 0 16 16" width="24" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z">
-                                                    </path>
-                                                </svg>
-                                            </div>هذا النص هو مثال لنص يمكن استبداله في نفس المساحة؟
-                                        </button></h2>
-                                    <div aria-labelledby="Tech-headingTwo" class="accordion-collapse collapse show"
-                                        data-bs-parent="#Tech-accordion" id="Tech-collapseTwo" >
-                                        <div class="accordion-body">
-                                            هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من
-                                            مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى
-                                            إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="Tech-headingThree"><button
-                                            aria-controls="Tech-collapseThree" aria-expanded="false"
-                                            class="accordion-button collapsed" data-bs-target="#Tech-collapseThree"
-                                            data-bs-toggle="collapse" type="button">
-                                            <div class="text-muted me-3">
-                                                <svg class="bi bi-question-circle-fill" fill="currentColor" height="24"
-                                                    viewbox="0 0 16 16" width="24" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z">
-                                                    </path>
-                                                </svg>
-                                            </div>هذا النص هو مثال لنص يمكن استبداله في نفس المساحة؟
-                                        </button></h2>
-                                    <div aria-labelledby="Tech-headingThree" class="accordion-collapse collapse"
-                                        data-bs-parent="#Tech-accordion" id="Tech-collapseThree">
-                                        <div class="accordion-body">
-                                            هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من
-                                            مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى
-                                            إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="Tech-headingFour"><button
-                                            aria-controls="Tech-collapseFour" aria-expanded="false"
-                                            class="accordion-button collapsed" data-bs-target="#Tech-collapseFour"
-                                            data-bs-toggle="collapse" type="button">
-                                            <div class="text-muted me-3">
-                                                <svg class="bi bi-question-circle-fill" fill="currentColor" height="24"
-                                                    viewbox="0 0 16 16" width="24" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z">
-                                                    </path>
-                                                </svg>
-                                            </div>هذا النص هو مثال لنص يمكن استبداله في نفس المساحة؟
-                                        </button></h2>
-                                    <div aria-labelledby="Tech-headingFour" class="accordion-collapse collapse"
-                                        data-bs-parent="#Tech-accordion" id="Tech-collapseFour">
-                                        <div class="accordion-body">
-                                            هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من
-                                            مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى
-                                            إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="faqCat  col-lg-8">
-                            <h6 class="mb-3 mt-3 mt-md-0">الدفع</h6>
-                            <div class="accordion" id="Bill-accordion">
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="Bill-headingOne"><button
-                                            aria-controls="Bill-collapseOne" aria-expanded="false"
-                                            class="accordion-button collapsed" data-bs-target="#Bill-collapseOne"
-                                            data-bs-toggle="collapse" type="button">
-                                            <div class="text-muted me-3">
-                                                <svg class="bi bi-question-circle-fill" fill="currentColor" height="24"
-                                                    viewbox="0 0 16 16" width="24" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z">
-                                                    </path>
-                                                </svg>
-                                            </div>هذا النص هو مثال لنص يمكن استبداله في نفس المساحة؟
-                                        </button></h2>
-                                    <div aria-labelledby="Bill-headingOne" class="accordion-collapse collapse"
-                                        data-bs-parent="#Bill-accordion" id="Bill-collapseOne">
-                                        <div class="accordion-body">
-                                            هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من
-                                            مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى
-                                            إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="Bill-headingTwo"><button
-                                            aria-controls="Bill-collapseTwo" aria-expanded="false"
-                                            class="accordion-button collapsed" data-bs-target="#Bill-collapseTwo"
-                                            data-bs-toggle="collapse" type="button">
-                                            <div class="text-muted me-3">
-                                                <svg class="bi bi-question-circle-fill" fill="currentColor" height="24"
-                                                    viewbox="0 0 16 16" width="24" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z">
-                                                    </path>
-                                                </svg>
-                                            </div>هذا النص هو مثال لنص يمكن استبداله في نفس المساحة؟
-                                        </button></h2>
-                                    <div aria-labelledby="Bill-headingTwo" class="accordion-collapse collapse"
-                                        data-bs-parent="#Bill-accordion" id="Bill-collapseTwo">
-                                        <div class="accordion-body">
-                                            هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من
-                                            مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى
-                                            إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="Bill-headingThree"><button
-                                            aria-controls="Bill-collapseThree" aria-expanded="false"
-                                            class="accordion-button collapsed" data-bs-target="#Bill-collapseThree"
-                                            data-bs-toggle="collapse" type="button">
-                                            <div class="text-muted me-3">
-                                                <svg class="bi bi-question-circle-fill" fill="currentColor" height="24"
-                                                    viewbox="0 0 16 16" width="24" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z">
-                                                    </path>
-                                                </svg>
-                                            </div>هذا النص هو مثال لنص يمكن استبداله في نفس المساحة؟
-                                        </button></h2>
-                                    <div aria-labelledby="Bill-headingThree" class="accordion-collapse collapse"
-                                        data-bs-parent="#Bill-accordion" id="Bill-collapseThree">
-                                        <div class="accordion-body">
-                                            هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من
-                                            مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى
-                                            إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="Bill-headingFour"><button
-                                            aria-controls="Bill-collapseFour" aria-expanded="false"
-                                            class="accordion-button collapsed" data-bs-target="#Bill-collapseFour"
-                                            data-bs-toggle="collapse" type="button">
-                                            <div class="text-muted me-3">
-                                                <svg class="bi bi-question-circle-fill" fill="currentColor" height="24"
-                                                    viewbox="0 0 16 16" width="24" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z">
-                                                    </path>
-                                                </svg>
-                                            </div>هذا النص هو مثال لنص يمكن استبداله في نفس المساحة؟
-                                        </button></h2>
-                                    <div aria-labelledby="Bill-headingFour" class="accordion-collapse collapse"
-                                        data-bs-parent="#Bill-accordion" id="Bill-collapseFour">
-                                        <div class="accordion-body">
-                                            هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من
-                                            مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى
-                                            إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Footer -->
-    <footer class="bg-body-tertiary text-center">
-        <!-- Grid container -->
-        <div class="container p-4">
-            <!-- Section: Social media -->
-            <!-- <section class="mb-4">
-
-                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
-    
-                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
-    
-                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
-    
-                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
-    
-                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
-    
-                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
-            </section> -->
-            <!-- Section: Social media -->
-    
-            <!-- Section: Form -->
-            <!-- <section class="">
-                <form action="">
-
-                    <div class="row d-flex justify-content-center">
-
-                        <div class="col-auto">
-                            <p class="pt-2">
-                                <strong>اشترك في نشرتنا الإخبارية</strong>
-                            </p>
-                        </div>
-    
-
-                        <div class="col-md-5 col-12">
-
-                            <div data-mdb-input-init class="form-outline mb-4">
-                                <input type="email" id="form5Example24" placeholder="عنوان البريد الإلكتروني" class="form-control" />
-                            </div>
-                        </div>
-    
-
-                        <div class="col-auto">
-                            <button data-mdb-ripple-init type="submit" class="btn btn-outline mb-4">
-                                اشتراك
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </section> -->
-            <!-- Section: Form -->
-    
-            <!-- Section: Text -->
-            <section class="mb-4">
-                <!-- <p>
-                    لوريم إيبسوم هو ببساطة نص شكلي يستخدم في صناعة الطباعة والتنضيد. لوريم إيبسوم هو النص
-                    الوهمي القياسي في هذه الصناعة منذ القرن الخامس عشر الميلادي.
-                </p> -->
-            </section>
-            <!-- Section: Text -->
-    
-            <!-- Section: Links -->
-            <section class="">
-                <!--Grid row-->
-                <div class="row">
-                    <!--Grid column-->
-                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            
-                        </h6>
-                        <p>
-                            <a href="../index.html" class="text-reset">الرئيسية</a>
-                        </p>
-                        <p>
-                            <a href="ProductsList.html" class="text-reset">المنتجات</a>
-                        </p>
-                    </div>
-                    <!--Grid column-->
-    
-                    <!--Grid column-->
-                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            
-                        </h6>
-                        <p>
-                            <a href="Profile.html" class="text-reset">الصفحة الشخصية</a>
-                        </p>
-                        <p>
-                            <a href="Store.html" class="text-reset">المتجر</a>
-                        </p>
-                    </div>
-                    
-                    <!--Grid column-->
-    
-                    <!--Grid column-->
-                    <!-- <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4" >
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            
-                        </h6>
-                        <p>
-                            <a href="ContactUs.html" class="text-reset">تواصل معنا</a>
-                        </p>
-                        <p>
-                            <a href="about.html" class="text-reset">من نحن</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-reset">الطلبات</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-reset">المساعدة</a>
-                        </p>
-                    </div>                     -->
-                    <!--Grid column-->
-    
-                    <!--Grid column-->
-                    <!-- Grid column -->
-                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4"><a href="ContactUs.html">تواصل معنا</a></h6>
-                        <p><i class="fas fa-home ms-3"></i>الاردن - اربد</p>
-                        <p>
-                            <i class="fas fa-envelope ms-3"></i>
-                            info@example.com
-                        </p>
-                        <p><i class="fas fa-phone ms-3"></i> + 0789456123</p>
-                    </div>
-                    
-                    <!--Grid column-->
-                </div>
-                <!--Grid row-->
-            </section>
-            <!-- Section: Links -->
-        </div>
-        <!-- Grid container -->
-    
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-            © 2024 حقوق الطبع والنشر:
-            <!-- <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Naseej.com</a> -->
-        </div>
-    </footer>
-    
-  <!-- Footer -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script>
-    <script src="../js/navbar.js"></script>
-    <script src="../js/script.js"></script></body>
-
-</html>

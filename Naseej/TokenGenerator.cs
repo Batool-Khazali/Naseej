@@ -13,14 +13,19 @@ public class TokenGenerator
         _configuration = configuration;
     }
 
-    public string GenerateToken(string username)
+    public string GenerateToken(string userEmail, bool isAdmin)
     {
         var jwtSettings = _configuration.GetSection("Jwt");
         var key = jwtSettings.GetValue<string>("Key");
         var claims = new List<Claim>
         {
-            new Claim(ClaimTypes.Name, username)
+            new Claim(ClaimTypes.Email, userEmail)
         };
+
+        if (isAdmin)
+        {
+            claims.Add(new Claim("IsAdmin", "true"));
+        }
 
         //claims.AddRange(roles.Select(role => new Claim(ClaimTypes.Role, role)));
 

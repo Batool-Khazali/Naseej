@@ -16,7 +16,9 @@
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/ContactUs.css">
 
-    <title>تواصل معنا</title>
+    <link rel="icon" href="../Images/naseej.png" type="image/x-icon"/>
+
+    <title>نسيج | تواصل معنا</title>
 </head>
 
 <body id="TheBody">
@@ -33,24 +35,25 @@
             <ul class="nav__items">
                 <li class="nav__item"><a href="../index.html#home" class="nav__link">الرئيسية</a></li>
                 <li class="nav__item"><a href="ProductsList.html" class="nav__link">المنتجات</a></li>
-                <!-- <li class="nav__item"><a href="#" class="nav__link">الخياطون</a></li>
-                <li class="nav__item"><a href="#" class="nav__link">المشغولات اليدوية</a></li> -->
+                <li class="nav__item"><a href="about.html" class="nav__link">من نحن</a></li>
+                <li class="nav__item"><a href="ContactUs.html" class="nav__link">تواصل معنا</a></li>
                 <li class="nav__item" id="IsLoggedIn" style="align-content: center;"></li>
-                <li class="nav__item"><a href="Cart.html" class="nav__link"><i class="fa-solid fa-cart-shopping"
-                            style="color: #504a40;"></i></a></li>
+                <li class="nav__item" style="align-content: center;">
+                    <a href="Cart.html" class="nav__link"><i class="fa-solid fa-cart-shopping"
+                            style="color: #504a40;"></i></a>
+                </li>
                 <li class="nav__item" id="logout"><a href="#" class="nav__link">تسجيل خروج</a></li>
 
-                    
+                <label class="switch nav__item">
+                    <input type="checkbox" id="darkModeToggle">
+                    <span class="slider">
+                        <span class="icon sun">☀️</span>
+                        <span class="icon moon">🌙</span>
+                    </span>
+                </label>
 
 
             </ul>
-            <label class="switch">
-                <input type="checkbox" id="darkModeToggle">
-                <span class="slider">
-                <span class="icon sun">☀️</span>
-                <span class="icon moon">🌙</span>
-                </span>
-            </label>
         </div>
     </nav>
     <!-- end of navbar -->
@@ -78,18 +81,18 @@
                                     <!-- <div id="form-message-success" class="mb-4">
                                         Your message was sent, thank you!
                                     </div> -->
-                                    <form method="POST" id="contactForm" name="contactForm" class="contactForm">
+                                    <form id="contactForm" name="contactForm" class="contactForm">
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group mb-3">
                                                     <label class="form-label" for="name"> الاسم</label>
-                                                    <input type="text" class="form-control" name="name" id="name" placeholder="الاسم">
+                                                    <input type="text" class="form-control" name="SenderName" id="name" placeholder="الاسم">
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group mb-3">
                                                     <label class="form-label" for="email">البريد الالكتروني</label>
-                                                    <input type="email" class="form-control" name="email" id="email" placeholder="البريدالالكتروني">
+                                                    <input type="email" class="form-control" name="SenderEmail" id="email" placeholder="البريدالالكتروني">
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
@@ -106,7 +109,7 @@
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <input type="submit" value="ارسال" class="btn button-primary py-2 px-4">
+                                                    <button type="submit" onclick="sendMessage(event)" value="ارسال" class="btn button-primary py-2 px-4">ارسال</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -133,7 +136,7 @@
                                         <i class="fas fa-map-marker-alt"></i>
                                     </div>
                                     <div class="text">
-                                        <p><span>العنوان:</span> HR3X+2VM, Al-Sheikh Khalil St., Irbid</p>
+                                        <p><span>العنوان:</span> <a href="https://maps.app.goo.gl/LY33BnEuKvHeJ4ga6" target="_blank" style="color: var(--link-color);"> HR3X+2VM, Al-Sheikh Khalil St., Irbid</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -143,7 +146,7 @@
                                         <i class="fas fa-phone"></i>
                                     </div>
                                     <div class="text">
-                                        <p><span>الهاتف:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+                                        <p><span>الهاتف:</span> <a href="tel://1234567920" target="_blank" style="color: var(--link-color);">+ (962) 789024480</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -153,7 +156,7 @@
                                         <i class="fas fa-paper-plane"></i>
                                     </div>
                                     <div class="text">
-                                        <p><span>البريد الالكتروني:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+                                        <p><span>البريد الالكتروني:</span> <a href="mailto:batoul.a.khazali@gmail.com" target="_blank" style="color: var(--link-color);">batoul.a.khazali@gmail.com</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -171,62 +174,20 @@
             <!-- Grid container -->
             <div class="container p-4">
                 <!-- Section: Social media -->
-                <!-- <section class="mb-4">
-    
-                    <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
-        
-                    <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
-        
-                    <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
-        
-                    <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
-        
-                    <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
-        
-                    <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
-                </section> -->
-                <!-- Section: Social media -->
-        
-                <!-- Section: Form -->
-                <!-- <section class="">
-                    <form action="">
-    
-                        <div class="row d-flex justify-content-center">
-    
-                            <div class="col-auto">
-                                <p class="pt-2">
-                                    <strong>اشترك في نشرتنا الإخبارية</strong>
-                                </p>
-                            </div>
-        
-    
-                            <div class="col-md-5 col-12">
-    
-                                <div data-mdb-input-init class="form-outline mb-4">
-                                    <input type="email" id="form5Example24" placeholder="عنوان البريد الإلكتروني" class="form-control" />
-                                </div>
-                            </div>
-        
-    
-                            <div class="col-auto">
-                                <button data-mdb-ripple-init type="submit" class="btn btn-outline mb-4">
-                                    اشتراك
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </section> -->
-                <!-- Section: Form -->
-        
-                <!-- Section: Text -->
                 <section class="mb-4">
-                    <!-- <p>
-                        لوريم إيبسوم هو ببساطة نص شكلي يستخدم في صناعة الطباعة والتنضيد. لوريم إيبسوم هو النص
-                        الوهمي القياسي في هذه الصناعة منذ القرن الخامس عشر الميلادي.
-                    </p> -->
+    
+                    <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1"
+                        href="mailto:batoul.a.khazali@gmail.com" role="button"><i class="fab fa-google"></i></a>
+    
+                    <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1"
+                        href="www.linkedin.com/in/batool-khazali-436583308" role="button"><i
+                            class="fab fa-linkedin-in"></i></a>
+    
+                    <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1"
+                        href="https://github.com/Batool-Khazali" role="button"><i class="fab fa-github"></i></a>
                 </section>
-                <!-- Section: Text -->
-        
+                <!-- Section: Social media -->
+    
                 <!-- Section: Links -->
                 <section class="">
                     <!--Grid row-->
@@ -235,7 +196,7 @@
                         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                             <!-- Links -->
                             <h6 class="text-uppercase fw-bold mb-4">
-                                
+    
                             </h6>
                             <p>
                                 <a href="../index.html" class="text-reset">الرئيسية</a>
@@ -245,12 +206,12 @@
                             </p>
                         </div>
                         <!--Grid column-->
-        
+    
                         <!--Grid column-->
                         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                             <!-- Links -->
                             <h6 class="text-uppercase fw-bold mb-4">
-                                
+    
                             </h6>
                             <p>
                                 <a href="Profile.html" class="text-reset">الصفحة الشخصية</a>
@@ -259,42 +220,51 @@
                                 <a href="Store.html" class="text-reset">المتجر</a>
                             </p>
                         </div>
-                        
+    
                         <!--Grid column-->
-        
+    
                         <!--Grid column-->
-                        <!-- <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4" >
+                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                             <h6 class="text-uppercase fw-bold mb-4">
-                                
+    
                             </h6>
-                            <p>
-                                <a href="ContactUs.html" class="text-reset">تواصل معنا</a>
-                            </p>
                             <p>
                                 <a href="about.html" class="text-reset">من نحن</a>
                             </p>
                             <p>
-                                <a href="#!" class="text-reset">الطلبات</a>
+                                <a href="faq.html" class="text-reset">الأسئلة الشائعة</a>
                             </p>
-                            <p>
-                                <a href="#!" class="text-reset">المساعدة</a>
-                            </p>
-                        </div>                     -->
+                        </div>
                         <!--Grid column-->
-        
+    
                         <!--Grid column-->
                         <!-- Grid column -->
                         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                             <!-- Links -->
-                            <h6 class="text-uppercase fw-bold mb-4"><a href="ContactUs.html">تواصل معنا</a></h6>
-                            <p><i class="fas fa-home ms-3"></i>الاردن - اربد</p>
+                            <h6 class="text-uppercase fw-bold mb-4" style="color: var(--link-color);">
+                                <a href="ContactUs.html" style="color: var(--link-color);">تواصل معنا</a>
+                            </h6>
                             <p>
-                                <i class="fas fa-envelope ms-3"></i>
-                                info@example.com
+                                <a href="https://maps.app.goo.gl/LY33BnEuKvHeJ4ga6" target="_blank"
+                                    style="color: var(--text-color);">
+                                    <i class="fas fa-home ms-3"></i> 
+                                    HR3X+2VM, Al-Sheikh Khalil St.,
+                                    Irbid
+                                </a>
                             </p>
-                            <p><i class="fas fa-phone ms-3"></i> + 0789456123</p>
+                            <p>
+                                <a href="mailto:batoul.a.khazali@gmail.com" style="color: var(--text-color);">
+                                    <i class="fas fa-envelope"></i> 
+                                    batoul.a.khazali@gmail.com
+                                </a>
+                            </p>
+                            <p>
+                                <a href="tel://1234567920" target="_blank" style="color: var(--text-color);">
+                                    <i class="fas fa-phone ms-3"></i> 
+                                    + (962) 789024480</a>
+                            </p>
                         </div>
-                        
+    
                         <!--Grid column-->
                     </div>
                     <!--Grid row-->
@@ -302,11 +272,11 @@
                 <!-- Section: Links -->
             </div>
             <!-- Grid container -->
-        
+    
             <!-- Copyright -->
             <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
                 © 2024 حقوق الطبع والنشر:
-                <!-- <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Naseej.com</a> -->
+                <p class="text-reset fw-bold" >Batool Khazali</p>
             </div>
         </footer>
         
@@ -315,6 +285,7 @@
     <!-- scripts -->
     <script src="../js/navbar.js"></script>
     <script src="../js/script.js"></script>
+    <script src="../js/contactUs.js"></script>
 </body>
 
 </html>

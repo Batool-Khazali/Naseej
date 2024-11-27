@@ -8,6 +8,32 @@
 const userId = localStorage.getItem('userId');
 
 document.addEventListener('DOMContentLoaded', function () {
+
+    if (!userId){
+        Swal.fire({
+            title: "الرجاء تسجيل الدخول ",
+            icon: "error",
+            showClass: {
+              popup: `
+                animate__animated
+                animate__fadeInUp
+                animate__faster
+              `
+            },
+            hideClass: {
+              popup: `
+                animate__animated
+                animate__fadeOutDown
+                animate__faster
+              `
+            }
+          });
+    
+          setTimeout(function() {
+            location.href = "Login.html"; 
+          }, 3000);
+    }
+
     fillCategory();
 });
 
@@ -76,8 +102,8 @@ async function getDetails(proId) {
     stock.value = ProData.stock;
 
     //////////////// sale
-    const sale = document.getElementById("productSale");
-    sale.value = ProData.salePercentage;
+    // const sale = document.getElementById("productSale");
+    // sale.value = ProData.salePercentage;
 }
 
 getDetails(ProId);
@@ -87,11 +113,11 @@ getDetails(ProId);
 /////////////////////////////////// edit product
 
 
-async function editProduct() {
-    // event.preventDefault();
+async function editProduct(event) {
+    event.preventDefault();
     debugger
 
-    const url =`https://localhost:7158/api/Store/editProdut/${userId}/${ProId}`
+    const url = `https://localhost:7158/api/Store/editProdut/${userId}/${ProId}`
 
     const form = document.getElementById('editStoreProduct');
     const formData = new FormData(form);
@@ -116,10 +142,49 @@ async function editProduct() {
 
 
     if (response.ok) {
-        location.href = "storeProducts.html"
+        Swal.fire({
+            title: "تم تعديل المنتج بنجاح",
+            icon: "success",
+            showClass: {
+              popup: `
+                animate__animated
+                animate__fadeInUp
+                animate__faster
+              `
+            },
+            hideClass: {
+              popup: `
+                animate__animated
+                animate__fadeOutDown
+                animate__faster
+              `
+            }
+          });
+
+          setTimeout(function() {
+            location.href = "storeProducts.html"
+          }, 3000);
     } else {
-        const errorText = await response.text();
-        alert(`Failed to update product: ${errorText}`);
+
+        Swal.fire({
+            icon: "error",
+            title: "يبدو أن هنالك خطأ ما",
+            footer: '<a href="ContactUs.html">تواصل معنا في حال استمرار الخطأ</a>',
+            showClass: {
+                popup: `
+                animate__animated
+                animate__fadeInUp
+                animate__faster
+              `
+            },
+            hideClass: {
+                popup: `
+                animate__animated
+                animate__fadeOutDown
+                animate__faster
+              `
+            }
+        });
     }
 
 }
