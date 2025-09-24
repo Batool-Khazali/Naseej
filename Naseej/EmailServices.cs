@@ -12,14 +12,14 @@ namespace Naseej
 
         private readonly string _smtpServer = "smtp.gmail.com"; // Change to your SMTP server
         private readonly int _smtpPort = 587; // SMTP port
-        private readonly string _smtpUser = "batoulkhazali96@gmail.com"; // Your email
-        private readonly string _smtpPass = "ygpv tlkb kfza jwpb"; // Your email password or app password
+        private readonly string _smtpUser =  // Your email
+        private readonly string _smtpPass =  Your email password or app password
 
         public async Task SendContactEmailAsync(string name, string fromEmail, string subject, string message)
         {
             var emailMessage = new MimeMessage();
             emailMessage.From.Add(new MailboxAddress(name, fromEmail));
-            emailMessage.To.Add(new MailboxAddress("Naseej", "batoulkhazali96@gmail.com"));
+            emailMessage.To.Add(new MailboxAddress("Naseej", "Your Email"));
             emailMessage.Subject = subject;
             emailMessage.Body = new TextPart("plain")
             {
@@ -55,7 +55,7 @@ namespace Naseej
         {
             var emailMessage = new MimeMessage();
             emailMessage.To.Add(new MailboxAddress(name, toEmail));
-            emailMessage.From.Add(new MailboxAddress("Naseej", "batoulkhazali96@gmail.com"));
+            emailMessage.From.Add(new MailboxAddress("Naseej", "Your Email"));
             emailMessage.Subject = "تأكيد الطلب - شكراً لك على طلبك";
             string itemsList = string.Join("\n", orderedItems.Select(item => $"- {item}"));
             emailMessage.Body = new TextPart("html")
@@ -103,7 +103,7 @@ namespace Naseej
         {
             var emailMessage = new MimeMessage();
             emailMessage.To.Add(new MailboxAddress(name, toEmail));
-            emailMessage.From.Add(new MailboxAddress("Naseej", "batoulkhazali96@gmail.com"));
+            emailMessage.From.Add(new MailboxAddress("Naseej", "Your Email"));
             emailMessage.Subject = $"تحديث حالة الطلب - رقم الطلب {orderNumber}";
 
             //string itemsList = string.Join("\n", orderedItems.Select(item => $"- {item}"));
@@ -181,7 +181,7 @@ namespace Naseej
         public async Task SendOrderErrorEmail (string name, string toEmail, string issueType, long? orderNumber)
         {
             var emailMessage = new MimeMessage();
-            emailMessage.From.Add(new MailboxAddress("Naseej", "batoulkhazali96@gmail.com")); 
+            emailMessage.From.Add(new MailboxAddress("Naseej", "Your Email")); 
             emailMessage.To.Add(new MailboxAddress(name, toEmail)); 
             emailMessage.Subject = $"مشكلة في الطلب - رقم الطلب {orderNumber}";
 
